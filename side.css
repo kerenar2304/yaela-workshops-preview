@@ -1,0 +1,13 @@
+@font-face{font-family:"Avigail";src:url(fonts/HKAvigail-Regular.otf) format("opentype");font-display:swap}
+:root{--ink:#2b2527;--cream:#f3f1ea;--pink:#e880ad;--pink-ink:#ad3d76;--green:#72b37e;--white:#fffdf8;--u:calc(100vw/1440);--gut:max(20px,calc(64*var(--u)))}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:300 clamp(1.02rem,calc(19*var(--u)),1.45rem)/1.65 "Heebo",Arial,sans-serif}
+h1,h2{font-family:"Avigail","Heebo",sans-serif;font-weight:400;line-height:1.05;margin:0 0 .4em;text-wrap:balance}
+h1{font-size:clamp(2.6rem,calc(90*var(--u)),6.6rem)}h2{font-size:clamp(1.9rem,calc(54*var(--u)),4rem)}
+p{margin:0 0 1em;text-wrap:pretty}a{color:inherit}
+.wrap{width:calc(100% - 2*var(--gut));margin-inline:auto}
+.btn{display:inline-flex;align-items:center;gap:.55em;padding:.78em 1.5em;border-radius:999px;font:500 1rem/1.2 "Heebo",sans-serif;text-decoration:none;background:var(--ink);color:var(--cream)}
+.btn.green{background:var(--green);color:var(--ink)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.todo{background:rgba(232,128,173,.2);padding:.1em .4em;border-radius:6px}
+.ftr{padding:40px 0 60px;font-size:.95rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+.credit{display:inline-flex;align-items:center;gap:8px;text-decoration:none}.credit img{height:26px;width:auto}
