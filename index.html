@@ -855,6 +855,47 @@ html:not([data-g="2"]):not([data-g="3"]) .tunx,html:not([data-g="2"]) .tunnel{di
   .kpath img{left:calc(62.2*var(--m));top:calc(-32.9*var(--m));width:calc(513.8*var(--m));height:calc(514*var(--m));filter:none}
   .kshadow{left:calc(97.5*var(--m));top:calc(649*var(--m));width:calc(259*var(--m));height:calc(54.5*var(--m));background:rgba(13,12,17,.23);filter:blur(11px);transform:rotate(8deg)}
 }
+
+/* ===== הירו + הדר לפי notikdesign/nosim: מסגרת 49.06vw, עיגול ~25vw, גדלי פונט של הרפרנס. השביל, העננים והצל מוקטנים יחד סביב מרכז-עליון ===== */
+.hdr{height:8.5vw;min-height:96px;align-items:flex-start;padding-top:1vw}
+.logo img{width:6.51vw;min-width:64px}
+.nav{margin-top:1.2vw;gap:2.6vw}
+.nav a{font-size:max(16px,1.25vw)}
+.hdr .btn.sm{margin-top:.46vw;font-size:max(16px,1.25vw);min-height:max(44px,3.39vw)}
+.khero{height:calc(776.1*var(--f))}
+.kbg{height:49.06vw;border-radius:0 0 25vw 25vw/0 0 24.4vw 24.4vw}
+.kbg img{width:100%;height:100%;left:0;top:0;object-fit:cover;object-position:50% 100%}
+.kc2{left:calc(-28.2*var(--f));top:calc(-62.7*var(--f));width:calc(932.8*var(--f));height:calc(492.5*var(--f))}
+.kc4{left:calc(536.8*var(--f));top:calc(40.3*var(--f));width:calc(756.7*var(--f));height:calc(438.1*var(--f))}
+.kc4 img{width:calc(830.6*var(--f));left:calc(-73.1*var(--f))}
+.kc3{left:calc(746.5*var(--f));top:calc(-114.9*var(--f));width:calc(491*var(--f));height:calc(400.7*var(--f))}
+.kc3 img{width:calc(759*var(--f));left:calc(-267.2*var(--f))}
+.kpath{left:calc(121.8*var(--f));top:calc(150.7*var(--f));width:calc(1002.2*var(--f));height:calc(683.6*var(--f))}
+.kpath img{left:calc(29.2*var(--f));top:calc(29.9*var(--f));width:calc(973.1*var(--f));height:calc(636.5*var(--f))}
+.kshadow{left:calc(753.2*var(--f));top:calc(656.7*var(--f));width:calc(370.9*var(--f));height:calc(61.2*var(--f));filter:blur(calc(16.4*var(--f)))}
+.khero h1{top:calc(118*var(--f));font-size:7.16vw;line-height:.92}
+.ksub{left:calc(459.5*var(--f));width:30.68vw;top:calc(300*var(--f));font-size:max(16px,1.25vw);line-height:2.135vw}
+.kctas{top:calc(398*var(--f));gap:calc(28*var(--f))}
+.kctas .btn{font-size:max(16px,1.25vw);min-height:max(44px,3.39vw)}
+@media (max-width:760px){
+  .hdr{height:84px;min-height:0;align-items:center;padding-top:0}
+  .logo img{width:72px;min-width:0}
+  .nav{margin-top:0}
+  .hdr .btn.sm{margin-top:0;font-size:17px;min-height:44px}
+  .khero{--H:max(calc(100svh - 17vw),157vw);height:calc(var(--H) + 41*var(--m))}
+  .kbg{height:var(--H);border-radius:0 0 36.3vw 36.3vw}
+  .kbg img{object-position:50% 100%}
+  .khero h1{top:calc(128*var(--m));font-size:12.6vw;line-height:.95}
+  .ksub{left:16px;width:calc(100% - 32px);top:calc(240*var(--m));font-size:14.5px;line-height:1.65}
+  .kctas{top:calc(336*var(--m));gap:14px}
+  .kctas .btn{font-size:17px;min-height:45px}
+  .kc2{left:calc(-176*var(--m));top:calc(18*var(--m));width:calc(460*var(--m));height:calc(243*var(--m))}
+  .kc4{left:calc(22*var(--m));top:calc(76*var(--m));width:calc(460*var(--m));height:calc(243*var(--m))}
+  .kc4 img{width:100%;left:0}
+  .kpath{left:calc(-217*var(--m));top:calc(var(--H) - 358*var(--m));width:calc(578*var(--m));height:calc(476*var(--m))}
+  .kpath img{left:calc(62.2*var(--m));top:calc(-32.9*var(--m));width:calc(513.8*var(--m));height:calc(514*var(--m))}
+  .kshadow{left:calc(97.5*var(--m));top:calc(var(--H) - 27*var(--m));width:calc(259*var(--m));height:calc(54.5*var(--m));filter:blur(11px)}
+}
 </style>
 <script src="js/works-carousel.js" defer></script>
 <script>(function(){var v=(location.search.match(/[?&]v=([1235])/)||[])[1]||"5";document.documentElement.setAttribute("data-wv",v);var g=(location.search.match(/[?&]g=([123])/)||[])[1]||"3";document.documentElement.setAttribute("data-g",g)})()</script>
