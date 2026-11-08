@@ -6,7 +6,7 @@
 <title>יעלה יהב | סדנאות לעיצוב: מבריף ראשון ללקוח קבוע</title>
 <meta name="description" content="שתי סדנאות זום בקבוצה קטנה למעצבות: פיצוח בריף למתחילות ושימור לקוח למתקדמות, עם יעלה יהב.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#1f3a27">
+<meta name="theme-color" content="#0d0c11">
 <link rel="icon" href="assets/logo.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
 @font-face{font-family:"Discovery";src:url(fonts/Discovery_Fs-Light.woff2) format("woff2");font-weight:300;font-display:swap}
 /* גרסה 5: לפי רפרנס notikdesign.com/nosim, במיתוג של יעלה. בסיס מידות 1440px: px ÷ 14.4 = vw */
 :root{
-  --ink:#1f3a27; --ink-2:#2b4d35; --pink:#e880ad; --pink-ink:#b23d76; --green:#72b37e; --green-ink:#2f7a42;
+  --ink:#0d0c11; --ink-2:#3a3940; --pink:#e880ad; --pink-ink:#b23d76; --green:#72b37e; --green-ink:#2f7a42;
   --cream:#f3f1ea; --paper:#fffdf8; --blush:#fbe9f1; --mint:#e8f3ea; --line:rgba(31,58,39,.22);
   --display:"Avigail","Heebo",sans-serif; --script:"Discovery","Heebo",sans-serif; --body:"Heebo",Arial,sans-serif;
   --t:max(16px,1.25vw); --gut:max(16px,4.44vw);
@@ -437,7 +437,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.04;text-wrap:b
 .circular-carousel__photo--leaving{animation:circular-carousel-leave .7s cubic-bezier(.33,1,.68,1) both}
 .circular-carousel__shade,.circular-carousel__inner{position:absolute;inset:0;pointer-events:none}
 .circular-carousel__shade{background:var(--cc-fade);opacity:var(--cc-depth,0)}
-.circular-carousel__inner{background:#1f3a27;opacity:var(--cc-inner)}
+.circular-carousel__inner{background:#0d0c11;opacity:var(--cc-inner)}
 .circular-carousel__caption{position:absolute;left:0;right:0;bottom:22px;display:flex;flex-direction:column;align-items:center;gap:6px;padding:0 16px;color:var(--black);text-align:center;pointer-events:none;animation:circular-carousel-reveal .9s ease both}
 .circular-carousel__title{display:flex;max-width:100%;flex-direction:column;align-items:center;font:500 max(16px,calc(22*var(--f)))/1.35 "Heebo",sans-serif;animation:circular-carousel-title .52s cubic-bezier(.22,1,.36,1)}
 .circular-carousel__subtitle{font-weight:300;font-size:.8em;opacity:.7}
@@ -931,9 +931,480 @@ html:not([data-g="2"]):not([data-g="3"]) .tunx,html:not([data-g="2"]) .tunnel{di
   .tun-head{width:min(46%,38.9vw)}
   .track-mark{width:.97vw;height:.97vw}
 }
+
+/* לוגואים: יותר אוויר מתחת לכותרת */
+.klogos{top:calc(170*var(--f))}
+@media (max-width:760px){
+  .klogos{top:calc(122*var(--m))}
+  [data-g="3"] .kgal{top:calc(312*var(--m))}
+  [data-g="3"] .kwork{height:calc(312*var(--m) + 310px)}
+}
+/* מסלול: תאריכי הסדנה בשפת "מה יהיה בסדנה" (מספרים בפונט הסקריפט, מחוברים בקו מקווקו) */
+.wdate{margin-top:1.1vw;color:var(--cream)}
+.wdate .dd{display:flex;align-items:center;gap:.9vw}
+.wdate b{font:300 max(32px,2.8vw)/1 var(--script)}
+.wdate i{font:300 max(20px,1.7vw)/1 var(--script);font-style:normal;opacity:.85}
+.wdate .dm{display:block;font:500 max(14px,1.04vw)/1.4 var(--body);margin-top:.45vw;opacity:.95}
+/* "הסדנה בשבילך אם" ממורכז מעל שורת העיגולים, ככותרת של השורה */
+@media (min-width:761px){
+  [data-wv="5"] .for{--lt:max(30.6vw,calc(13vw + 220px));right:5.5%;left:auto;width:15.4%;text-align:center;white-space:nowrap;top:var(--lt);font-size:max(20px,1.75vw);line-height:1.2}
+  [data-wv="5"] .circle{top:calc(max(30.6vw,calc(13vw + 220px)) + max(46px,3.3vw))}
+  [data-wv="5"] .why-box{height:max(700px,50.5vw)}
+  [data-wv="5"] .why{height:calc(max(700px,50.5vw) + 120vh)}
+  [data-wv="5"] .why-pin{top:max(84px,calc((100vh - max(700px,50.5vw))/2 + 30px))}
+}
+@media (max-width:760px){
+  .wdate{margin-top:16px}
+  .wdate .dd{gap:12px}
+  .wdate b{font-size:38px}
+  .wdate i{font-size:22px}
+  .wdate .dm{font-size:14.5px;margin-top:6px}
+  [data-wv="5"] .for{text-align:center;font-size:22px}
+  /* עיגולים: קטנים יותר, טקסט גדול יותר */
+  [data-wv="5"] .circle,.circle{width:min(200px,54vw);padding:20px 18px}
+  [data-wv="5"] .circle h3,.circle h3{font-size:17.5px;line-height:1.3}
+  [data-wv="5"] .circle p,.circle p{font-size:14.5px;line-height:1.35}
+  .circles{gap:30px}
+}
+
+/* תאריכים v2: שני עיגולי קרם קטנים עם התאריך, מחוברים בקו מקווקו כמו ב"מה יהיה בסדנה", ולידם יום ושעה */
+.wdesc{text-wrap:pretty}
+.wdate{display:flex;align-items:center;gap:max(14px,1.3vw);margin-top:max(14px,1.2vw)}
+.wdate .dd{display:flex;align-items:center;gap:0}
+.wdate b{display:grid;place-items:center;width:max(62px,4.9vw);aspect-ratio:1;border-radius:50%;background:var(--cream);color:var(--black);font:300 max(19px,1.55vw)/1 var(--script);box-shadow:0 .6vw 1.2vw -.7vw rgba(90,30,60,.45)}
+.wdate i{display:block;width:max(14px,1.2vw);border-top:2px dashed var(--cream);opacity:.9}
+.wdate .dm{display:block;margin:0;font:400 max(14px,1.04vw)/1.45 var(--body);color:var(--cream)}
+.wdate .dm strong{display:block;font:300 max(19px,1.55vw)/1.2 var(--script)}
+@media (max-width:760px){
+  .wdate{gap:14px;margin-top:18px}
+  .wdate b{width:64px;font-size:20px}
+  .wdate i{width:14px}
+  .wdate .dm{font-size:14.5px}
+  .wdate .dm strong{font-size:20px}
+}
+
+/* מובייל: שכבת הטשטוש מאחורי הטקסט יצרה פס בהיר בקצוות הפאנל. מתחת לתמונה הרקע כמעט אטום ממילא, אז מורידים אותה */
+@media (max-width:760px){
+  [data-wv="5"] .why-sky::before{display:none}
+}
+
+/* ===== מה יהיה בסדנה: איור מרכזי מהמצגת של יעלה, ולצדו שני מפגשים בכרטיסים מעוגלים עם תגית תאריך ===== */
+.mx{display:grid;grid-template-columns:1fr minmax(0,34vw) 1fr;align-items:center;gap:2.4vw;margin-top:2.6vw;text-align:right}
+.mx-it{display:flex;align-items:center;gap:2.2vw}
+.mx-it.l{flex-direction:row-reverse}
+.mx-txt{flex:1;min-width:0}
+.mx-txt .day{display:block;font:500 max(13px,.95vw)/1.3 var(--body);color:var(--pink-ink);letter-spacing:.02em}
+.mx-txt h3{font:500 max(18px,1.5vw)/1.25 var(--body);color:var(--black);margin-top:.45em;text-wrap:balance}
+.mx-txt p{font:400 max(14px,1.02vw)/1.55 var(--body);color:var(--black);opacity:.85;margin-top:.5em;text-wrap:pretty}
+.mx-card{position:relative;flex:none;margin:0;width:max(140px,11.5vw);aspect-ratio:4/5;border-radius:max(20px,1.7vw);background:#fff;padding:max(8px,.6vw);
+  box-shadow:0 1.4vw 2.6vw -1.5vw rgba(31,58,39,.38),0 0 0 1px rgba(31,58,39,.05);rotate:-2deg;transition:rotate .5s cubic-bezier(.2,.7,.3,1)}
+.mx-it.l .mx-card{rotate:2deg}
+.mx-it:hover .mx-card{rotate:0deg}
+.mx-card img{display:block;width:100%;height:100%;object-fit:contain;border-radius:max(14px,1.2vw);background:#fbf7f3;mix-blend-mode:multiply;padding:8%}
+.mx-d{position:absolute;top:50%;translate:0 -50%;right:calc(max(30px,2.4vw) * -1);background:var(--pink);color:var(--cream);font:300 max(19px,1.5vw)/1 var(--script);padding:.42em .75em .38em;border-radius:999px;box-shadow:0 .8vw 1.4vw -.8vw rgba(120,40,80,.55);white-space:nowrap}
+.mx-it.l .mx-d{right:auto;left:calc(max(30px,2.4vw) * -1)}
+.g .mx-d{background:var(--green)}
+.mx-mid{position:relative}
+.mx-mid::before{content:"";position:absolute;inset:-6% -4%;background:radial-gradient(closest-side,rgba(255,255,255,.85),rgba(255,255,255,0));z-index:-1}
+.mx-mid img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+@media (max-width:760px){
+  .mx{grid-template-columns:1fr;gap:34px;margin-top:22px}
+  .mx-mid{order:-1;width:88%;justify-self:center}
+  .mx-it,.mx-it.l{flex-direction:row-reverse;gap:22px}
+  .mx-card{width:118px;border-radius:20px;padding:7px}
+  .mx-card img{border-radius:14px}
+  .mx-d,.mx-it.l .mx-d{top:auto;bottom:-14px;right:50%;left:auto;translate:50% 0;font-size:19px}
+  .mx-txt h3{font-size:18px}
+  .mx-txt p{font-size:15px}
+  .mx-txt .day{font-size:13.5px}
+}
+
+/* מה יהיה בסדנה, תיקונים: האיור המרכזי בכרטיס לבן גדול (האיורים על רקע לבן), יותר רווח בין הכרטיס לטקסט */
+@media (min-width:761px){.mx{grid-template-columns:1fr minmax(0,30vw) 1fr;gap:3vw}.mx-it{gap:3.6vw}}
+@media (min-width:761px) and (max-width:1200px){
+  .mx{grid-template-columns:1fr 1fr;row-gap:4vw;column-gap:6vw}
+  .mx-mid{grid-column:1/-1;order:-1;width:min(560px,60%);justify-self:center}
+  .mx-it.l{flex-direction:row}
+  .mx-it.l .mx-d{left:auto;right:calc(max(30px,2.4vw) * -1)}
+}
+.mx-card img{background:#fff;mix-blend-mode:normal}
+.mx-mid::before{display:none}
+.mx-mid{background:#fff;border-radius:max(26px,2.4vw);padding:2.2vw;box-shadow:0 1.8vw 3.4vw -2vw rgba(31,58,39,.38),0 0 0 1px rgba(31,58,39,.05)}
+.mx-mid img{mix-blend-mode:normal;aspect-ratio:3/2;object-fit:contain}
+@media (max-width:760px){
+  .mx-mid{width:100%;padding:18px;border-radius:26px}
+  .mx-it,.mx-it.l{gap:24px}
+}
+
+/* ===== מה יהיה בסדנה v3, לפי הרפרנס: איור גדול במרכז בלי מסגרת, וארבעה כרטיסי פולרויד מדורגים, שניים מכל צד, עם תגית על הקצה והטקסט בצד החיצוני ===== */
+.mz{position:relative;height:30vw;margin-top:1vw;text-align:right}
+.mz-mid{position:absolute;left:33%;width:34%;top:0;height:100%;display:grid;place-items:center}
+.mz-mid img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.mz-it{position:absolute;display:flex;align-items:center;gap:2.4vw;width:30%}
+.mz-it.rt{right:2%;top:2vw}.mz-it.rb{right:7%;top:16vw}
+.mz-it.lt{left:2%;top:2vw;flex-direction:row-reverse}.mz-it.lo{left:7%;top:16vw;flex-direction:row-reverse}
+.mz-it.rt,.mz-it.rb{flex-direction:row-reverse}
+.mz-it.lt,.mz-it.lo{flex-direction:row}
+.mz-card{position:relative;flex:none;margin:0;width:11vw;padding:.55vw .55vw 1.5vw;background:#fff;border-radius:.6vw;box-shadow:0 1vw 2vw -1.2vw rgba(31,58,39,.4),0 0 0 1px rgba(31,58,39,.06)}
+.mz-card img{display:block;width:100%;aspect-ratio:1;object-fit:contain;padding:10%;border-radius:.3vw;mix-blend-mode:multiply;
+  background:radial-gradient(60% 55% at 30% 30%,rgba(232,128,173,.22),transparent 70%),radial-gradient(55% 60% at 75% 70%,rgba(114,179,126,.18),transparent 70%),#fbf6f2}
+.mz-b{position:absolute;top:50%;translate:0 -50%;background:var(--pink);color:var(--cream);font:300 max(16px,1.2vw)/1 var(--script);padding:.5em .8em .45em;border-radius:999px;white-space:nowrap;box-shadow:0 .6vw 1.2vw -.6vw rgba(120,40,80,.55)}
+.g .mz-b{background:var(--green)}
+.mz-it.rt .mz-b,.mz-it.rb .mz-b{right:0;translate:50% -50%}
+.mz-it.lt .mz-b,.mz-it.lo .mz-b{left:0;translate:-50% -50%}
+.mz-txt{flex:1;min-width:0}
+.mz-txt .day{display:block;font:500 max(13px,.9vw)/1.3 var(--body);color:var(--pink-ink)}
+.g .mz-txt .day{color:var(--ink)}
+.mz-txt h3{font:700 max(17px,1.45vw)/1.2 var(--body);color:var(--ink);margin-top:.25em;text-wrap:balance}
+.mz-txt p{font:400 max(13.5px,.98vw)/1.5 var(--body);color:var(--black);opacity:.85;margin-top:.35em;text-wrap:pretty}
+.mz-it.rt .mz-txt,.mz-it.rb .mz-txt{padding-right:0}
+.mz-it.rt .mz-card,.mz-it.rb .mz-card{margin-right:0}
+@media (max-width:1100px){
+  .mz{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:34px 26px;margin-top:20px}
+  .mz-mid{position:relative;inset:auto;grid-column:1/-1;width:min(560px,90%);height:auto;justify-self:center}
+  .mz-mid img{height:auto}
+  .mz-it,.mz-it.rt,.mz-it.rb,.mz-it.lt,.mz-it.lo{position:relative;inset:auto;width:auto;flex-direction:column;align-items:center;text-align:center;gap:22px}
+  .mz-card{width:min(170px,40vw);padding:8px 8px 22px;border-radius:8px}
+  .mz-it .mz-b,.mz-it.rt .mz-b,.mz-it.rb .mz-b,.mz-it.lt .mz-b,.mz-it.lo .mz-b{top:auto;bottom:-14px;right:50%;left:auto;translate:50% 0;font-size:17px}
+  .mz-txt h3{font-size:17px}
+  .mz-txt p{font-size:14.5px}
+}
+@media (max-width:420px){
+  .mz{gap:30px 14px}
+  .mz-card{width:100%}
+  .mz-txt h3{font-size:16px}
+  .mz-txt p{font-size:14px}
+}
+
+@media (min-width:1101px){
+  .mz-mid{left:35.5%;width:29%}
+  .mz-mid img{-webkit-mask:radial-gradient(closest-side,#000 78%,transparent);mask:radial-gradient(closest-side,#000 78%,transparent)}
+  .mz-it.rb{right:5.5%}.mz-it.lo{left:5.5%}
+  .mz-it{width:31%}
+}
+
+.mz-mid img{-webkit-mask:radial-gradient(closest-side,#000 78%,transparent);mask:radial-gradient(closest-side,#000 78%,transparent)}
+@media (min-width:761px) and (max-width:1100px){.mz-mid{width:min(440px,55%)}}
+
+/* ===== מה יהיה בסדנה v4: מצפן במרכז, כל איור בתוך המעוין המעוגל מהלוגו, 4 כלים שלוקחים מהסדנה ===== */
+.meets h2{color:var(--pink)}
+.g .meets h2{color:var(--green)}
+.mz-card{width:12.5vw;aspect-ratio:1;padding:0;background:none;border-radius:0;box-shadow:none}
+.mz-card .dmi{position:absolute;inset:14.6%;rotate:45deg;border-radius:16%;background:#fff;overflow:hidden;box-shadow:0 0 0 1px rgba(31,58,39,.06),.9vw .9vw 2vw -1vw rgba(31,58,39,.35)}
+.mz-card .dmi img{position:absolute;left:50%;top:50%;width:118%;height:118%;translate:-50% -50%;rotate:-45deg;object-fit:contain;padding:16%;mix-blend-mode:multiply;background:none;border-radius:0;aspect-ratio:auto}
+.mz-dot{position:absolute;top:50%;width:1.5vw;aspect-ratio:1;background:var(--pink);border-radius:22%;rotate:45deg;translate:0 -50%;box-shadow:0 .4vw .8vw -.3vw rgba(120,40,80,.5)}
+.g .mz-dot{background:var(--green)}
+.mz-it.rt .mz-dot,.mz-it.rb .mz-dot{right:4%}
+.mz-it.lt .mz-dot,.mz-it.lo .mz-dot{left:4%}
+.mz-mid img{-webkit-mask:none;mask:none;mix-blend-mode:normal}
+@media (min-width:1101px){
+  .mz{height:31vw}
+  .mz-mid{left:36%;width:28%}
+  .mz-mid img{width:100%;height:auto;margin:auto}
+  .mz-it.rt{right:1.5%;top:.5vw}.mz-it.rb{right:7.5%;top:16vw}
+  .mz-it.lt{left:1.5%;top:.5vw}.mz-it.lo{left:7.5%;top:16vw}
+  .mz-it{gap:1.4vw;width:30%}
+}
+@media (max-width:1100px){
+  .mz-card{width:min(190px,44vw)}
+  .mz-dot{width:16px;top:auto;bottom:6%;right:50%!important;left:auto!important;translate:50% 0}
+  .mz-mid{width:min(340px,70%)}
+  .mz-it,.mz-it.rt,.mz-it.rb,.mz-it.lt,.mz-it.lo{gap:8px}
+}
+
+/* מעוינים: פחות אנמי. מעוין מלא בצבע המסלול מאחור (כמו בלוגו), מילוי פנימי בגוון עדין, בלי המעוין הקטן */
+.mz-dot{display:none}
+.mz-card::before{content:"";position:absolute;inset:14.6%;rotate:45deg;border-radius:16%;background:var(--pink);translate:0 9%}
+.g .mz-card::before{background:var(--green)}
+.mz-card .dmi{background:#fdeef4;box-shadow:none}
+.g .mz-card .dmi{background:#eef6ef}
+
+/* המצפן: הטבעת קבועה, הכוכב והמחט מסתובבים סיבוב מלא ומתייצבים בנדנוד קטן, כמו מצפן אמיתי */
+.cmp{position:relative;width:100%;aspect-ratio:1}
+.cmp img{position:absolute;inset:0;width:100%!important;height:100%!important;margin:0!important;object-fit:contain}
+@media (prefers-reduced-motion:no-preference){
+  .cmp .rot{animation:cmpspin 9s cubic-bezier(.45,.05,.3,1) infinite}
+}
+@keyframes cmpspin{0%{rotate:0deg}30%{rotate:385deg}40%{rotate:348deg}49%{rotate:368deg}57%{rotate:357deg}64%{rotate:360deg}100%{rotate:360deg}}
+
+/* ===== מה יהיה בסדנה: כותרת גדולה יותר, והאיורים יושבים על עננים במקום מעוינים ===== */
+.meets h2{font-size:max(48px,6.2vw)}
+.mz-card{width:15vw;aspect-ratio:5/4}
+.mz-card::before{content:"";position:absolute;inset:auto -8% -6% -8%;height:46%;rotate:0deg;translate:none;border-radius:50%;background:radial-gradient(closest-side,rgba(232,128,173,.42),rgba(232,128,173,0));filter:blur(6px)}
+.g .mz-card::before{background:radial-gradient(closest-side,rgba(114,179,126,.42),rgba(114,179,126,0))}
+.mz-card::after{content:"";position:absolute;left:-20%;right:-20%;bottom:-16%;height:58%;background:url(assets/v5/k-cloud.webp) center bottom/contain no-repeat;filter:drop-shadow(0 .5vw .9vw rgba(150,60,100,.22));pointer-events:none}
+.g .mz-card::after{filter:drop-shadow(0 .5vw .9vw rgba(40,90,50,.22))}
+.mz-card .dmi{inset:0 6% 20% 6%;rotate:0deg;border-radius:0;background:none!important;overflow:visible;box-shadow:none}
+.mz-card .dmi img{inset:0;left:0;top:0;width:100%;height:100%;translate:none;rotate:0deg;padding:0;object-fit:contain;object-position:center bottom;mix-blend-mode:normal}
+@media (min-width:1101px){
+  .mz-it{gap:1vw}
+  .mz-it.rt{top:0}.mz-it.lt{top:0}
+  .mz-it.rb,.mz-it.lo{top:15.5vw}
+}
+@media (max-width:1100px){
+  .mz-card{width:min(200px,44vw)}
+  .mz-it,.mz-it.rt,.mz-it.rb,.mz-it.lt,.mz-it.lo{gap:24px}
+}
+
+/* ===================== "מה יהיה בסדנה": בסיס משותף לגרסה הקבועה (המצפן במרכז) ===================== */
+.meets{--tc:var(--pink)}
+.g .meets{--tc:var(--green)}
+html[data-mv] .mz-card::before,html[data-mv] .mz-card::after{display:none}
+html[data-mv] .mz-card{aspect-ratio:1}
+html[data-mv] .mz-card .dmi{inset:12%}
+html[data-mv] .mz-card .dmi img{object-position:center}
+
+/* ---------- כל הגרסאות עד 1100: המצפן למעלה, הכלים ברשימה (איור מימין, טקסט לידו) ---------- */
+@media (max-width:1100px){
+  html[data-mv] .mz{display:block;height:auto}
+  html[data-mv] .mz::before{display:none}
+  html[data-mv] .mz-mid{position:relative;inset:auto;width:min(400px,88%);height:auto;aspect-ratio:1/.92;margin:0 auto 26px;padding:9%;background:color-mix(in srgb,var(--tc) 20%,#fffdf8);top:auto}
+  html[data-mv] .mz-mid .cmp{width:84%;margin:auto}
+  html[data-mv] .mz-it,html[data-mv] .mz-it.rt,html[data-mv] .mz-it.rb,html[data-mv] .mz-it.lt,html[data-mv] .mz-it.lo{flex-direction:row!important;text-align:right;align-items:center;gap:16px;padding:14px 0}
+  html[data-mv] .mz-card{width:86px;background:#fff;border-radius:50%;box-shadow:0 10px 20px -12px rgba(31,58,39,.4)}
+  html[data-mv] .mz-txt{text-align:right}
+}
+
+/* ---------- 4. כמו הרפרנס של המזוודה: המצפן במרכז, ארבעת הכלים בעיגולים מסביב, קווי הובלה מכל עיגול אל המצפן ---------- */
+.mz-lines{display:none}
+@media (min-width:1101px){
+  html[data-mv="4"] .mz{height:36vw;margin-top:2vw}
+  html[data-mv="4"] .mz-lines{display:block;position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
+  html[data-mv="4"] .mz-lines path{fill:none;stroke:var(--tc);stroke-width:1.6;vector-effect:non-scaling-stroke;opacity:.8}
+  html[data-mv="4"] .mz-lines circle{fill:var(--tc)}
+  html[data-mv="4"] .mz-mid{left:37%;width:26%;top:50%;height:auto;aspect-ratio:1;translate:0 -50%;z-index:1}
+  html[data-mv="4"] .mz-mid::before{content:"";position:absolute;inset:-14%;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--tc) 22%,transparent),transparent);z-index:-1}
+  html[data-mv="4"] .mz-it{position:absolute;width:16%;aspect-ratio:1;display:grid;place-content:center;text-align:center;gap:0;padding:2.4vw 1.8vw;border-radius:50%;background:#fffdf8;border:2px solid var(--tc);box-shadow:0 1.4vw 2.6vw -1.6vw rgba(31,58,39,.35);z-index:2}
+  html[data-mv="4"] .mz-it::before{content:"";position:absolute;inset:.7vw;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--tc) 35%,transparent);pointer-events:none}
+  html[data-mv="4"] .mz-card{display:none}
+  html[data-mv="4"] .mz-txt{text-align:center}
+  html[data-mv="4"] .mz-txt h3{font-size:max(17px,1.45vw);line-height:1.2;margin:0}
+  html[data-mv="4"] .mz-txt p{font-size:max(13px,.95vw);line-height:1.45;margin-top:.5em}
+  html[data-mv="4"] .mz-it.rt{left:76%;top:2%}
+  html[data-mv="4"] .mz-it.rb{left:70%;bottom:2%;top:auto}
+  html[data-mv="4"] .mz-it.lt{left:8%;top:2%}
+  html[data-mv="4"] .mz-it.lo{left:14%;bottom:2%;top:auto}
+}
+@media (max-width:1100px){
+  html[data-mv="4"] .mz{display:grid;grid-template-columns:1fr 1fr;gap:16px;height:auto}
+  html[data-mv="4"] .mz-mid{grid-column:1/-1;position:relative;inset:auto;width:min(320px,76%);height:auto;aspect-ratio:1;margin:0 auto 8px;justify-self:center}
+  html[data-mv="4"] .mz-it,html[data-mv="4"] .mz-it.rt,html[data-mv="4"] .mz-it.rb,html[data-mv="4"] .mz-it.lt,html[data-mv="4"] .mz-it.lo{position:relative;inset:auto;width:100%;aspect-ratio:1;display:grid;place-content:center;text-align:center;padding:22px 16px;border-radius:50%;background:#fffdf8;border:2px solid var(--tc);gap:0}
+  html[data-mv="4"] .mz-card{display:none}
+  html[data-mv="4"] .mz-txt{text-align:center}
+  html[data-mv="4"] .mz-txt h3{font-size:15.5px;line-height:1.2;margin:0}
+  html[data-mv="4"] .mz-txt p{font-size:13px;line-height:1.4;margin-top:6px}
+}
+
+@media (min-width:1101px){html[data-mv="4"] .mz-it{right:auto!important}}
+@media (max-width:1100px){html[data-mv="4"] .mz-mid{background:none;padding:0;border-radius:0}}
+
+/* m=4: בלי עיגול, עם האיור מהמצגת מעל הטקסט */
+html[data-mv="4"] .mz-it,html[data-mv="4"] .mz-it.rt,html[data-mv="4"] .mz-it.rb,html[data-mv="4"] .mz-it.lt,html[data-mv="4"] .mz-it.lo{border:0!important;background:none!important;box-shadow:none!important;border-radius:0!important;aspect-ratio:auto!important;display:flex!important;flex-direction:column!important;align-items:center;justify-content:flex-start;padding:0!important}
+html[data-mv="4"] .mz-it::before{display:none}
+html[data-mv="4"] .mz-card{display:block!important;width:9vw;aspect-ratio:5/4;background:none;box-shadow:none;border-radius:0;flex:none}
+html[data-mv="4"] .mz-card .dmi{inset:0}
+html[data-mv="4"] .mz-card .dmi img{object-position:center bottom}
+html[data-mv="4"] .mz-txt{margin-top:.8vw}
+@media (min-width:1101px){
+  html[data-mv="4"] .mz-it.rt,html[data-mv="4"] .mz-it.lt{top:0}
+  html[data-mv="4"] .mz-it.rb,html[data-mv="4"] .mz-it.lo{bottom:0}
+}
+@media (max-width:1100px){
+  html[data-mv="4"] .mz{gap:28px 16px}
+  html[data-mv="4"] .mz-card{width:min(150px,40vw)}
+  html[data-mv="4"] .mz-txt{margin-top:10px}
+}
+
+/* מסלול 2: אותה קומפוזיציה כמו מסלול 1, הצבע המוביל ירוק והדימוי הוא השביל, עם מעצבת שצועדת בו */
+#client .why-sky img{object-position:40% 60%}
+#client .why-bal.walker{left:16%;top:6%;height:84%;animation:walkbob 1.6s ease-in-out infinite alternate;filter:drop-shadow(0 1.2vw 1.2vw rgba(31,58,39,.25))}
+@keyframes walkbob{from{translate:0 0}to{translate:0 -1%}}
+@media (prefers-reduced-motion:reduce){#client .why-bal.walker{animation:none}}
+@media (max-width:760px){
+  #client .why-bal.walker{left:50%!important;top:40px!important;height:300px!important;margin-left:-71px;translate:none}
+  #client .why-sky img{object-position:35% 50%}
+}
+
+#client .why-bal.walker{top:-5%;height:66%;left:18%}
+/* "מה יהיה בסדנה": במקום תת-הכותרת, מלבן מעוגל עם התאריכים והשעות */
+.mdate{display:inline-flex;align-items:center;gap:.9em;margin-top:max(14px,1.1vw);padding:.55em 1.3em;border-radius:max(14px,1.1vw);background:var(--tc,var(--pink));color:var(--cream);font:400 max(15px,1.15vw)/1.3 var(--body);box-shadow:0 1vw 2vw -1.2vw rgba(31,58,39,.4)}
+.mdate b{font-weight:600}
+.mdate span{opacity:.92;padding-inline-start:.9em;border-inline-start:1.5px solid rgba(255,255,255,.5)}
+@media (max-width:760px){
+  .mdate{flex-direction:column;gap:2px;font-size:15px;padding:10px 20px;border-radius:14px}
+  .mdate span{border:0;padding:0}
+}
+
+#client .why-bal.walker{top:-7%;height:66%;left:10%}
+@media (max-width:760px){#client .why-bal.walker{margin-left:-67px;top:30px!important}}
+
+#client .why-bal.walker{top:-4%}
+@media (max-width:760px){#client .why-sky img{object-position:12% 100%!important}#client .why-bal.walker{top:90px!important}}
+
+/* m=4: חצים מאוירים ומעוגלים מהמצפן אל הכלים, בסגנון החץ מהמצגת */
+html[data-mv="4"] .mz-lines path{stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;vector-effect:none;opacity:.85}
+/* בלי קווים מקווקווים בעמוד: קווים רציפים ודקים בצבע המותג */
+.track-line{background:color-mix(in srgb,var(--cream) 75%,transparent)!important;border-radius:2px}
+.card .res li{border-bottom:1px solid var(--line)}
+.price{border:1.5px solid color-mix(in srgb,var(--pink) 70%,transparent)}
+.g .price{border-color:color-mix(in srgb,var(--green) 70%,transparent)}
+.q::before{border:1.5px solid color-mix(in srgb,var(--pink) 45%,transparent)}
+.faq details{background:linear-gradient(var(--line),var(--line)) bottom/100% 1px no-repeat}
+.rows li{background:linear-gradient(var(--line),var(--line)) bottom/100% 1px no-repeat}
+.dot .ring,.meet .ring{border-style:solid;opacity:.6}
+.why .acts a.more{border-bottom-style:solid}
+
+/* כל כותרות הסקשנים בגודל אחד, כמו "מה יהיה בסדנה" */
+html body :is(.kwork h2,.kabout h2,.why h2,.meets h2,.sec-head h2){font-size:max(48px,6.2vw)!important;line-height:1.02}
+@media (max-width:760px){html body :is(.kwork h2,.kabout h2,.why h2,.meets h2,.sec-head h2){font-size:48px!important}}
+/* חצי המצפן עבים יותר, כמו החץ מהמצגת */
+html[data-mv="4"] .mz-lines path{stroke-width:5}
+
+/* רווח בין "מה יהיה בסדנה" לפאנל "בסוף הסדנה" */
+.meets{padding-bottom:max(70px,7vw)!important}
+@media (max-width:760px){.meets{padding-bottom:72px!important}}
+
+/* "מילים ממי שעבדו איתי מקרוב" בירוק של הלוגו */
+#h-words{color:var(--green)}
+
+/* המצפן עוקב אחרי העכבר: המחט פונה לסמן, וכשהעכבר יוצא היא חוזרת לנדנוד */
+html.cmp-live .cmp .rot{animation:none!important;transition:rotate .5s cubic-bezier(.3,1.4,.5,1)}
+
+/* מסלול "הסדנה בשבילך אם": קווים מעוגלים עם ראש חץ במקום הקו הישר */
+.track-line,.track-mark{display:none!important}
+.trk{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:6}
+.trk path{fill:none;stroke:#fff;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;transition:stroke-dashoffset .25s linear,opacity .3s}
+.trk path.hd{stroke-dasharray:none}
+@media (max-width:760px){html body .circles{row-gap:78px!important}}
+
+/* פוטר בירוק המיתוג, טקסט בשחור לקריאות */
+.foot{background:var(--green)!important;color:var(--black)!important}
+.foot .sec-head .script,.foot h2{color:var(--black)!important}
+.foot .lead a,.foot a{color:var(--black)!important}
+.foot .lead a{text-decoration:underline;text-underline-offset:.2em}
+.foot .bottom .lg img{filter:brightness(0)}
+.foot .bottom{border-color:rgba(13,12,17,.25)!important}
+
+/* תגית המסלול השני בירוק המיתוג */
+.tag{background:var(--pink);color:var(--black);font-weight:500}
+.g .tag{background:var(--green);color:var(--black);font-weight:500}
+.inc h3{color:var(--pink)}
+.g .inc h3{color:var(--green)}
+
+/* ===================== "בסוף הסדנה": 3 אפשרויות (?r=1 כרטיס כניסה, ?r=3 משטח צבע מלא). בלי פרמטר: הנוכחי ===================== */
+.order{--tc:var(--pink);--tl:var(--blush)}
+.g .order{--tc:var(--green);--tl:var(--mint)}
+
+/* ---------- 3. משטח צבע מלא: כל האזור בצבע המסלול, מה לוקחים בטקסט גדול על הצבע, ומה כלול בכרטיס שמנת שצף בצד ---------- */
+html[data-rv="3"] .order{padding-bottom:max(60px,5vw)}
+html[data-rv="3"] .band{height:auto;bottom:0;border-radius:max(36px,8vw)}
+html[data-rv="3"] .order .sec-head{text-align:right;width:min(80vw,1240px);margin:0 auto;padding-top:5.4vw}
+html[data-rv="3"] .order .sec-head h2{color:var(--paper)}
+html[data-rv="3"] .card{background:none;box-shadow:none;overflow:visible;width:min(80vw,1240px);grid-template-columns:1.35fr 1fr;gap:5vw;align-items:start}
+html[data-rv="3"] .card .res{background:none;padding:1vw 0 0}
+html[data-rv="3"] .card .res li{font-size:max(19px,1.65vw);line-height:1.3;font-weight:400;color:var(--black);border-bottom:2px solid rgba(255,253,248,.7)!important;padding:1em 0;gap:1em}
+html[data-rv="3"] .card .res li:last-child{border:0!important}
+html[data-rv="3"] .card .res .dia{color:var(--paper)}
+html[data-rv="3"] .card .inc{background:var(--paper);border-radius:max(22px,2vw);box-shadow:0 2vw 4vw -1.6vw rgba(13,12,17,.4);rotate:-2deg;margin-top:-6vw;padding:2.8vw}
+html[data-rv="3"] .price{border-color:var(--tc)}
+@media (max-width:760px){
+  html[data-rv="3"] .band{border-radius:36px;margin:0 12px}
+  html[data-rv="3"] .order .sec-head{width:auto;padding:44px 28px 0;text-align:center}
+  html[data-rv="3"] .card{width:calc(100% - 24px);gap:10px;grid-template-columns:1fr}
+  html[data-rv="3"] .card .res{padding:0 18px}
+  html[data-rv="3"] .card .res li{font-size:17px}
+  html[data-rv="3"] .card .inc{rotate:0deg;margin:10px 0 0;padding:26px 22px}
+}
+
+/* "בסוף הסדנה": משטח הצבע נמתח מקצה לקצה, שמיים בהירים למעלה ועננים שנסחפים לאט */
+html[data-rv="3"] .band{margin:0!important;border-radius:0!important;overflow:hidden;
+  background:radial-gradient(70% 55% at 78% 0%,rgba(255,255,255,.38),transparent 70%),radial-gradient(60% 50% at 10% 100%,rgba(255,255,255,.22),transparent 70%),var(--tc)}
+.o-cls{position:absolute;inset:0;pointer-events:none}
+.o-cls i{position:absolute;aspect-ratio:1.9;background:url(assets/v5/k-cloud.webp) center/contain no-repeat}
+.o-cls i:nth-child(1){left:-8%;bottom:-12%;width:38%;opacity:.95}
+.o-cls i:nth-child(2){left:24%;bottom:-16%;width:30%;opacity:.8;transform:scaleX(-1)}
+.o-cls i:nth-child(3){right:-6%;bottom:-14%;width:34%;opacity:.85}
+.o-cls i:nth-child(4){right:30%;top:4%;width:16%;opacity:.55;transform:scaleX(-1)}
+.o-cls i:nth-child(5){left:4%;top:8%;width:18%;opacity:.5}
+@media (prefers-reduced-motion:no-preference){.o-cls i{animation:kdrift 16s ease-in-out infinite alternate}.o-cls i:nth-child(2n){animation-duration:21s;animation-delay:-7s}}
+html[data-rv="3"] .order{padding-bottom:max(90px,8vw)}
+html[data-rv="3"] .card .inc{position:relative;z-index:2}
+@media (max-width:760px){
+  .o-cls i:nth-child(1){width:90%;left:-30%;bottom:-4%}
+  .o-cls i:nth-child(2){width:70%;left:40%;bottom:-6%}
+  .o-cls i:nth-child(3){display:none}
+  .o-cls i:nth-child(4){width:44%;right:-12%;top:2%}
+  .o-cls i:nth-child(5){display:none}
+}
+
+#h-faq{color:var(--pink)}
+
+/* מסלול 2: במקום עננים, שביל אבנים בדשא כמו בהירו, לאורך תחתית המשטח */
+.g .o-cls i{display:none}
+.g .o-cls::after{content:"";position:absolute;left:0;right:0;bottom:-1px;aspect-ratio:9.15;background:url(assets/grass-strip.webp?v=4) center bottom/100% auto no-repeat;filter:saturate(.82) brightness(.97) hue-rotate(-6deg)}
+html[data-rv="3"] .g .order{padding-bottom:max(120px,11vw)}
+@media (max-width:760px){.g .o-cls::after{aspect-ratio:auto;height:120px;background-size:auto 100%;background-position:85% bottom;background-repeat:no-repeat}html[data-rv="3"] .g .order{padding-bottom:130px}}
+
+/* ===== המלצות בווידאו: הסרטון הפעיל במרכז גדול ובצבע, השאר קטנים מתחת לשכבת פייד ורודה ===== */
+.vids{position:relative;margin:3vw 0 0;overflow:hidden;padding:1vw 0 0}
+.vtrack{display:flex;align-items:flex-start;gap:max(14px,1.4vw);transition:translate .7s cubic-bezier(.3,.8,.2,1);width:max-content}
+.vd{flex:none;width:max(170px,15vw);margin:0;text-align:center;transition:width .6s cubic-bezier(.3,.8,.2,1)}
+.vd.on{width:max(240px,21vw)}
+.vf{position:relative;aspect-ratio:4/5;border-radius:max(24px,2.4vw);overflow:hidden;background:var(--blush);margin-top:max(30px,3vw);transition:margin .6s,box-shadow .6s;cursor:pointer}
+.vd.on .vf{margin-top:0;box-shadow:0 2vw 4vw -2vw rgba(13,12,17,.35)}
+.vf video{display:block;width:100%;height:100%;object-fit:cover}
+.vf::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,color-mix(in srgb,var(--pink) 30%,transparent),color-mix(in srgb,var(--pink) 72%,transparent));transition:opacity .6s;pointer-events:none}
+.vd.on .vf::after{opacity:0}
+.vplay{position:absolute;left:50%;top:50%;translate:-50% -50%;z-index:2;width:max(56px,4.6vw);aspect-ratio:1;border-radius:50%;border:0;background:var(--paper);box-shadow:0 10px 30px -10px rgba(13,12,17,.5);cursor:pointer;opacity:0;scale:.8;transition:opacity .4s,scale .4s}
+.vplay::before{content:"";position:absolute;inset:0;margin:auto;width:0;height:0;border-style:solid;border-width:.62em 0 .62em 1.05em;border-color:transparent transparent transparent var(--pink);translate:12% 0;font-size:max(14px,1.15vw)}
+.vd.on .vplay{opacity:1;scale:1}
+.vd.playing .vplay{opacity:0;pointer-events:none}
+.vd figcaption{margin-top:1em;display:grid;gap:.15em}
+.vd figcaption b{font-weight:500;font-size:max(15px,1.05vw);transition:font-size .6s}
+.vd.on figcaption b{font-size:max(19px,1.45vw)}
+.vd figcaption span{font-size:max(13px,.85vw);opacity:0;transition:opacity .5s}
+.vd.on figcaption span{opacity:.7}
+.vnav{display:flex;align-items:center;gap:12px;width:min(80vw,1180px);margin:2.4vw auto 0}
+.vbar{flex:1;height:2px;background:color-mix(in srgb,var(--black) 12%,transparent);border-radius:2px;overflow:hidden}
+.vbar i{display:block;height:100%;width:20%;background:var(--pink);border-radius:2px;transition:width .6s}
+.vnav button{width:44px;height:44px;border-radius:50%;border:0;background:var(--black);color:var(--paper);font-size:18px;cursor:pointer;display:grid;place-items:center}
+.vnav button:disabled{opacity:.3;cursor:default}
+@media (max-width:760px){
+  .vd{width:46vw}.vd.on{width:66vw}
+  .vf{border-radius:22px;margin-top:28px}
+  .vnav{width:calc(100% - 32px);margin-top:22px}
+}
+
+/* מסלול 2: במקום רצועת דשא מודבקת, תמונת השביל המלאה כרקע עם פייד ירוק בצד הטקסט (כמו פאנל המסלול) */
+.g .o-cls::after{display:none!important}
+html[data-rv="3"] .g .order{padding-bottom:max(90px,8vw)}
+
+/* טקסט בעיגולי "הסדנה בשבילך אם" גדול יותר בדסקטופ */
+@media (min-width:761px){html body .circle h3{font-size:max(15px,1.22vw)!important;line-height:1.25}html body .circle p{font-size:max(13px,.96vw)!important;line-height:1.35}html body .circle{padding:1.4vw 1.3vw!important}}
+
+@media (min-width:761px) and (max-width:1250px){.nav ul{gap:clamp(14px,2vw,28px)!important}.nav ul a{font-size:15px}}
+
+/* קרדיט קרן: לוגו גדול וקריא */
+.foot .credit{font-size:max(14px,.95vw);gap:.8em}
+.foot .credit img{width:max(150px,11vw)!important;height:auto}
+@media (max-width:760px){.foot .credit img{width:140px!important}}
+
+/* מסלול 2: במקום עננים, שיחי תלתן צומחים מהפינות התחתונות */
+.g .o-cls i{display:none;background-image:url(assets/clover.webp);aspect-ratio:2.07;animation:none!important;transform:none;opacity:1}
+.g .o-cls i:nth-child(1){display:block;left:-3%;bottom:-5%;width:30%}
+.g .o-cls i:nth-child(2){display:block;left:31%;bottom:-6%;width:15%;transform:scaleX(-1)}
+.g .o-cls i:nth-child(3){display:block;right:-4%;bottom:-6%;width:27%;transform:scaleX(-1)}
+html[data-rv="3"] .g .order{padding-bottom:max(130px,12vw)}
+@media (max-width:760px){.g .o-cls i:nth-child(1){width:72%;left:-14%;bottom:-2%}.g .o-cls i:nth-child(2){display:none}.g .o-cls i:nth-child(3){width:60%;right:-16%;bottom:-3%}html[data-rv="3"] .g .order{padding-bottom:120px}}
+
+/* מסלול 2: רצועת דשא שקופה מלאה (GPT) לאורך כל התחתית, במקום שיחי התלתן */
+.g .o-cls i{display:none!important}
+.g .o-cls::after{display:block!important;content:"";position:absolute;left:0;right:0;bottom:-1px;aspect-ratio:3;background:url(assets/grass-t.webp) center bottom/100% auto no-repeat;filter:none}
+html[data-rv="3"] .g .order{padding-bottom:max(200px,20vw)}
+@media (max-width:760px){.g .o-cls::after{aspect-ratio:auto;height:190px;background-size:auto 100%;background-position:center bottom;background-repeat:repeat-x}html[data-rv="3"] .g .order{padding-bottom:150px}}
 </style>
 <script src="js/works-carousel.js" defer></script>
-<script>(function(){var v=(location.search.match(/[?&]v=([1235])/)||[])[1]||"5";document.documentElement.setAttribute("data-wv",v);var g=(location.search.match(/[?&]g=([123])/)||[])[1]||"3";document.documentElement.setAttribute("data-g",g)})()</script>
+<script>(function(){var v=(location.search.match(/[?&]v=([1235])/)||[])[1]||"5";document.documentElement.setAttribute("data-wv",v);var g=(location.search.match(/[?&]g=([123])/)||[])[1]||"3";document.documentElement.setAttribute("data-g",g);document.documentElement.setAttribute("data-mv","4");document.documentElement.setAttribute("data-rv","3")})()</script>
 </head>
 <body>
 <a class="skip" href="#main">דילוג לתוכן</a>
@@ -942,12 +1413,15 @@ html:not([data-g="2"]):not([data-g="3"]) .tunx,html:not([data-g="2"]) .tunnel{di
   <nav class="nav" aria-label="תפריט הדף">
     <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="פתיחת התפריט"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg></button>
     <ul id="menu">
-      <li><a href="#brief">הסדנאות</a></li>
+      <li><a href="#work">שותפויות</a></li>
       <li><a href="#about">מי אני</a></li>
+      <li><a href="#brief">פיצוח בריף</a></li>
+      <li><a href="#client">שימור לקוח</a></li>
+      <li><a href="#words">המלצות</a></li>
       <li><a href="#faq">שאלות נפוצות</a></li>
     </ul>
   </nav>
-  <a class="btn sm" href="#register">צור קשר</a>
+  <a class="btn sm" href="#register">להרשמה</a>
 </header>
 
 <main id="main">
@@ -969,7 +1443,7 @@ html:not([data-g="2"]):not([data-g="3"]) .tunx,html:not([data-g="2"]) .tunnel{di
 <section class="kwork" id="work" aria-labelledby="h-work">
   <h2 id="h-work">שותפויות מקצועיות<br class="m"> מתמשכות</h2>
   <!-- TODO: אישור יעלה להציג את סמלי הלקוחות -->
-  <picture><source media="(max-width:760px)" srcset="assets/v5/k-logos-m.webp?v=2"><img class="klogos" src="assets/v5/k-logos.webp" alt="לקוחות: עמותת הידידים של המרכז הרפואי תל אביב (איכילוב), צופים החיים, אמנותי, קצאא, עיריית עפולה, צה״ל, חבל לכיש, קבוצת תגלית, נגה" width="2600" height="542" loading="lazy"></picture>
+  <picture><source media="(max-width:760px)" srcset="assets/v5/k-logos-m.webp?v=4"><img class="klogos" src="assets/v5/k-logos.webp?v=3" alt="לקוחות: עמותת הידידים של המרכז הרפואי תל אביב (איכילוב), צופים החיים, אמנותי, קצאא, עיריית עפולה, צה״ל, חבל לכיש, קבוצת תגלית, נגה" width="2600" height="580" loading="lazy"></picture>
   <div class="kgal" data-carousel>
   <ul class="works" aria-label="עבודות נבחרות">
     <li class="w w1" data-title="דוח פעילות שנתי" data-subtitle="ההסתדרות"><figure><div class="ph"><img src="assets/gallery/histadrut.webp" alt="שער דוח הפעילות השנתי של לשכת הקשר עם הכנסת" width="1200" height="900" loading="lazy"></div><figcaption><b>דוח פעילות שנתי</b>ההסתדרות</figcaption></figure></li>
@@ -1114,8 +1588,7 @@ html:not([data-g="2"]):not([data-g="3"]) .tunx,html:not([data-g="2"]) .tunnel{di
         <h2 id="h-brief">מעל המשימה</h2>
         <span class="script p">פיצוח בריף · מסלול מתחילות</span>
         <p class="wdesc">מבריף עמוס לכיוון עיצובי ברור, עוד לפני הסקיצה הראשונה. בשני מפגשי זום בקבוצה קטנה נלמד להבין מי האדם שמאחורי הבקשה ומה הסיפור שהעיצוב צריך לספר, ונהפוך את ההבנה להחלטות של תוכן, היררכיה ושפה.</p>
-        <span class="script c">חמישי 12.11 ו־19.11 · 20:00 עד 21:40, בזום</span>
-        <div class="acts"><a class="btn green" href="#register" data-track="brief">להרשמה</a><a class="more" href="#brief-meets">מה בסדנה</a></div>
+        <div class="acts"><a class="btn green" href="#register" data-track="brief">להרשמה</a></div>
       </div>
       <span class="for">הסדנה בשבילך אם</span>
       <div class="circles">
@@ -1128,15 +1601,18 @@ html:not([data-g="2"]):not([data-g="3"]) .tunx,html:not([data-g="2"]) .tunnel{di
     </div></div>
   </div>
   <div class="meets" id="brief-meets">
-    <div class="reveal"><h2>מה יהיה בסדנה</h2><span class="script">שני ערבים, צעד אחר צעד</span></div>
-    <div class="mrow">
-      <div class="meet reveal"><span class="ring"></span><span class="d">12.11</span><span class="day">מפגש ראשון, חמישי</span><h3>להבין לפני שמתחילים לעצב</h3><p>מי האדם שמאחורי הבקשה, ומה הסיפור שהעיצוב צריך לספר</p></div>
-      <div class="meet-ill reveal"><img src="assets/ill-2.webp" alt="" width="1028" height="1005" loading="lazy"></div>
-      <div class="meet k reveal"><span class="ring"></span><span class="d">19.11</span><span class="day">מפגש שני, חמישי</span><h3>להפוך הבנה להחלטות</h3><p>תוכן, היררכיה ושפה, על מקרה שלם מההתחלה ועד הסוף</p></div>
+    <div class="reveal"><h2>מה יהיה בסדנה</h2><p class="mdate"><b>חמישי · 12.11 ו־19.11</b><span>20:00 עד 21:40 · בזום</span></p></div>
+    <div class="mz">
+      <div class="mz-mid"><div class="cmp" role="img" aria-label="המצפן של יעלה"><img src="assets/compass-base.webp" alt="" loading="lazy"><img class="rot" src="assets/compass-rotor.webp" alt="" loading="lazy"></div></div>
+      <svg class="mz-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M76 22.3H68L61 31"/><path d="M70 77.8H66L60.6 69"/><path d="M24 22.3H32L39 31"/><path d="M30 77.8H34L39.4 69"/></svg>
+      <div class="mz-it rt reveal"><figure class="mz-card"><span class="dmi"><img src="assets/fig-21-t.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>שאלות שמפצחות בריף</h3><p>שאלות שהופכות בריף עמוס או חלקי לכיוון ברור</p></div></div>
+      <div class="mz-it rb reveal"><figure class="mz-card"><span class="dmi"><img src="assets/ill-desk-t.webp?v=2" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>סדר בחומרים</h3><p>דרך לזהות מה חסר ולעשות סדר בחומרים</p></div></div>
+      <div class="mz-it lt reveal"><figure class="mz-card"><span class="dmi"><img src="assets/fig-19-t.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>מהבנה להחלטות</h3><p>חיבור בין הבנת הפרויקט להחלטות על מסר, מבנה ושפה</p></div></div>
+      <div class="mz-it lo reveal"><figure class="mz-card"><span class="dmi"><img src="assets/ill-27-t.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>כיוון לפני התוכנה</h3><p>כיוון עיצובי מגובש עוד לפני שפותחים את התוכנה</p></div></div>
     </div>
   </div>
   <div class="order">
-    <div class="band" aria-hidden="true"></div>
+    <div class="band" aria-hidden="true"><div class="o-cls"><i></i><i></i><i></i><i></i><i></i></div></div>
     <div class="sec-head reveal"><h2>בסוף הסדנה</h2><span class="script">מה לוקחים איתך הביתה</span></div>
     <div class="card reveal">
       <div class="res"><ul>
@@ -1165,15 +1641,14 @@ html:not([data-g="2"]):not([data-g="3"]) .tunx,html:not([data-g="2"]) .tunnel{di
 <section id="client" class="g" aria-labelledby="h-client" style="margin-top:8vw">
   <div class="why">
     <div class="why-pin"><div class="why-box">
-      <div class="why-sky" aria-hidden="true"><img src="assets/v5/k-hero.webp" alt="" loading="lazy"></div>
+      <div class="why-sky" aria-hidden="true"><img src="assets/path-green.webp" alt="" loading="lazy"></div>
       <span class="why-cls" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
-      <img class="why-bal" src="assets/balloon-group.webp" alt="" aria-hidden="true" width="1000" height="1315" loading="lazy">
+      <img class="why-bal walker" src="assets/walker-yaela-g.webp" alt="" aria-hidden="true" width="654" height="1453" loading="lazy">
       <div class="why-title">
         <h2 id="h-client">מלקוח לשותפות</h2>
         <span class="script p">שימור לקוח · מסלול מתקדמות</span>
         <p class="wdesc">מפרויקט בודד לעבודה רציפה, דרך היכרות שיוצרת יתרון. בשני מפגשי זום בקבוצה קטנה נכיר לעומק את עולם הלקוח ואת הפרויקט כולו, ונבנה זיכרון מקצועי שמחבר בין עבודות, עם אחריות וגבולות ברורים.</p>
-        <span class="script c">שלישי 22.12 ו־29.12 · 20:00 עד 21:40, בזום</span>
-        <div class="acts"><a class="btn" href="#register" data-track="client">להרשמה</a><a class="more" href="#client-meets">מה בסדנה</a></div>
+        <div class="acts"><a class="btn" href="#register" data-track="client">להרשמה</a></div>
       </div>
       <span class="for">הסדנה בשבילך אם</span>
       <!-- טיוטה: לאשר את נקודות הכאב מול יעלה -->
@@ -1187,15 +1662,18 @@ html:not([data-g="2"]):not([data-g="3"]) .tunx,html:not([data-g="2"]) .tunnel{di
     </div></div>
   </div>
   <div class="meets" id="client-meets">
-    <div class="reveal"><h2>מה יהיה בסדנה</h2><span class="script">שני ערבים, צעד אחר צעד</span></div>
-    <div class="mrow">
-      <div class="meet reveal"><span class="ring"></span><span class="d">22.12</span><span class="day">מפגש ראשון, שלישי</span><h3>היכרות שמקדמת עבודה משותפת</h3><p>עולם הלקוח, הפרויקט כולו, והאדם שאיתו חושבים יחד</p></div>
-      <div class="meet-ill reveal"><img src="assets/ill-26.webp" alt="" width="1536" height="1024" loading="lazy"></div>
-      <div class="meet k reveal"><span class="ring"></span><span class="d">29.12</span><span class="day">מפגש שני, שלישי</span><h3>מהיכרות להמשכיות</h3><p>זיכרון מקצועי, חיבור בין עבודות, אחריות וגבולות</p></div>
+    <div class="reveal"><h2>מה יהיה בסדנה</h2><p class="mdate"><b>שלישי · 22.12 ו־29.12</b><span>20:00 עד 21:40 · בזום</span></p></div>
+    <div class="mz">
+      <div class="mz-mid"><div class="cmp" role="img" aria-label="המצפן של יעלה"><img src="assets/compass-base-g.webp" alt="" loading="lazy"><img class="rot" src="assets/compass-rotor-g.webp" alt="" loading="lazy"></div></div>
+      <svg class="mz-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M76 22.3H68L61 31"/><path d="M70 77.8H66L60.6 69"/><path d="M24 22.3H32L39 31"/><path d="M30 77.8H34L39.4 69"/></svg>
+      <div class="mz-it rt reveal"><figure class="mz-card"><span class="dmi"><img src="assets/ill-26-t-g.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>היכרות עם עולם הלקוח</h3><p>הבנה של העולם והמערכת שבהם הלקוח פועל</p></div></div>
+      <div class="mz-it rb reveal"><figure class="mz-card"><span class="dmi"><img src="assets/ill-3-t-g.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>זיכרון מקצועי</h3><p>ידע שמצטבר מפרויקט לפרויקט ומשרת גם את הבא</p></div></div>
+      <div class="mz-it lt reveal"><figure class="mz-card"><span class="dmi"><img src="assets/fig-21-t-g.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>שפה עיצובית מתמשכת</h3><p>שפה עיצובית שמתפתחת יחד עם הלקוח</p></div></div>
+      <div class="mz-it lo reveal"><figure class="mz-card"><span class="dmi"><img src="assets/fig-25-t-g.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>להוביל משוב והחלטות</h3><p>דרך להוביל משוב והחלטות, עם אחריות וגבולות</p></div></div>
     </div>
   </div>
   <div class="order">
-    <div class="band" aria-hidden="true"></div>
+    <div class="band" aria-hidden="true"><div class="o-cls"><i></i><i></i><i></i><i></i><i></i></div></div>
     <div class="sec-head reveal"><h2>בסוף הסדנה</h2><span class="script">מה לוקחים איתך הביתה</span></div>
     <div class="card reveal">
       <div class="res"><ul>
@@ -1222,15 +1700,20 @@ html:not([data-g="2"]):not([data-g="3"]) .tunx,html:not([data-g="2"]) .tunnel{di
 
 <!-- 6. המלצות -->
 <section class="words" id="words" aria-labelledby="h-words">
-  <div class="sec-head reveal"><h2 id="h-words">מילים ממי שעבדו איתי מקרוב</h2><span class="script">מה אומרים עליי</span></div>
-  <!-- TODO: אישור פרסום מהממליצים -->
-  <div class="qs">
-    <figure class="q reveal"><span class="mk" aria-hidden="true">”</span><blockquote>אני ממליצה בחום על יעלה! לכל מי שצריך בוסט לעבודה שלו בעיצוב: החל מניהול העבודה מול עצמך ומול לקוחות, ועד ליצירת קונספט ושפה עיצובית. שווה את ההשקעה.</blockquote><figcaption><span class="dia" style="color:var(--pink)"></span>תמי דקל</figcaption></figure>
-    <figure class="q reveal"><span class="mk" aria-hidden="true">”</span><blockquote>ממליץ בחום! מניסיון עבודה צמוד, מדובר במקצוענית ברמות הגבוהות ביותר, עם עין חדה לפרטים, יצירתיות אינסופית והמון ידע מעשי. מי שיפסיד את הקורס הזה פשוט מפספס.</blockquote><figcaption><span class="dia" style="color:var(--green)"></span>חוני נאור כהן</figcaption></figure>
-    <figure class="q reveal"><span class="mk" aria-hidden="true">”</span><blockquote>אני ממליצה בחום! מהיכרות מקרוב עם המקצועיות שלך ועם התוצאות שמגיעות בעקבותיה, ברור לי שהקורס הזה שווה את ההשקעה, חד־משמעית.</blockquote><figcaption><span class="dia" style="color:var(--pink)"></span>ירין פרץ</figcaption></figure>
+  <div class="sec-head reveal"><h2 id="h-words">מילים ממי שעבדו איתי מקרוב</h2></div>
+  <!-- TODO: שמות וסרטון דמה! להחליף בסרטוני משתתפות הפיילוט (assets/video/pilot-N.mp4) (mp4 אנכי/ריבועי, עד 60 שניות) + אישור פרסום -->
+  <div class="vids reveal">
+    <div class="vtrack">
+      <figure class="vd"><div class="vf"><video preload="none" playsinline poster="assets/video/demo-poster.jpg" aria-label="סרטון המלצה 1"><source src="assets/video/demo.mp4" type="video/mp4"></video><button class="vplay" type="button" aria-label="הפעלת הסרטון"></button></div><figcaption><b>נועה לוי</b><span>מעצבת גרפית עצמאית · משתתפת בפיילוט</span></figcaption></figure>
+      <figure class="vd"><div class="vf"><video preload="none" playsinline poster="assets/video/demo-poster.jpg" aria-label="סרטון המלצה 2"><source src="assets/video/demo.mp4" type="video/mp4"></video><button class="vplay" type="button" aria-label="הפעלת הסרטון"></button></div><figcaption><b>מיכל כהן</b><span>מעצבת בסטודיו · משתתפת בפיילוט</span></figcaption></figure>
+      <figure class="vd on"><div class="vf"><video preload="none" playsinline poster="assets/video/demo-poster.jpg" aria-label="סרטון המלצה 3"><source src="assets/video/demo.mp4" type="video/mp4"></video><button class="vplay" type="button" aria-label="הפעלת הסרטון"></button></div><figcaption><b>שירה אברהם</b><span>מעצבת בתחילת הדרך · משתתפת בפיילוט</span></figcaption></figure>
+      <figure class="vd"><div class="vf"><video preload="none" playsinline poster="assets/video/demo-poster.jpg" aria-label="סרטון המלצה 4"><source src="assets/video/demo.mp4" type="video/mp4"></video><button class="vplay" type="button" aria-label="הפעלת הסרטון"></button></div><figcaption><b>טל פרידמן</b><span>מעצבת מותגים · משתתפת בפיילוט</span></figcaption></figure>
+      <figure class="vd"><div class="vf"><video preload="none" playsinline poster="assets/video/demo-poster.jpg" aria-label="סרטון המלצה 5"><source src="assets/video/demo.mp4" type="video/mp4"></video><button class="vplay" type="button" aria-label="הפעלת הסרטון"></button></div><figcaption><b>רוני שגיא</b><span>מעצבת בצוות שיווק · משתתפת בפיילוט</span></figcaption></figure>
+    </div>
+    <div class="vnav"><span class="vbar"><i></i></span><button class="vprev" type="button" aria-label="הסרטון הקודם">→</button><button class="vnext" type="button" aria-label="הסרטון הבא">←</button></div>
   </div>
   <div class="faq" id="faq">
-    <div class="sec-head reveal" style="margin-bottom:1.5vw"><h2>שאלות נפוצות</h2></div>
+    <div class="sec-head reveal" style="margin-bottom:1.5vw"><h2 id="h-faq">שאלות נפוצות</h2></div>
     <div class="reveal">
       <details><summary>איך אדע אם הסדנה מתאימה לי?</summary><p>אם שלב ההתחלה גוזל זמן, מעורר ספק או מוביל לניחושים ולתיקונים חוזרים, הסדנה נוגעת בדיוק במקום הזה. היא עוזרת לעשות סדר ולהתקדם מהבנת המשימה להחלטות עיצוביות ברורות יותר.</p></details>
       <details><summary>יש לי כבר ניסיון בעיצוב. עדיין יש לי מה ללמוד?</summary><p>כן. גם עם ניסיון, שלב החשיבה שבין הבריף לסקיצה יכול להישאר לא לגמרי ברור. הסדנה עוזרת לעצור, לדייק את ההבנה של המשימה ולקבל החלטות עיצוביות מתוך יותר ביטחון.</p></details>
@@ -1263,9 +1746,9 @@ html:not([data-g="2"]):not([data-g="3"]) .tunx,html:not([data-g="2"]) .tunnel{di
     <div class="send"><button class="btn" type="submit">להמשך לתשלום</button><span>המחירים כוללים מע״מ</span></div>
   </form>
   <div class="bottom">
-    <a class="lg" href="#top" aria-label="לראש הדף"><img src="assets/logo-light.webp" alt="יעלה: עיצוב בהקשבה תחילה" width="970" height="568" loading="lazy"></a>
+    <a class="lg" href="#top" aria-label="לראש הדף"><img src="assets/logo.webp" alt="יעלה: עיצוב בהקשבה תחילה" width="970" height="568" loading="lazy"></a>
     <ul><li><a href="legal.html#terms">תקנון ומדיניות ביטולים</a></li><li><a href="legal.html#privacy">מדיניות פרטיות</a></li><li><a href="legal.html#a11y">הצהרת נגישות</a></li></ul>
-    <a class="credit" href="https://kerenarlih.co.il" target="_blank" rel="noopener">עיצוב ופיתוח האתר: <img src="assets/credit-logo-light.svg" alt="קרן ארליכמן" width="90" height="30" loading="lazy"></a>
+    <a class="credit" href="https://kerenarlih.co.il" target="_blank" rel="noopener">עיצוב ופיתוח האתר: <img src="assets/credit-logo.svg" alt="קרן ארליכמן" width="90" height="30" loading="lazy"></a>
   </div>
 </footer>
 <a class="wa" href="https://wa.me/972528449567" target="_blank" rel="noopener" aria-label="שליחת הודעה בוואטסאפ"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
@@ -1294,16 +1777,55 @@ html:not([data-g="2"]):not([data-g="3"]) .tunx,html:not([data-g="2"]) .tunnel{di
       if(!desk.matches){
         var y0=ctr[0].y,y1=ctr[ctr.length-1].y,q=Math.min(1,Math.max(0,(innerHeight*.62-(hb.top+y0))/(y1-y0))),y=y0+q*(y1-y0);
         line.style.cssText='top:'+y0+'px;height:'+(y-y0)+'px';mk.style.cssText='top:'+y+'px';
-        cs.forEach(function(c,i){c.classList.toggle('on',y>=ctr[i].y-40)});return}
+        cs.forEach(function(c,i){c.classList.toggle('on',y>=ctr[i].y-40)});trk(w,host,hb,cs,false,function(i){return (y-ctr[i].y)/(ctr[i+1].y-ctr[i].y)});return}
       var r=w.getBoundingClientRect(),span=w.offsetHeight-innerHeight,p=Math.min(1,Math.max(0,(-r.top+60)/Math.max(1,span*.85)));
       var x0=ctr[0].x,x1=ctr[ctr.length-1].x,x=x0+p*(x1-x0),cy=ctr[0].y;
       line.style.cssText='top:'+cy+'px;right:'+x0+'px;width:'+(x-x0)+'px';mk.style.cssText='top:'+cy+'px;right:'+x+'px';
       cs.forEach(function(c,i){c.classList.toggle('on',x>=ctr[i].x-2)});
+      trk(w,host,hb,cs,true,function(i){return (x-ctr[i].x)/(ctr[i+1].x-ctr[i].x)});
     });
+  }
+  // קווים מעוגלים ומאוירים בין העיגולים (כמו החצים של המצפן), נמתחים עם הגלילה
+  var RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function trk(w,host,hb,cs,hz,prog){
+    var s=host.querySelector(':scope > .trk');
+    if(!s){s=document.createElementNS('http://www.w3.org/2000/svg','svg');s.setAttribute('class','trk');s.setAttribute('aria-hidden','true');host.appendChild(s)}
+    s.setAttribute('viewBox','0 0 '+hb.width+' '+hb.height);
+    var h='',L=hz?Math.max(13,hb.width*.011):13;
+    for(var i=0;i<cs.length-1;i++){
+      var a=cs[i].getBoundingClientRect(),b=cs[i+1].getBoundingClientRect(),q=RM?1:Math.min(1,Math.max(0,prog(i))),sg=-1,x0,y0,x2,y2,cx,cy,g;
+      var ra=cs[i].offsetWidth/2,rb=cs[i+1].offsetWidth/2,ax=a.left+a.width/2-hb.left,ay=a.top+a.height/2-hb.top,bx=b.left+b.width/2-hb.left,by=b.top+b.height/2-hb.top,pd=12,t=0.75;
+      if(hz){x0=ax-Math.cos(t)*(ra+pd);y0=ay+sg*Math.sin(t)*(ra+pd);x2=bx+Math.cos(t)*(rb+pd);y2=by+sg*Math.sin(t)*(rb+pd);cx=(x0+x2)/2;cy=(ay+by)/2+sg*ra*1.15}
+      else{y0=ay+Math.cos(t)*(ra+pd);x0=ax+sg*Math.sin(t)*(ra+pd);y2=by-Math.cos(t)*(rb+pd);x2=bx+sg*Math.sin(t)*(rb+pd);cy=(y0+y2)/2;cx=(ax+bx)/2+sg*ra*1.15}
+      g=Math.atan2(y2-cy,x2-cx);
+      var p=function(d){return (x2+L*Math.cos(g+Math.PI+d)).toFixed(1)+' '+(y2+L*Math.sin(g+Math.PI+d)).toFixed(1)};
+      h+='<path pathLength="1" style="stroke-dashoffset:'+(1-q).toFixed(3)+'" d="M'+x0.toFixed(1)+' '+y0.toFixed(1)+'Q'+cx.toFixed(1)+' '+cy.toFixed(1)+' '+x2.toFixed(1)+' '+y2.toFixed(1)+'"/>'
+        +'<path class="hd" style="opacity:'+(q>.97?1:0)+'" d="M'+p(-.55)+'L'+x2.toFixed(1)+' '+y2.toFixed(1)+'L'+p(.55)+'"/>';
+    }
+    s.innerHTML=h;
   }
   addEventListener('scroll',onScroll,{passive:true});onScroll();
   if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.circle,.dot,.lines path').forEach(function(c){c.classList.add('on')})}
 })();
 </script>
+<script>/* m=4: ציור החצים לפי הגודל בפועל (בלי עיוות) */(function(){var A=[[60,30,66,10,74.5,17],[61,68,66,84,69,71],[40,30,34,10,25.5,17],[39,68,34,84,31,71]];function draw(){document.querySelectorAll(".mz-lines").forEach(function(svg){var W=svg.clientWidth,H=svg.clientHeight;if(!W||!H)return;svg.setAttribute("viewBox","0 0 "+W+" "+H);svg.removeAttribute("preserveAspectRatio");var h="";A.forEach(function(a){var x0=a[0]*W/100,y0=a[1]*H/100,x1=a[2]*W/100,y1=a[3]*H/100,x2=a[4]*W/100,y2=a[5]*H/100,g=Math.atan2(y2-y1,x2-x1),L=Math.max(14,W*.015);var p=function(d){return (x2+L*Math.cos(g+Math.PI+d)).toFixed(1)+" "+(y2+L*Math.sin(g+Math.PI+d)).toFixed(1)};h+="<path d=\"M"+x0+" "+y0+"Q"+x1+" "+y1+" "+x2+" "+y2+"\"/><path d=\"M"+p(-.5)+"L"+x2+" "+y2+"L"+p(.5)+"\"/>"});svg.innerHTML=h})}addEventListener("resize",draw);addEventListener("load",draw);draw()})();</script>
+<script>/* המחט פונה אל העכבר (רק במכשירים עם עכבר) */(function(){if(!matchMedia("(hover:hover) and (pointer:fine)").matches||matchMedia("(prefers-reduced-motion:reduce)").matches)return;var rs=[].slice.call(document.querySelectorAll(".cmp .rot"));if(!rs.length)return;var H=document.documentElement,last={},raf=0,ev;function up(){raf=0;var any=false;rs.forEach(function(r){var m=r.closest(".meets").getBoundingClientRect();if(ev.clientY<m.top||ev.clientY>m.bottom)return;any=true;var b=r.getBoundingClientRect(),a=Math.atan2(ev.clientY-(b.top+b.height/2),ev.clientX-(b.left+b.width/2))*180/Math.PI+90,p=last[r.src]||0,d=((a-p)%360+540)%360-180;last[r.src]=p+d;r.style.rotate=last[r.src]+"deg"});H.classList.toggle("cmp-live",any);if(!any)rs.forEach(function(r){r.style.rotate=""})}addEventListener("mousemove",function(e){ev=e;if(!raf)raf=requestAnimationFrame(up)},{passive:true})})()</script>
+<script>/* המלצות בווידאו: מרכוז הסרטון הפעיל, חצים, נקודה בפס, הפעלה בלחיצה */(function(){var w=document.querySelector(".vids");if(!w)return;var t=w.querySelector(".vtrack"),it=[].slice.call(t.children),bar=w.querySelector(".vbar i"),pv=w.querySelector(".vprev"),nx=w.querySelector(".vnext"),i=it.findIndex(function(e){return e.classList.contains("on")});if(i<0)i=0;
+function stop(){it.forEach(function(e){var v=e.querySelector("video");if(!v.paused)v.pause();v.controls=false;e.classList.remove("playing")})}
+function go(n,anim){i=Math.max(0,Math.min(it.length-1,n));stop();it.forEach(function(e,k){e.classList.toggle("on",k===i)});bar.style.width=((i+1)/it.length*100)+"%";pv.disabled=i===0;nx.disabled=i===it.length-1;place()}
+function place(){var e=it[i],W=w.clientWidth,on=e.classList.contains("on");var off=0;var gap=parseFloat(getComputedStyle(t).columnGap)||0;
+ /* חישוב לפי הרוחב הסופי (לא תוך כדי אנימציה): הסרטון הפעיל רחב יותר */
+ var small=it[i===0?1:0].getBoundingClientRect().width;var big=e.offsetWidth;var x=0;
+ var rtl=getComputedStyle(t).direction==="rtl";
+ /* מיקום מרכז הפריט i ממתחילת המסילה */
+ var c=0;for(var k=0;k<i;k++)c+=(k===i?big:measure(k))+gap;c+=finalW(true)/2;
+ var tx=rtl?(c-W/2):(W/2-c);t.style.translate=tx+"px 0"}
+function finalW(on){var vw=innerWidth;if(vw<=760)return vw*(on?.66:.46);return Math.max(on?240:170,vw*(on?.21:.15))}
+function measure(k){return finalW(k===i)}
+it.forEach(function(e,k){e.querySelector(".vf").addEventListener("click",function(){if(k!==i){go(k);return}var v=e.querySelector("video");if(!v.querySelector("source")&&!v.src)return;if(v.paused){v.controls=true;v.play();e.classList.add("playing")}})});
+pv.addEventListener("click",function(){go(i-1)});nx.addEventListener("click",function(){go(i+1)});
+addEventListener("resize",place);
+var sx=null;t.addEventListener("touchstart",function(e){sx=e.touches[0].clientX},{passive:true});t.addEventListener("touchend",function(e){if(sx==null)return;var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>40)go(i+(d>0?1:-1));sx=null});
+go(i)})();</script>
 </body>
 </html>
