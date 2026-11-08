@@ -906,6 +906,31 @@ html:not([data-g="2"]):not([data-g="3"]) .tunx,html:not([data-g="2"]) .tunnel{di
   .kpath img{left:calc(8.75*var(--m));top:calc(-12.04*var(--m));width:calc(621.1*var(--m));height:calc(529.8*var(--m))}
   .khero{height:calc(var(--H) + 41*var(--m))}
 }
+
+/* לוגואים במובייל: גריד 3x3 גדול יותר, והגלריה זזה למטה בהתאם */
+@media (max-width:760px){
+  .klogos{left:12px;width:calc(100% - 24px);top:calc(96*var(--m))}
+  [data-g="3"] .kgal{top:calc(275*var(--m))}
+  [data-g="3"] .kwork{height:calc(275*var(--m) + 310px)}
+}
+
+/* אודות במובייל: "אני יעלה" גדול ומדורג שמאלה מתחת ל"נעים מאוד" (לפי הסקיצה של קרן) */
+@media (max-width:760px){
+  .kabout h2 .l2{font-size:1.45em;padding-inline-start:26vw;margin-top:-.12em;white-space:nowrap}
+}
+
+/* מסכים רחבים: כל התקרות בפיקסלים הופכות ליחסיות למסך (ערך÷14.4vw), כך שמעל 1440 הכל גדל באותו יחס */
+@media (min-width:1441px){
+  .kab-fig{width:min(100%,38.9vw)}
+  .a-vis{width:min(100%,38.9vw)}
+  .hero-in{width:min(46vw,47.2vw)}
+  .card{width:min(70vw,76.4vw)}
+  .qs{width:min(81.9vw,100%)}
+  .faq{width:min(59.7vw,calc(100% - 2*var(--gut)))}
+  .form{width:min(52.8vw,100%)}
+  .tun-head{width:min(46%,38.9vw)}
+  .track-mark{width:.97vw;height:.97vw}
+}
 </style>
 <script src="js/works-carousel.js" defer></script>
 <script>(function(){var v=(location.search.match(/[?&]v=([1235])/)||[])[1]||"5";document.documentElement.setAttribute("data-wv",v);var g=(location.search.match(/[?&]g=([123])/)||[])[1]||"3";document.documentElement.setAttribute("data-g",g)})()</script>
@@ -944,7 +969,7 @@ html:not([data-g="2"]):not([data-g="3"]) .tunx,html:not([data-g="2"]) .tunnel{di
 <section class="kwork" id="work" aria-labelledby="h-work">
   <h2 id="h-work">שותפויות מקצועיות<br class="m"> מתמשכות</h2>
   <!-- TODO: אישור יעלה להציג את סמלי הלקוחות -->
-  <picture><source media="(max-width:760px)" srcset="assets/v5/k-logos-m.webp"><img class="klogos" src="assets/v5/k-logos.webp" alt="לקוחות: עמותת הידידים של המרכז הרפואי תל אביב (איכילוב), צופים החיים, אמנותי, קצאא, עיריית עפולה, צה״ל, חבל לכיש, קבוצת תגלית, נגה" width="2600" height="542" loading="lazy"></picture>
+  <picture><source media="(max-width:760px)" srcset="assets/v5/k-logos-m.webp?v=2"><img class="klogos" src="assets/v5/k-logos.webp" alt="לקוחות: עמותת הידידים של המרכז הרפואי תל אביב (איכילוב), צופים החיים, אמנותי, קצאא, עיריית עפולה, צה״ל, חבל לכיש, קבוצת תגלית, נגה" width="2600" height="542" loading="lazy"></picture>
   <div class="kgal" data-carousel>
   <ul class="works" aria-label="עבודות נבחרות">
     <li class="w w1" data-title="דוח פעילות שנתי" data-subtitle="ההסתדרות"><figure><div class="ph"><img src="assets/gallery/histadrut.webp" alt="שער דוח הפעילות השנתי של לשכת הקשר עם הכנסת" width="1200" height="900" loading="lazy"></div><figcaption><b>דוח פעילות שנתי</b>ההסתדרות</figcaption></figure></li>
