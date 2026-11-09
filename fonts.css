@@ -1,0 +1,21 @@
+/* Futura 100 Hebrew מהפרויקט ydd7wto באדובי, בשם futura-he עם size-adjust 114%: העברית של פוטורה יוצאת קטנה, כך כל הטקסט הרץ גדל במקום אחד. אם משנים את הפרויקט באדובי, לעדכן את הכתובות מ-https://use.typekit.net/ydd7wto.css */
+@font-face {
+font-family:"futura-he";
+src:url("https://use.typekit.net/af/56e140/00000000000000007762a409/31/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/56e140/00000000000000007762a409/31/d?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/56e140/00000000000000007762a409/31/a?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n7&v=3") format("opentype");
+font-display:swap;size-adjust:114%;font-style:normal;font-weight:700;font-stretch:normal;
+}
+@font-face {
+font-family:"futura-he";
+src:url("https://use.typekit.net/af/89f108/00000000000000007762a408/31/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n3&v=3") format("woff2"),url("https://use.typekit.net/af/89f108/00000000000000007762a408/31/d?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n3&v=3") format("woff"),url("https://use.typekit.net/af/89f108/00000000000000007762a408/31/a?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n3&v=3") format("opentype");
+font-display:swap;size-adjust:114%;font-style:normal;font-weight:300;font-stretch:normal;
+}
+@font-face {
+font-family:"futura-he";
+src:url("https://use.typekit.net/af/3c5197/00000000000000007762a407/31/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n5&v=3") format("woff2"),url("https://use.typekit.net/af/3c5197/00000000000000007762a407/31/d?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n5&v=3") format("woff"),url("https://use.typekit.net/af/3c5197/00000000000000007762a407/31/a?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n5&v=3") format("opentype");
+font-display:swap;size-adjust:114%;font-style:normal;font-weight:500;font-stretch:normal;
+}
+@font-face {
+font-family:"futura-he";
+src:url("https://use.typekit.net/af/b624a0/00000000000000007762a405/31/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/b624a0/00000000000000007762a405/31/d?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/b624a0/00000000000000007762a405/31/a?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n4&v=3") format("opentype");
+font-display:swap;size-adjust:114%;font-style:normal;font-weight:400;font-stretch:normal;
+}

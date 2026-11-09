@@ -8,18 +8,16 @@
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0d0c11">
 <link rel="icon" href="assets/logo.webp">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://use.typekit.net" crossorigin><link rel="preconnect" href="https://p.typekit.net" crossorigin><link rel="stylesheet" href="https://use.typekit.net/ydd7wto.css"><link rel="stylesheet" href="fonts.css">
 <link rel="preload" as="image" href="assets/v5/hero.webp" media="(min-width:761px)">
 <link rel="preload" as="image" href="assets/v5/hero-m.webp" media="(max-width:760px)">
 <style>
 @font-face{font-family:"Avigail";src:url(fonts/HKAvigail-Regular.otf) format("opentype");font-weight:400;font-display:swap}
-@font-face{font-family:"Discovery";src:url(fonts/Discovery_Fs-Light.woff2) format("woff2");font-weight:300;font-display:swap}
 /* גרסה 5: לפי רפרנס notikdesign.com/nosim, במיתוג של יעלה. בסיס מידות 1440px: px ÷ 14.4 = vw */
 :root{
   --ink:#0d0c11; --ink-2:#3a3940; --pink:#e880ad; --pink-ink:#b23d76; --green:#72b37e; --green-ink:#2f7a42;
   --cream:#f3f1ea; --paper:#fffdf8; --blush:#fbe9f1; --mint:#e8f3ea; --line:rgba(31,58,39,.22);
-  --display:"Avigail","Heebo",sans-serif; --script:"Discovery","Heebo",sans-serif; --body:"Heebo",Arial,sans-serif;
+  --display:"Avigail","futura-100-hebrew",sans-serif; --script:"futura-he","futura-100-hebrew",Arial,sans-serif; --body:"futura-he","futura-100-hebrew",Arial,sans-serif;
   --t:max(16px,1.25vw); --gut:max(16px,4.44vw);
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -215,7 +213,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.04;text-wrap:b
 .card .res .dia{color:var(--pink)}
 .g .card .res .dia{color:var(--green)}
 .card .inc{padding:2.6vw 2.6vw 2.4vw;display:grid;gap:1.1vw;align-content:start}
-.inc li{display:flex;gap:.7em;align-items:center;font-size:max(15px,1vw);padding:.15em 0}
+.inc li{display:flex;gap:.7em;align-items:center;font-size:max(16px,1.2vw);font-weight:400;padding:.15em 0}
 .inc .dia{color:var(--ink);font-size:.8em}
 .price{display:flex;align-items:baseline;gap:.5em;border:2px dashed var(--pink);border-radius:16px;padding:.6em 1em}
 .g .price{border-color:var(--green)}
@@ -439,7 +437,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.04;text-wrap:b
 .circular-carousel__shade{background:var(--cc-fade);opacity:var(--cc-depth,0)}
 .circular-carousel__inner{background:#0d0c11;opacity:var(--cc-inner)}
 .circular-carousel__caption{position:absolute;left:0;right:0;bottom:22px;display:flex;flex-direction:column;align-items:center;gap:6px;padding:0 16px;color:var(--black);text-align:center;pointer-events:none;animation:circular-carousel-reveal .9s ease both}
-.circular-carousel__title{display:flex;max-width:100%;flex-direction:column;align-items:center;font:500 max(16px,calc(22*var(--f)))/1.35 "Heebo",sans-serif;animation:circular-carousel-title .52s cubic-bezier(.22,1,.36,1)}
+.circular-carousel__title{display:flex;max-width:100%;flex-direction:column;align-items:center;font:500 max(16px,calc(22*var(--f)))/1.35 var(--body);animation:circular-carousel-title .52s cubic-bezier(.22,1,.36,1)}
 .circular-carousel__subtitle{font-weight:300;font-size:.8em;opacity:.7}
 .circular-carousel__count{display:inline-flex;align-items:center;gap:3px;font-size:13px;font-variant-numeric:tabular-nums;line-height:1;color:var(--pink);font-weight:500}
 .circular-carousel__slash{opacity:.6}
@@ -1397,11 +1395,11 @@ html[data-rv="3"] .g .order{padding-bottom:max(90px,8vw)}
 html[data-rv="3"] .g .order{padding-bottom:max(130px,12vw)}
 @media (max-width:760px){.g .o-cls i:nth-child(1){width:72%;left:-14%;bottom:-2%}.g .o-cls i:nth-child(2){display:none}.g .o-cls i:nth-child(3){width:60%;right:-16%;bottom:-3%}html[data-rv="3"] .g .order{padding-bottom:120px}}
 
-/* מסלול 2: רצועת דשא שקופה מלאה (GPT) לאורך כל התחתית, במקום שיחי התלתן */
+/* מסלול 2: רצועת דשא בסגנון הדשא של השביל, עם תלתנים לבנים פה ושם (GPT, grass-clover) */
 .g .o-cls i{display:none!important}
-.g .o-cls::after{display:block!important;content:"";position:absolute;left:0;right:0;bottom:-1px;aspect-ratio:3;background:url(assets/grass-t.webp) center bottom/100% auto no-repeat;filter:none}
-html[data-rv="3"] .g .order{padding-bottom:max(200px,20vw)}
-@media (max-width:760px){.g .o-cls::after{aspect-ratio:auto;height:190px;background-size:auto 100%;background-position:center bottom;background-repeat:repeat-x}html[data-rv="3"] .g .order{padding-bottom:150px}}
+.g .o-cls::after{display:block!important;content:"";position:absolute;left:0;right:0;bottom:-1px;aspect-ratio:8.26;background:url(assets/grass-clover.webp) center bottom/100% auto no-repeat;filter:none}
+html[data-rv="3"] .g .order{padding-bottom:max(150px,13vw)}
+@media (max-width:760px){.g .o-cls::after{aspect-ratio:auto;height:80px;background-size:auto 100%;background-position:center bottom}html[data-rv="3"] .g .order{padding-bottom:100px}}
 </style>
 <script src="js/works-carousel.js" defer></script>
 <script>(function(){var v=(location.search.match(/[?&]v=([1235])/)||[])[1]||"5";document.documentElement.setAttribute("data-wv",v);var g=(location.search.match(/[?&]g=([123])/)||[])[1]||"3";document.documentElement.setAttribute("data-g",g);document.documentElement.setAttribute("data-mv","4");document.documentElement.setAttribute("data-rv","3")})()</script>
