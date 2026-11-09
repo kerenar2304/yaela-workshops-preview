@@ -1,6 +1,6 @@
 @font-face{font-family:"Avigail";src:url(fonts/HKAvigail-Regular.otf) format("opentype");font-display:swap}
 :root{--ink:#2b2527;--cream:#f3f1ea;--pink:#e880ad;--pink-ink:#ad3d76;--green:#72b37e;--white:#fffdf8;--u:calc(100vw/1440);--gut:max(20px,calc(64*var(--u)))}
-*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:300 clamp(1.02rem,calc(19*var(--u)),1.45rem)/1.65 "futura-he","futura-100-hebrew",Arial,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:400 max(16px,1.15vw)/1.65 "futura-he","futura-100-hebrew",Arial,sans-serif}
 h1,h2{font-family:"Avigail","futura-100-hebrew",sans-serif;font-weight:400;line-height:1.05;margin:0 0 .4em;text-wrap:balance}
 h1{font-size:clamp(2.6rem,calc(90*var(--u)),6.6rem)}h2{font-size:clamp(1.9rem,calc(54*var(--u)),4rem)}
 p{margin:0 0 1em;text-wrap:pretty}a{color:inherit}
