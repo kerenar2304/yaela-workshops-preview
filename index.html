@@ -1435,6 +1435,45 @@ html body .circle h3{font-size:var(--fs-b)!important;line-height:1.3!important;f
 .opt{padding:1.05em 1.25em;gap:1em}
 .opt .nm{gap:.3em;line-height:1.3!important}
 .opt .nm span{opacity:.75;text-wrap:balance}
+/* תיקון לקוחה 1: הבהרה רכה מתחת ללוגו, כדי שיבלוט גם מעל סקשן ורוד או ירוק */
+.hdr .logo{position:relative}
+.hdr .logo::before{content:"";position:absolute;inset:-45% -40%;border-radius:50%;background:radial-gradient(closest-side,rgba(243,241,234,.96),rgba(243,241,234,.8) 55%,rgba(243,241,234,0));z-index:-1;pointer-events:none}
+/* תיקון לקוחה 3: כותרת השותפויות קטנה יותר, כדי שכותרת ההירו תישאר הגדולה ביותר והלוגואים לא יתגמדו */
+html body .kwork h2{font-size:max(40px,3.9vw)!important;line-height:1.05!important}
+@media (max-width:760px){html body .kwork h2{font-size:34px!important}}
+/* גלריה: חצי דפדוף ליד כפתור העצירה */
+.tun-arr{display:none;position:absolute;left:50%;z-index:6;width:44px;height:44px;border-radius:50%;border:0;background:var(--cream);color:var(--black);place-items:center;cursor:pointer;box-shadow:0 8px 20px -10px rgba(31,58,39,.45)}
+.tun-arr svg{width:16px;height:16px}
+[data-g="2"] .tun-arr{display:grid;bottom:calc(46*var(--f))}
+[data-g="3"] .tun-arr{display:grid;bottom:calc(10*var(--f))}
+[data-g="3"] .tun-prev{translate:calc(-50% + 56px) 0}[data-g="3"] .tun-next{translate:calc(-50% - 56px) 0}
+@media (max-width:760px){[data-g="3"] .tun-arr{bottom:0}}
+[data-g="2"] .tun-prev{translate:calc(-50% + 56px) 0}[data-g="2"] .tun-next{translate:calc(-50% - 56px) 0}
+@media (max-width:760px){[data-g="2"] .tun-arr{bottom:30px}}
+.kab-lead,.kab-cols p{text-wrap:pretty}.kab-lead{text-wrap:balance}
+/* תיקון לקוחה 7: "סדנת" קטן בפוטורה מעל שם הסדנה, ומסלול העיגולים קצר ומהיר יותר */
+.why-title h2 .kick{display:inline;font:500 calc(var(--fs-h2) * .3)/1 var(--body);letter-spacing:.02em;color:inherit;margin-inline-end:.45em;vertical-align:baseline}
+@media (min-width:761px){html body .why{height:calc(max(700px,50.5vw) + 65vh)!important}}
+.js .circle{transition:scale .35s cubic-bezier(.3,1.4,.5,1),opacity .25s!important}
+.trk path{transition:stroke-dashoffset .12s linear,opacity .2s!important}
+/* ל׳ עם הזנב הארוך: הגליף החלופי של אביגיל (swsh), טקסט חי */
+.why-title h2 .sw{font-feature-settings:"swsh" 1}
+.card .res li,.card .inc li{text-wrap:balance}
+/* שורת ההטבה מתחת למחיר בכרטיסייה */
+.inc .deal{display:block;margin-top:-.2em;font:400 var(--fs-s)/1.4 var(--body);color:var(--black);text-decoration:underline;text-underline-offset:.2em;text-decoration-color:color-mix(in srgb,var(--tc,var(--pink)) 80%,transparent)}
+@media (min-width:761px){html body #client .why-title{width:56%}html body #client .why-title h2{white-space:nowrap}}
+.why-title .script.p{text-wrap:balance}
+/* המלצה כתובה: כרטיסייה אנכית על נייר קרם, באותו רצף של הסרטונים */
+.vd-q .vf{background:var(--paper) url(assets/v5/k-paper.webp) center/cover;cursor:pointer;display:grid;place-items:center;padding:max(20px,1.8vw);text-align:right}
+.vd-q .vf::after{display:none}
+.vq{margin:0;position:relative;display:grid;gap:.6em}
+.vq::before{content:"״";font:400 3.2em/0.6 var(--display);color:var(--pink)}
+.vq p{margin:0;font:400 var(--fs-s)/1.5 var(--body);color:var(--black);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden}
+.vd-q.on .vq p{-webkit-line-clamp:unset;display:block}
+@media (max-width:760px){html body .vd-q .vf{padding:16px 18px}html body .vd-q .vq p{font-size:13px!important;line-height:1.42!important}.vq::before{font-size:2.4em}}
+/* בקשת קרן: בלי פס ההתקדמות בהמלצות, רק החצים */
+.vnav .vbar{display:none}
+.vnav{justify-content:center}
 </style>
 <script src="js/works-carousel.js" defer></script>
 <script>(function(){var v=(location.search.match(/[?&]v=([1235])/)||[])[1]||"5";document.documentElement.setAttribute("data-wv",v);var g=(location.search.match(/[?&]g=([123])/)||[])[1]||"3";document.documentElement.setAttribute("data-g",g);document.documentElement.setAttribute("data-mv","4");document.documentElement.setAttribute("data-rv","3")})()</script>
@@ -1448,8 +1487,8 @@ html body .circle h3{font-size:var(--fs-b)!important;line-height:1.3!important;f
     <ul id="menu">
       <li><a href="#work">שותפויות</a></li>
       <li><a href="#about">מי אני</a></li>
-      <li><a href="#brief">פיצוח בריף</a></li>
-      <li><a href="#client">שימור לקוח</a></li>
+      <li><a href="#brief">מעל המשימה</a></li>
+      <li><a href="#client">מלקוח לשותפות</a></li>
       <li><a href="#words">המלצות</a></li>
       <li><a href="#faq">שאלות נפוצות</a></li>
     </ul>
@@ -1476,34 +1515,37 @@ html body .circle h3{font-size:var(--fs-b)!important;line-height:1.3!important;f
 <section class="kwork" id="work" aria-labelledby="h-work">
   <h2 id="h-work">שותפויות מקצועיות<br class="m"> מתמשכות</h2>
   <!-- TODO: אישור יעלה להציג את סמלי הלקוחות -->
-  <picture><source media="(max-width:760px)" srcset="assets/v5/k-logos-m.webp?v=4"><img class="klogos" src="assets/v5/k-logos.webp?v=3" alt="לקוחות: עמותת הידידים של המרכז הרפואי תל אביב (איכילוב), צופים החיים, אמנותי, קצאא, עיריית עפולה, צה״ל, חבל לכיש, קבוצת תגלית, נגה" width="2600" height="580" loading="lazy"></picture>
+  <picture><source media="(max-width:760px)" srcset="assets/v5/k-logos-m.webp?v=5"><img class="klogos" src="assets/v5/k-logos.webp?v=5" alt="לקוחות: עמותת הידידים של המרכז הרפואי תל אביב (איכילוב), צופים החיים, אמנותי, קצאא, עיריית עפולה, צה״ל, חבל לכיש, קבוצת תגלית, נגה" width="2600" height="580" loading="lazy"></picture>
   <div class="kgal" data-carousel>
   <ul class="works" aria-label="עבודות נבחרות">
-    <li class="w w1" data-title="דוח פעילות שנתי" data-subtitle="ההסתדרות"><figure><div class="ph"><img src="assets/gallery/histadrut.webp" alt="שער דוח הפעילות השנתי של לשכת הקשר עם הכנסת" width="1200" height="900" loading="lazy"></div><figcaption><b>דוח פעילות שנתי</b>ההסתדרות</figcaption></figure></li>
-    <li class="w w2" data-title="עצמאות 77" data-subtitle="עיריית עפולה"><figure><div class="ph"><img src="assets/gallery/afula77.webp" alt="פוסטר חגיגות העצמאות ה-77 של עפולה בעמוד פרסום ברחוב עם דגלי ישראל" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 77</b>עיריית עפולה</figcaption></figure></li>
-    <li class="w w3" data-title="מיתוג וניירת" data-subtitle="חלונות"><figure><div class="ph"><img src="assets/gallery/halonot.webp" alt="מיתוג חלונות: נייר מכתבים ותיק בד על רקע סגול" width="1200" height="900" loading="lazy"></div><figcaption><b>מיתוג וניירת</b>חלונות</figcaption></figure></li>
-    <li class="w w4" data-title="מומנט, ערב גאלה" data-subtitle="מרכז רפואי איכילוב"><figure><div class="ph"><img src="assets/gallery/momentum.webp" alt="הזמנה לערב הגאלה של מומנט, קרן לקידום הבריאות, על שולחן כחול כהה" width="1200" height="900" loading="lazy"></div><figcaption><b>מומנט, ערב גאלה</b>מרכז רפואי איכילוב</figcaption></figure></li>
-    <li class="w w5" data-title="עצמאות 78, חולצות" data-subtitle="עיריית עפולה"><figure><div class="ph"><img src="assets/gallery/afula78-kid.webp" alt="ילדה בחולצת חגיגות העצמאות ה-78 של עפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 78, חולצות</b>עיריית עפולה</figcaption></figure></li>
-    <li class="w w6" data-title="קיץ פנומנל" data-subtitle="עיריית עפולה"><figure><div class="ph"><img src="assets/gallery/phenomenal.webp" alt="פוסטר ארט לוזרוב של קיץ פנומנל על קיר בשדרה בשקיעה" width="1200" height="900" loading="lazy"></div><figcaption><b>קיץ פנומנל</b>עיריית עפולה</figcaption></figure></li>
-    <li class="w w7" data-title="מוצרי מיתוג" data-subtitle="חלונות"><figure><div class="ph"><img src="assets/gallery/bottle.webp" alt="בקבוק וכוס ממותגים של חלונות על רקע טורקיז" width="1200" height="900" loading="lazy"></div><figcaption><b>מוצרי מיתוג</b>חלונות</figcaption></figure></li>
-    <li class="w w8" data-title="מצגת" data-subtitle="מרכז רפואי איכילוב"><figure><div class="ph"><img src="assets/gallery/ichilov.webp" alt="שקפי מצגת של איכילוב בגוני כחול" width="1200" height="900" loading="lazy"></div><figcaption><b>מצגת</b>מרכז רפואי איכילוב</figcaption></figure></li>
-    <li class="w w9" data-title="עצמאות 78, שילוט" data-subtitle="עיריית עפולה"><figure><div class="ph"><img src="assets/gallery/afula78-sign.webp" alt="שלט חוצות של חגיגות העצמאות ה-78 בעפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 78, שילוט</b>עיריית עפולה</figcaption></figure></li>
-    <li class="w w10" data-title="שילוט" data-subtitle="פארק הרכבת"><figure><div class="ph"><img src="assets/gallery/park.webp" alt="שלט מספר בעיצוב פארק הרכבת על קיר" width="1200" height="900" loading="lazy"></div><figcaption><b>שילוט</b>פארק הרכבת</figcaption></figure></li>
-    <li class="w w11" data-title="עצמאות 78, כובעים" data-subtitle="עיריית עפולה"><figure><div class="ph"><img src="assets/gallery/afula78-cap.webp" alt="כובע ממותג של חגיגות העצמאות ה-78 של עפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 78, כובעים</b>עיריית עפולה</figcaption></figure></li>
-    <li class="w w12" data-title="עצמאות 76" data-subtitle="עיריית עפולה"><figure><div class="ph"><img src="assets/gallery/afula76-shirt.webp" alt="חולצה ממותגת של חגיגות העצמאות ה-76 של עפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 76</b>עיריית עפולה</figcaption></figure></li>
-    <!-- TODO: לאשר מול יעלה את שמות העבודות החדשות מתיקיית 3.11/Links -->
-    <li class="w w13" data-title="מיתוג וניירת" data-subtitle="חבל לכיש"><figure><div class="ph"><img src="assets/gallery/lachish-set.webp" alt="מיתוג וניירת לחבל לכיש: מחברת, לוח כתיבה, מעטפה וכרטיס ביקור" width="1200" height="900" loading="lazy"></div><figcaption><b>מיתוג וניירת</b>חבל לכיש</figcaption></figure></li>
-    <li class="w w14" data-title="ספר מורשת, אוגדה 98" data-subtitle="צה״ל"><figure><div class="ph"><img src="assets/gallery/book98.webp" alt="כפולת עמודים מספר המורשת של אוגדה 98" width="1200" height="900" loading="lazy"></div><figcaption><b>ספר מורשת, אוגדה 98</b>צה״ל</figcaption></figure></li>
-    <li class="w w15" data-title="עצמאות 75" data-subtitle="עיריית עפולה"><figure><div class="ph"><img src="assets/gallery/afula75.webp" alt="במת חגיגות העצמאות ה-75 של עפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 75</b>עיריית עפולה</figcaption></figure></li>
-    <li class="w w16" data-title="כרטיסי מותג" data-subtitle="חלונות"><figure><div class="ph"><img src="assets/gallery/halonot-cards.webp" alt="כרטיסי מותג של חלונות בסגול ולבן" width="1200" height="900" loading="lazy"></div><figcaption><b>כרטיסי מותג</b>חלונות</figcaption></figure></li>
-    <li class="w w17" data-title="ספר גדוד מלר" data-subtitle="צה״ל"><figure><div class="ph"><img src="assets/gallery/book-meler.webp" alt="כריכת הספר מה שצריך עושים, סיפורו של גדוד מלר" width="1200" height="900" loading="lazy"></div><figcaption><b>ספר גדוד מלר</b>צה״ל</figcaption></figure></li>
-    <li class="w w18" data-title="טקס יקיר העיר" data-subtitle="עיריית עפולה"><figure><div class="ph"><img src="assets/gallery/afula-ceremony.webp" alt="שקף פתיחה לטקס יקיר העיר של עפולה, עצמאות 2024" width="1200" height="900" loading="lazy"></div><figcaption><b>טקס יקיר העיר</b>עיריית עפולה</figcaption></figure></li>
-    <li class="w w19" data-title="70 שנה, דגל" data-subtitle="חבל לכיש"><figure><div class="ph"><img src="assets/gallery/lachish70.webp" alt="דגל 70 שנה לחבל לכיש מתנופף על רקע שמיים" width="1200" height="900" loading="lazy"></div><figcaption><b>70 שנה, דגל</b>חבל לכיש</figcaption></figure></li>
-    <li class="w w20" data-title="ספרי מורשת" data-subtitle="צה״ל"><figure><div class="ph"><img src="assets/gallery/book-yearbook.webp" alt="ספרי מורשת ועמודים פתוחים של עוצבה" width="1200" height="900" loading="lazy"></div><figcaption><b>ספרי מורשת</b>צה״ל</figcaption></figure></li>
-    <li class="w w21" data-title="עצמאות 74" data-subtitle="עיריית עפולה"><figure><div class="ph"><img src="assets/gallery/afula74.webp" alt="באנר חגיגות העצמאות ה-74 של עפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 74</b>עיריית עפולה</figcaption></figure></li>
-    <li class="w w22" data-title="מצגת אחריות תקציבית" data-subtitle="מצגת"><figure><div class="ph"><img src="assets/gallery/budget-deck.webp" alt="מצגת אחריות תקציבית על מסך בחדר ישיבות" width="1200" height="900" loading="lazy"></div><figcaption><b>מצגת אחריות תקציבית</b>מצגת</figcaption></figure></li>
-    <li class="w w23" data-title="ספר מורשת, עמודים" data-subtitle="צה״ל"><figure><div class="ph"><img src="assets/gallery/book-pages.webp" alt="כפולת עמודים עם תמונות וציטוטים מספר מורשת" width="1200" height="900" loading="lazy"></div><figcaption><b>ספר מורשת, עמודים</b>צה״ל</figcaption></figure></li>
-    <li class="w w24" data-title="חגיגות עצמאות" data-subtitle="עיריית עפולה"><figure><div class="ph"><img src="assets/gallery/afula-parade.webp" alt="ילדים בחולצות חגיגות העצמאות של עפולה בתהלוכה ברחוב" width="1200" height="900" loading="lazy"></div><figcaption><b>חגיגות עצמאות</b>עיריית עפולה</figcaption></figure></li>
+    <!-- סדר לפי מסמך יעלה גרסה 3. 01 עד 07 מהדרייב נוספו 24.11. ממתינים ל־6 תקריבי צה״ל -->
+    <li class="w w1" data-title="זהות ליבה: חידוש מותג ושפה חזותית" data-subtitle="מועצה אזורית חבל לכיש" data-full="assets/gallery/full/lachish-core.webp?v=5"><figure><div class="ph"><img src="assets/gallery/lachish-core.webp?v=5" alt="הלוגו הישן והחדש של מועצה אזורית חבל לכיש, עם הסבר על חידוש המותג" width="1200" height="900" loading="lazy"></div><figcaption><b>70 שנה, דגל</b>חבל לכיש</figcaption></figure></li>
+    <li class="w w2" data-title="זהות ליבה: פריסה רב־ערוצית וערכת מותג" data-subtitle="מועצה אזורית חבל לכיש" data-full="assets/gallery/full/lachish-set.webp?v=5"><figure><div class="ph"><img src="assets/gallery/lachish-set.webp?v=5" alt="מחברות, מעטפה ונייר מכתבים של חבל לכיש על רקע שדה וטרקטור" width="1200" height="900" loading="lazy"></div><figcaption><b>מיתוג וניירת</b>חבל לכיש</figcaption></figure></li>
+    <li class="w w3" data-title="זהות קהילתית: מיתוג מערך צח״י" data-subtitle="מועצה אזורית חבל לכיש" data-full="assets/gallery/full/lachish-tzachi.webp?v=5"><figure><div class="ph"><img src="assets/gallery/lachish-tzachi.webp?v=5" alt="מחברות ועדכון וואטסאפ בעיצוב היחידה לעבודה קהילתית ומערך צח״י של חבל לכיש" width="1200" height="900" loading="lazy"></div><figcaption><b>70 שנה, דגל</b>חבל לכיש</figcaption></figure></li>
+    <li class="w w4" data-title="זהות ליבה: קמפיין חגיגות 70 שנה" data-subtitle="מועצה אזורית חבל לכיש" data-full="assets/gallery/full/lachish70.webp"><figure><div class="ph"><img src="assets/gallery/lachish70.webp" alt="דגל 70 שנה לחבל לכיש מתנופף על רקע שמיים" width="1200" height="900" loading="lazy"></div><figcaption><b>70 שנה, דגל</b>חבל לכיש</figcaption></figure></li>
+    <li class="w w5" data-title="שפה ציבורית: שילוט ומרחב ציבורי" data-subtitle="עיריית עפולה, פארק הרכבת" data-full="assets/gallery/full/park.webp?v=5"><figure><div class="ph"><img src="assets/gallery/park.webp?v=5" alt="דגלי פארק הרכבת בשחור ולבן לאורך טיילת מוארת בערב" width="1200" height="900" loading="lazy"></div><figcaption><b>שילוט</b>פארק הרכבת</figcaption></figure></li>
+    <li class="w w6" data-title="שפה ציבורית: קמפיין מופעים ואירועי שיא" data-subtitle="עיריית עפולה, קיץ Extra" data-full="assets/gallery/full/afula-extra.webp?v=5"><figure><div class="ph"><img src="assets/gallery/afula-extra.webp?v=5" alt="מסך מחשב עם פוסטרים של קיץ Extra בעפולה, סאבלימינל והצל וששון שאולוב" width="1200" height="900" loading="lazy"></div><figcaption><b>70 שנה, דגל</b>חבל לכיש</figcaption></figure></li>
+    <li class="w w7" data-title="שפה ציבורית: שילוט חוצות ופרסום עירוני" data-subtitle="עיריית עפולה, קיץ פנומנל" data-full="assets/gallery/full/phenomenal.webp?v=5"><figure><div class="ph"><img src="assets/gallery/phenomenal.webp?v=5" alt="פוסטר ארט לוזרוב של קיץ פנומנל על קיר בשדרה בשקיעה" width="1200" height="900" loading="lazy"></div><figcaption><b>קיץ פנומנל</b>עיריית עפולה</figcaption></figure></li>
+    <li class="w w8" data-title="שפה ציבורית: אירועי הוקרה וטקסים רשמיים" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula-ceremony.webp?v=3"><figure><div class="ph"><img src="assets/gallery/afula-ceremony.webp?v=4" alt="שקף פתיחה לטקס יקיר העיר של עפולה, עצמאות 2024" width="1200" height="900" loading="lazy"></div><figcaption><b>טקס יקיר העיר</b>עיריית עפולה</figcaption></figure></li>
+    <li class="w w9" data-title="זיכרון מותגי: חגיגות עצמאות 74" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula74.webp?v=5"><figure><div class="ph"><img src="assets/gallery/afula74.webp?v=5" alt="מחשב נייד עם עמוד הפייסבוק של עיריית עפולה ובאנר חגיגות עצמאות 74" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 74</b>עיריית עפולה</figcaption></figure></li>
+    <li class="w w10" data-title="זיכרון מותגי: חגיגות עצמאות 74, שילוט" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula74-banner.webp?v=5"><figure><div class="ph"><img src="assets/gallery/afula74-banner.webp?v=5" alt="באנר חגיגות עצמאות 74 של עפולה מתוח על חזית בניין" width="1200" height="900" loading="lazy"></div><figcaption><b>70 שנה, דגל</b>חבל לכיש</figcaption></figure></li>
+    <li class="w w11" data-title="זיכרון מותגי: חגיגות עצמאות 75" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula75.webp"><figure><div class="ph"><img src="assets/gallery/afula75.webp" alt="במת חגיגות העצמאות ה-75 של עפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 75</b>עיריית עפולה</figcaption></figure></li>
+    <li class="w w12" data-title="זיכרון מותגי: חגיגות עצמאות 76" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula76-shirt.webp"><figure><div class="ph"><img src="assets/gallery/afula76-shirt.webp" alt="חולצה ממותגת של חגיגות העצמאות ה-76 של עפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 76</b>עיריית עפולה</figcaption></figure></li>
+    <li class="w w13" data-title="זיכרון מותגי: חגיגות עצמאות 77" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula77.webp"><figure><div class="ph"><img src="assets/gallery/afula77.webp" alt="פוסטר חגיגות העצמאות ה-77 של עפולה בעמוד פרסום ברחוב עם דגלי ישראל" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 77</b>עיריית עפולה</figcaption></figure></li>
+    <li class="w w14" data-title="זיכרון מותגי: עצמאות 78, שילוט ומכוונים" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula78-sign.webp"><figure><div class="ph"><img src="assets/gallery/afula78-sign.webp" alt="שלט חוצות של חגיגות העצמאות ה-78 בעפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 78, שילוט</b>עיריית עפולה</figcaption></figure></li>
+    <li class="w w15" data-title="זיכרון מותגי: עצמאות 78, תכנון מוצר" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula78-kid.webp"><figure><div class="ph"><img src="assets/gallery/afula78-kid.webp" alt="ילדה בחולצת חגיגות העצמאות ה-78 של עפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 78, חולצות</b>עיריית עפולה</figcaption></figure></li>
+    <li class="w w16" data-title="זיכרון מותגי: עצמאות 78, כובעים" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula78-cap.webp"><figure><div class="ph"><img src="assets/gallery/afula78-cap.webp" alt="כובע ממותג של חגיגות העצמאות ה-78 של עפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 78, כובעים</b>עיריית עפולה</figcaption></figure></li>
+    <li class="w w17" data-title="זיכרון מותגי: חגיגות עצמאות" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula-parade.webp"><figure><div class="ph"><img src="assets/gallery/afula-parade.webp" alt="ילדים בחולצות חגיגות העצמאות של עפולה בתהלוכה ברחוב" width="1200" height="900" loading="lazy"></div><figcaption><b>חגיגות עצמאות</b>עיריית עפולה</figcaption></figure></li>
+    <li class="w w18" data-title="נרטיב חזותי: ספר מורשת ותיעוד מבצעי" data-subtitle="צה״ל, אוגדה 98" data-full="assets/gallery/full/book98.webp"><figure><div class="ph"><img src="assets/gallery/book98.webp" alt="כפולת עמודים מספר המורשת של אוגדה 98" width="1200" height="900" loading="lazy"></div><figcaption><b>ספר מורשת, אוגדה 98</b>צה״ל</figcaption></figure></li>
+    <li class="w w19" data-title="נרטיב חזותי: ספר מורשת קרב" data-subtitle="עמותת שריון, גדוד מלר" data-full="assets/gallery/full/book-meler.webp"><figure><div class="ph"><img src="assets/gallery/book-meler.webp" alt="כריכת הספר מה שצריך עושים, סיפורו של גדוד מלר" width="1200" height="900" loading="lazy"></div><figcaption><b>ספר גדוד מלר</b>צה״ל</figcaption></figure></li>
+    <li class="w w20" data-title="נרטיב חזותי: עימוד מורכב ועיבוד נרטיב קרב" data-subtitle="צה״ל וגופי ביטחון" data-full="assets/gallery/full/book-pages.webp"><figure><div class="ph"><img src="assets/gallery/book-pages.webp" alt="כפולת עמודים עם תמונות וציטוטים מספר מורשת" width="1200" height="900" loading="lazy"></div><figcaption><b>ספר מורשת, עמודים</b>צה״ל</figcaption></figure></li>
+    <li class="w w21" data-title="נרטיב חזותי: עימוד מורכב ועיבוד נרטיב קרב" data-subtitle="צה״ל וגופי ביטחון" data-full="assets/gallery/full/book-yearbook.webp"><figure><div class="ph"><img src="assets/gallery/book-yearbook.webp" alt="ספרי מורשת ועמודים פתוחים של עוצבה" width="1200" height="900" loading="lazy"></div><figcaption><b>ספרי מורשת</b>צה״ל</figcaption></figure></li>
+    <li class="w w22" data-title="דוח פעילות שנתי ופרלמנטרי" data-subtitle="הסתדרות העובדים הכללית" data-full="assets/gallery/full/histadrut.webp"><figure><div class="ph"><img src="assets/gallery/histadrut.webp" alt="שער דוח הפעילות השנתי של לשכת הקשר עם הכנסת" width="1200" height="900" loading="lazy"></div><figcaption><b>דוח פעילות שנתי</b>ההסתדרות</figcaption></figure></li>
+    <li class="w w23" data-title="מיתוג אירוע גאלה וגיוס משאבים" data-subtitle="מרכז רפואי איכילוב, מומנט" data-full="assets/gallery/full/momentum.webp"><figure><div class="ph"><img src="assets/gallery/momentum.webp" alt="הזמנה לערב הגאלה של מומנט, קרן לקידום הבריאות, על שולחן כחול כהה" width="1200" height="900" loading="lazy"></div><figcaption><b>מומנט, ערב גאלה</b>מרכז רפואי איכילוב</figcaption></figure></li>
+    <li class="w w24" data-title="מצגת הנהלה ודוחות אסטרטגיים" data-subtitle="המרכז הרפואי איכילוב" data-full="assets/gallery/full/ichilov.webp"><figure><div class="ph"><img src="assets/gallery/ichilov.webp" alt="שקפי מצגת של איכילוב בגוני כחול" width="1200" height="900" loading="lazy"></div><figcaption><b>מצגת</b>מרכז רפואי איכילוב</figcaption></figure></li>
+    <li class="w w25" data-title="זהות מותג וערכת פריסה" data-subtitle="עמותת חלונות" data-full="assets/gallery/full/halonot.webp"><figure><div class="ph"><img src="assets/gallery/halonot.webp" alt="מיתוג חלונות: נייר מכתבים ותיק בד על רקע סגול" width="1200" height="900" loading="lazy"></div><figcaption><b>מיתוג וניירת</b>חלונות</figcaption></figure></li>
+    <li class="w w26" data-title="מוצרי מותג יישומיים" data-subtitle="עמותת חלונות" data-full="assets/gallery/full/bottle.webp"><figure><div class="ph"><img src="assets/gallery/bottle.webp" alt="בקבוק וכוס ממותגים של חלונות על רקע טורקיז" width="1200" height="900" loading="lazy"></div><figcaption><b>מוצרי מיתוג</b>חלונות</figcaption></figure></li>
+    <li class="w w27" data-title="כרטיסי מותג" data-subtitle="עמותת חלונות" data-full="assets/gallery/full/halonot-cards.webp"><figure><div class="ph"><img src="assets/gallery/halonot-cards.webp" alt="כרטיסי מותג של חלונות בסגול ולבן" width="1200" height="900" loading="lazy"></div><figcaption><b>כרטיסי מותג</b>חלונות</figcaption></figure></li>
   </ul>
   <div class="tunnel" role="list" aria-label="עבודות נבחרות"></div>
   
@@ -1514,7 +1556,7 @@ html body .circle h3{font-size:var(--fs-b)!important;line-height:1.3!important;f
     if(document.documentElement.getAttribute('data-g')!=='2')return;
     var gal=document.querySelector('.kgal');gal.removeAttribute('data-carousel');
     var lis=[].slice.call(gal.querySelectorAll('.works li')),tun=gal.querySelector('.tunnel'),btn=gal.querySelector('.tun-pause');
-    var items=lis.map(function(li){var im=li.querySelector('img');return {src:im.getAttribute('src'),alt:im.alt,t:li.dataset.title,s:li.dataset.subtitle}});
+    var items=lis.map(function(li){var im=li.querySelector('img');return {src:im.getAttribute('src'),full:li.dataset.full,alt:im.alt,t:li.dataset.title,s:li.dataset.subtitle}});
     /* סרט רציף בצורת U, כמו בסרטון: אריחים באותו גובה צמודים זה לזה, נולדים במרכז הקיר האחורי,
        מתעגלים בפינה וממשיכים על הקירות אל הצופה. בלי שקיפות */
     var cards=[],N=items.length,PER=14,AS=[1.33,1,1.5,.82,1.33,1.15,.9];
@@ -1540,7 +1582,7 @@ html body .circle h3{font-size:var(--fs-b)!important;line-height:1.3!important;f
     var onScr=true;new IntersectionObserver(function(e){onScr=e[0].isIntersecting}).observe(tun);
     function frame(ts){
       if(!onScr||document.hidden){last=0;requestAnimationFrame(frame);return}
-      if(last&&run)off+=(ts-last)/1000*G.speed;last=ts;
+      var dt=last?(ts-last)/1000:0;if(run&&!drag)off+=dt*G.speed;if(!drag&&vel){off+=vel*dt;vel*=Math.pow(.92,dt*60);if(Math.abs(vel)<2)vel=0}last=ts;
       var best=null;
       cards.forEach(function(c){
         var L=G['L'+c.side],uc=((c.u+off)%L)+c.w/2;if(uc>L-c.w/2)uc-=L;/* האריח שנולד: מופיע מתוך המרכז */
@@ -1553,9 +1595,21 @@ html body .circle h3{font-size:var(--fs-b)!important;line-height:1.3!important;f
     }
     layout();addEventListener('resize',layout);
     requestAnimationFrame(frame);
+    /* דפדוף ידני (בקשת קרן 24.11): גרירה בעכבר או באצבע, עם תנופה. גרירה החוצה מהמרכז מקדמת, פנימה מחזירה. חצים לקפיצה */
+    var drag=null,vel=0,moved=0;tun.style.touchAction='pan-y';tun.style.cursor='grab';
+    tun.addEventListener('pointerdown',function(e){if(e.button>0)return;var r=tun.getBoundingClientRect();drag={x:e.clientX,t:performance.now(),dir:(e.clientX>r.left+r.width/2)?1:-1,id:e.pointerId};moved=0;vel=0});
+    tun.addEventListener('pointermove',function(e){if(!drag)return;var dx=e.clientX-drag.x,now=performance.now();if(Math.abs(dx)<1)return;moved+=Math.abs(dx);
+      if(moved>6&&!tun.hasPointerCapture(drag.id)){tun.setPointerCapture(drag.id);tun.style.cursor='grabbing'}
+      var d=dx*drag.dir*2.2;off+=d;vel=d/Math.max(.008,(now-drag.t)/1000);drag.x=e.clientX;drag.t=now});
+    function endDrag(){if(!drag)return;if(performance.now()-drag.t>80)vel=0;vel=Math.max(-G.speed*40,Math.min(G.speed*40,vel));drag=null;tun.style.cursor='grab'}
+    tun.addEventListener('pointerup',endDrag);tun.addEventListener('pointercancel',endDrag);
+    tun.addEventListener('click',function(e){if(moved>6){e.stopPropagation();e.preventDefault();moved=0}},true);
+    [['tun-prev','לעבודות הקודמות',1,'M6 3l5 5-5 5'],['tun-next','לעבודות הבאות',-1,'M10 3L5 8l5 5']].forEach(function(o){var b=document.createElement('button');b.type='button';b.className='tun-arr '+o[0];b.setAttribute('aria-label',o[1]);
+      b.innerHTML='<svg viewBox="0 0 16 16"><path d="'+o[3]+'" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      b.addEventListener('click',function(){vel+=o[2]*G.speed*14});btn.parentNode.insertBefore(b,btn)});
     /* פופאפ: לחיצה על עבודה פותחת אותה בגדול, התנועה נעצרת עד הסגירה */
     var lb=gal.querySelector('.lb'),lbImg=lb.querySelector('img'),wasRun;
-    cards.forEach(function(c){c.el.addEventListener('click',function(){wasRun=run;run=false;lbImg.src=c.it.src;lbImg.alt=c.it.alt;lb.querySelector('b').textContent=c.it.t;lb.querySelector('span').textContent=c.it.s;lb.showModal()})});
+    cards.forEach(function(c){c.el.addEventListener('click',function(){wasRun=run;run=false;lbImg.src=c.it.full||c.it.src;lbImg.alt=c.it.alt;lb.querySelector('b').textContent=c.it.t;lb.querySelector('span').textContent=c.it.s;lb.showModal()})});
     lb.addEventListener('close',function(){run=wasRun});
     lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('lb-x'))lb.close()});
     btn.addEventListener('click',function(){run=!run;btn.setAttribute('aria-label',run?'עצירת התנועה':'הפעלת התנועה');btn.innerHTML=run?'<svg viewBox="0 0 16 16"><path d="M3 2h3.5v12H3zM9.5 2H13v12H9.5z"/></svg>':'<svg viewBox="0 0 16 16"><path d="M4 2l10 6-10 6z"/></svg>'});
@@ -1567,7 +1621,7 @@ html body .circle h3{font-size:var(--fs-b)!important;line-height:1.3!important;f
     if(document.documentElement.getAttribute('data-g')!=='3')return;
     var gal=document.querySelector('.kgal');gal.removeAttribute('data-carousel');
     var lis=[].slice.call(gal.querySelectorAll('.works li')),box=gal.querySelector('.marq'),btn=gal.querySelector('.tun-pause');
-    var items=lis.map(function(li){var im=li.querySelector('img');return {src:im.getAttribute('src'),alt:im.alt,t:li.dataset.title,s:li.dataset.subtitle}});
+    var items=lis.map(function(li){var im=li.querySelector('img');return {src:im.getAttribute('src'),full:li.dataset.full,alt:im.alt,t:li.dataset.title,s:li.dataset.subtitle}});
     var tiles=items.map(function(it){var el=document.createElement('button');el.type='button';el.className='mtile';el.setAttribute('aria-label',it.t+', '+it.s+'. לפתיחה בגדול');el.innerHTML='<img src="'+it.src+'" alt="" loading="lazy">';box.appendChild(el);return {el:el,it:it}});
     var off=0,last=0,run=!matchMedia('(prefers-reduced-motion:reduce)').matches,S=0,GAP=0,L=0;
     function layout(){var W=box.clientWidth;S=W<600?Math.round(W*.46):Math.round(W*.19);GAP=Math.round(S*.06);L=tiles.length*(S+GAP);box.style.setProperty('--s',S+'px')}
@@ -1575,15 +1629,27 @@ html body .circle h3{font-size:var(--fs-b)!important;line-height:1.3!important;f
     var onScr=true;new IntersectionObserver(function(e){onScr=e[0].isIntersecting}).observe(box);
     function frame(ts){
       if(!onScr||document.hidden){last=0;requestAnimationFrame(frame);return}
-      if(last&&run)off+=(ts-last)/1000*S*.22;last=ts;
+      var dt=last?(ts-last)/1000:0;if(run&&!drag)off+=dt*S*.22;if(!drag&&vel){off+=vel*dt;vel*=Math.pow(.92,dt*60);if(Math.abs(vel)<2)vel=0}last=ts;
       var W=box.clientWidth,A=0;/* בקו ישר */
       tiles.forEach(function(t,i){var x=((i*(S+GAP)-off)%L+L)%L-S;var y=Math.sin((x+S/2)/W*Math.PI*2)*A;
         t.el.style.transform='translate3d('+x.toFixed(1)+'px,'+y.toFixed(1)+'px,0)'});
       requestAnimationFrame(frame);
     }
     layout();addEventListener('resize',layout);requestAnimationFrame(frame);
+    /* דפדוף ידני (בקשת קרן 24.11): גרירה בעכבר או באצבע עם תנופה, וחצים שמזיזים שלוש עבודות */
+    var drag=null,vel=0,moved=0,glide=0;box.style.touchAction='pan-y';box.style.cursor='grab';
+    box.addEventListener('pointerdown',function(e){if(e.button>0)return;drag={x:e.clientX,t:performance.now(),id:e.pointerId};moved=0;vel=0});
+    box.addEventListener('pointermove',function(e){if(!drag)return;var dx=e.clientX-drag.x,now=performance.now();if(!dx)return;moved+=Math.abs(dx);
+      if(moved>6&&!box.hasPointerCapture(drag.id)){box.setPointerCapture(drag.id);box.style.cursor='grabbing'}
+      off-=dx;vel=-dx/Math.max(.008,(now-drag.t)/1000);drag.x=e.clientX;drag.t=now});
+    function endDrag(){if(!drag)return;if(performance.now()-drag.t>80)vel=0;vel=Math.max(-S*30,Math.min(S*30,vel));drag=null;box.style.cursor='grab'}
+    box.addEventListener('pointerup',endDrag);box.addEventListener('pointercancel',endDrag);
+    box.addEventListener('click',function(e){if(moved>6){e.stopPropagation();e.preventDefault();moved=0}},true);
+    [['tun-prev','לעבודות הקודמות',1,'M6 3l5 5-5 5'],['tun-next','לעבודות הבאות',-1,'M10 3L5 8l5 5']].forEach(function(o){var b=document.createElement('button');b.type='button';b.className='tun-arr '+o[0];b.setAttribute('aria-label',o[1]);
+      b.innerHTML='<svg viewBox="0 0 16 16"><path d="'+o[3]+'" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      b.addEventListener('click',function(){vel+=o[2]*(S+GAP)*14.4});btn.parentNode.insertBefore(b,btn)});
     var lb=gal.querySelector('.lb'),lbImg=lb.querySelector('img'),wasRun;
-    tiles.forEach(function(t){t.el.addEventListener('click',function(){wasRun=run;run=false;lbImg.src=t.it.src;lbImg.alt=t.it.alt;lb.querySelector('b').textContent=t.it.t;lb.querySelector('span').textContent=t.it.s;lb.showModal()})});
+    tiles.forEach(function(t){t.el.addEventListener('click',function(){wasRun=run;run=false;lbImg.src=t.it.full||t.it.src;lbImg.alt=t.it.alt;lb.querySelector('b').textContent=t.it.t;lb.querySelector('span').textContent=t.it.s;lb.showModal()})});
     lb.addEventListener('close',function(){run=wasRun});
     lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('lb-x'))lb.close()});
     btn.addEventListener('click',function(){run=!run;btn.setAttribute('aria-label',run?'עצירת התנועה':'הפעלת התנועה');btn.innerHTML=run?'<svg viewBox="0 0 16 16"><path d="M3 2h3.5v12H3zM9.5 2H13v12H9.5z"/></svg>':'<svg viewBox="0 0 16 16"><path d="M4 2l10 6-10 6z"/></svg>'});
@@ -1594,14 +1660,15 @@ html body .circle h3{font-size:var(--fs-b)!important;line-height:1.3!important;f
 <!-- 3. אודות: על הקרם, בלי מסגרת. ענן לבן מטשטש את המעבר של יעלה לרקע. כותרת מדורגת, משפט פתיחה גדול, שתי עמודות -->
 <section class="kabout" id="about" aria-labelledby="h-about">
   <div class="kab-fig">
-    <img class="kab-me" src="assets/v5/yaela-cut.webp" alt="יעלה יהב, מעצבת גרפית וארט דיירקטורית, בבלייזר בהיר" width="1000" height="1000" loading="lazy">
+    <img class="kab-me" src="assets/v5/yaela-cut.webp?v=4" alt="יעלה יהב, מעצבת גרפית וארט דיירקטורית, בז׳קט בז׳ וחולצה לבנה" width="1000" height="800" loading="lazy">
   </div>
   <div class="kab-txt">
     <h2 id="h-about"><span class="l1">נעים מאוד,</span><span class="l2">אני <img class="kab-logo" src="assets/v5/logo-mark.webp" alt="יעלה" width="940" height="414"></span></h2>
-    <p class="kab-lead">בכל עבודה אני מתחילה בהקשבה לאדם שמאחורי הבריף: למה שהוא מבקש, למה שחשוב לו ולסיפור שהוא רוצה לספר.</p>
+    <p class="kab-lead">בהקשבה תחילה מדייקים את ליבת העשייה לעיצוב ברור ומדויק.</p>
     <div class="kab-cols">
-      <p>אני עובדת עם מחלקת השיווק והדוברות של הצופים, עם מועצות ועיריות, עושה ספרי מורשת לצה״ל, קמפיינים פוליטיים וסביבות למידה לבתי ספר עם חברת אמנותי.</p>
-      <p>מתוך הדרך הזו פיתחתי את שיטת המצפן. אני מלמדת אותה כי הקושי של רוב המעצבות הוא לא כישרון או תוכנות, אלא הקשר עם הלקוח.</p>
+      <p>פיתחתי את שיטת המצפן כדי לענות על הפער שבין הלימודים למציאות בשטח: שם, מול הלקוחות, החוטים מתפזרים והעבודה הופכת מתישה ומלאת סימני שאלה. הבנתי שאנחנו עובדים קודם כל מול אנשים, ויצרתי מתודולוגיה שאוספת את מה שנפרם, מחלצת את גרעין האמת מתוך בריף מבולבל ומייצרת שותפות בטוחה.</p>
+      <p>היכולת הזו נשענת על מעל 1,600 שעות של סדנאות, ליווי ותהליכי התפתחות אישית שעברתי בעצמי. מרחב שלימד אותי מבפנים להקשיב בין השורות, להכיל מורכבות רגשית, ולהפוך כל בלבול לשקט מקצועי שנותן מקום בטוח ללקוחות ולמעצבים שאני מלווה.</p>
+      <p>הגב המקצועי שלי נשען על 25 שנות ליווי ועיצוב לארגונים, מועצות ועיריות, ספרי מורשת לצה״ל, קמפיינים פוליטיים וסביבות למידה לבתי ספר, לצד עשור של עבודה בבתי דפוס ושליטה ברצפת הדפוס שמבטיחה שמה שמעוצב עובד במציאות.</p>
     </div>
     <a class="btn" href="#register">לבחירת מסלול</a>
   </div>
@@ -1616,55 +1683,56 @@ html body .circle h3{font-size:var(--fs-b)!important;line-height:1.3!important;f
     <div class="why-pin"><div class="why-box">
       <div class="why-sky" aria-hidden="true"><img src="assets/sky-hd.webp" alt="" loading="lazy"></div>
       <span class="why-cls" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
-      <img class="why-bal" src="assets/balloon-ill.webp" alt="" aria-hidden="true" width="760" height="1453" loading="lazy">
+      <img class="why-bal" src="assets/balloon-ill.webp?v=2" alt="" aria-hidden="true" width="760" height="1453" loading="lazy">
       <div class="why-title">
-        <h2 id="h-brief">מעל המשימה</h2>
-        <span class="script p">פיצוח בריף · מסלול מתחילות</span>
-        <p class="wdesc">מבריף עמוס לכיוון עיצובי ברור, עוד לפני הסקיצה הראשונה. בשני מפגשי זום בקבוצה קטנה נלמד להבין מי האדם שמאחורי הבקשה ומה הסיפור שהעיצוב צריך לספר, ונהפוך את ההבנה להחלטות של תוכן, היררכיה ושפה.</p>
+        <h2 id="h-brief"><small class="kick">סדנת</small>מע<span class="sw">ל</span> המשימה</h2>
+        <span class="script p">פיצוח בריף · לכיוון עיצובי ברור</span>
+        <p class="wdesc">מתקיעות וסימני שאלה לכיוון עיצובי ברור, עוד לפני הסקיצה הראשונה. בשני מפגשי זום בקבוצה קטנה נלמד לפענח מי האדם שעומד מאחורי הבקשה, לחלץ את הסיפור שהעיצוב צריך לספר, ולתרגם את ההבנה להחלטות ברורות של תוכן, היררכיה ושפה חזותית.</p>
         <div class="acts"><a class="btn green" href="#register" data-track="brief">להרשמה</a></div>
       </div>
       <span class="for">הסדנה בשבילך אם</span>
       <div class="circles">
         <span class="track-line"></span><span class="track-mark" aria-hidden="true"></span>
-        <div class="circle"><h3>קיבלת עבודה חדשה, ולא ברור ממה מתחילים</h3><p>יש בריף ויש חומרים, אבל אין עדיין כיוון</p></div>
-        <div class="circle"><h3>קשה להבין מה חשוב ומה חסר</h3><p>מה נכנס, מה נשאר בחוץ, ומה העיצוב צריך לספר</p></div>
-        <div class="circle"><h3>את פותחת את התוכנה ומתחילה לנחש</h3><p>מנסה, מתקנת, ותוהה אם פספסת משהו</p></div>
-        <div class="circle"><h3>הקושי הוא לעבור מההבנה להחלטות</h3><p>זה לא עניין של כישרון או שליטה בתוכנות</p></div>
+        <div class="circle"><h3>קיבלת בריף לעיצוב</h3><p>ולא ברור לך ממה להתחיל</p></div>
+        <div class="circle"><h3>חיפשת שעות השראות</h3><p>והדף נשאר ריק</p></div>
+        <div class="circle"><h3>הגשת סקיצה מושקעת</h3><p>וקיבלת סבבים אינסופיים</p></div>
+        <div class="circle"><h3>נתקעת שוב ושוב,</h3><p>והביטחון המקצועי נסדק</p></div>
       </div>
     </div></div>
   </div>
   <div class="meets" id="brief-meets">
-    <div class="reveal"><h2>מה יהיה בסדנה</h2><p class="mdate"><b>חמישי · 12.11 ו־19.11</b><span>20:00 עד 21:40 · בזום</span></p></div>
+    <div class="reveal"><h2>מה נלמד בסדנה</h2><p class="mdate"><b>חמישי · 7.1 ו־14.1</b><span>20:00 עד 21:40 · בזום</span></p></div>
     <div class="mz">
       <div class="mz-mid"><div class="cmp" role="img" aria-label="המצפן של יעלה"><img src="assets/compass-base.webp" alt="" loading="lazy"><img class="rot" src="assets/compass-rotor.webp" alt="" loading="lazy"></div></div>
       <svg class="mz-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M76 22.3H68L61 31"/><path d="M70 77.8H66L60.6 69"/><path d="M24 22.3H32L39 31"/><path d="M30 77.8H34L39.4 69"/></svg>
-      <div class="mz-it rt reveal"><figure class="mz-card"><span class="dmi"><img src="assets/fig-21-t.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>שאלות שמפצחות בריף</h3><p>שאלות שהופכות בריף עמוס או חלקי לכיוון ברור</p></div></div>
-      <div class="mz-it rb reveal"><figure class="mz-card"><span class="dmi"><img src="assets/ill-desk-t.webp?v=2" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>סדר בחומרים</h3><p>דרך לזהות מה חסר ולעשות סדר בחומרים</p></div></div>
-      <div class="mz-it lt reveal"><figure class="mz-card"><span class="dmi"><img src="assets/fig-19-t.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>מהבנה להחלטות</h3><p>חיבור בין הבנת הפרויקט להחלטות על מסר, מבנה ושפה</p></div></div>
-      <div class="mz-it lo reveal"><figure class="mz-card"><span class="dmi"><img src="assets/ill-27-t.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>כיוון לפני התוכנה</h3><p>כיוון עיצובי מגובש עוד לפני שפותחים את התוכנה</p></div></div>
+      <div class="mz-it rt reveal"><figure class="mz-card"><span class="dmi"><img src="assets/mz1-02.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>שאלות שמפצחות בריף</h3><p>לדעת בדיוק מה לשאול כדי לקבל תמונה בהירה</p></div></div>
+      <div class="mz-it lt reveal"><figure class="mz-card"><span class="dmi"><img src="assets/mz1-01.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>מציאת הנרטיב המתאים</h3><p>לחלץ את הסיפור והרעיון המוביל עוד לפני העיצוב</p></div></div>
+      <div class="mz-it rb reveal"><figure class="mz-card"><span class="dmi"><img src="assets/mz1-03.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>מרעיון לצורה ויזואלית</h3><p>לראות את הכיוון מראש, בלי ללכת לאיבוד בהשראות</p></div></div>
+      <div class="mz-it lo reveal"><figure class="mz-card"><span class="dmi"><img src="assets/mz1-04.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>מעומס חומרים למבנה ברור</h3><p>להגיע עם החלטות ברורות על סדר התוכן בדף</p></div></div>
     </div>
   </div>
   <div class="order">
     <div class="band" aria-hidden="true"><div class="o-cls"><i></i><i></i><i></i><i></i><i></i></div></div>
-    <div class="sec-head reveal"><h2>בסוף הסדנה</h2><span class="script">מה לוקחים איתך הביתה</span></div>
+    <div class="sec-head reveal"><h2>מה לוקחים הביתה</h2></div>
     <div class="card reveal">
       <div class="res"><ul>
-        <li><span class="dia"></span>שאלות שהופכות בריף עמוס או חלקי לכיוון ברור</li>
-        <li><span class="dia"></span>דרך לזהות מה חסר ולעשות סדר בחומרים</li>
-        <li><span class="dia"></span>חיבור בין הבנת הפרויקט להחלטות על מסר, מבנה ושפה</li>
-        <li><span class="dia"></span>כיוון עיצובי מגובש עוד לפני שפותחים את התוכנה</li>
+        <li><span class="dia"></span>שאלות שמפצחות כל בריף לכיוון ברור</li>
+        <li><span class="dia"></span>דרך לחילוץ הסיפור והרעיון המוביל</li>
+        <li><span class="dia"></span>חיבור בין הבנת הפרויקט למסר, מבנה ושפה</li>
+        <li><span class="dia"></span>כיוון ברור ומגובש עוד לפני שפותחים תוכנה</li>
       </ul></div>
       <div class="inc">
-        <span class="tag">פיצוח בריף</span>
-        <h3>מה כלול</h3>
+        <h3>מה כלול בסדנה</h3>
         <ul>
-          <li><span class="dia"></span>שני מפגשי זום, 12.11 ו־19.11</li>
+          <li><span class="dia"></span>שני מפגשי זום, 7.1 ו־14.1</li>
           <li><span class="dia"></span>20:00 עד 21:40</li>
           <li><span class="dia"></span>קבוצה קטנה, עם מקום לשאלות</li>
           <li><span class="dia"></span>בלי תוכנות ובלי סקיצות במפגש</li>
+          <li><span class="dia"></span>הקלטות וצ׳קליסט ליישום מיידי</li>
         </ul>
         <p class="price"><b>680</b><span>₪ כולל מע״מ</span></p>
-        <a class="btn" href="#register" data-track="brief">להרשמה לפיצוח בריף</a>
+        <a class="deal" href="#register">מחיר סדנה 550 ₪ ברכישת שתי סדנאות</a>
+        <a class="btn" href="#register" data-track="brief">להרשמה למעל המשימה</a>
       </div>
     </div>
   </div>
@@ -1676,56 +1744,56 @@ html body .circle h3{font-size:var(--fs-b)!important;line-height:1.3!important;f
     <div class="why-pin"><div class="why-box">
       <div class="why-sky" aria-hidden="true"><img src="assets/path-green.webp" alt="" loading="lazy"></div>
       <span class="why-cls" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
-      <img class="why-bal walker" src="assets/walker-yaela-g.webp" alt="" aria-hidden="true" width="654" height="1453" loading="lazy">
+      <img class="why-bal walker" src="assets/walker-yaela-g.webp?v=2" alt="" aria-hidden="true" width="654" height="1453" loading="lazy">
       <div class="why-title">
-        <h2 id="h-client">מלקוח לשותפות</h2>
-        <span class="script p">שימור לקוח · מסלול מתקדמות</span>
-        <p class="wdesc">מפרויקט בודד לעבודה רציפה, דרך היכרות שיוצרת יתרון. בשני מפגשי זום בקבוצה קטנה נכיר לעומק את עולם הלקוח ואת הפרויקט כולו, ונבנה זיכרון מקצועי שמחבר בין עבודות, עם אחריות וגבולות ברורים.</p>
+        <h2 id="h-client"><small class="kick">סדנת</small>מלקוח לשותפות</h2>
+        <span class="script p">בניית מעגל לקוחות · להתפתחות מקצועית ויציבות בפרנסה</span>
+        <p class="wdesc">מתחושת חוסר ודאות ומרדף אחרי פרויקטים למערכת יחסים מקצועית, יציבה ומלאת הערכה. בשני מפגשי זום בקבוצה קטנה נלמד איך לעבור מביצוע משימות נקודתיות להובלת שותפות מתמשכת: לבסס אמון עמוק מול הלקוח, ולבנות עבודה רציפה שמעניקה שקט וביטחון כלכלי.</p>
         <div class="acts"><a class="btn" href="#register" data-track="client">להרשמה</a></div>
       </div>
       <span class="for">הסדנה בשבילך אם</span>
-      <!-- טיוטה: לאשר את נקודות הכאב מול יעלה -->
       <div class="circles">
         <span class="track-line"></span><span class="track-mark" aria-hidden="true"></span>
-        <div class="circle"><h3>הפרויקט נמסר, ושם הקשר נגמר</h3><p>הלקוח מרוצה, אבל לא חוזר</p></div>
-        <div class="circle"><h3>כל עבודה מתחילה מאפס</h3><p>שוב להסביר, שוב לשכנע, שוב לנחש</p></div>
-        <div class="circle"><h3>מול הלקוח את מגיבה במקום להוביל</h3><p>ההחלטות נופלות עלייך והגבולות זזים</p></div>
-        <div class="circle"><h3>את רוצה לקוחות שנשארים שנים</h3><p>ושפה עיצובית שמתפתחת איתם</p></div>
+        <div class="circle"><h3>מסרת פרויקט מוצלח,</h3><p>אך הקשר נגמר ברגע שהקובץ נשלח</p></div>
+        <div class="circle"><h3>כל עבודה מתחילה מאפס,</h3><p>ושוב צריך לנחש, להסביר ולהוכיח מחדש</p></div>
+        <div class="circle"><h3>את מוצאת את עצמך רק מבצעת,</h3><p>במקום להוביל שפה עיצובית</p></div>
+        <div class="circle"><h3>את רוצה שקט וביטחון כלכלי</h3><p>ולקוחות שנשארים שנים</p></div>
       </div>
     </div></div>
   </div>
   <div class="meets" id="client-meets">
-    <div class="reveal"><h2>מה יהיה בסדנה</h2><p class="mdate"><b>שלישי · 22.12 ו־29.12</b><span>20:00 עד 21:40 · בזום</span></p></div>
+    <div class="reveal"><h2>מה נלמד בסדנה</h2><p class="mdate"><b>חמישי · 28.1 ו־4.2</b><span>20:00 עד 21:40 · בזום</span></p></div>
     <div class="mz">
       <div class="mz-mid"><div class="cmp" role="img" aria-label="המצפן של יעלה"><img src="assets/compass-base-g.webp" alt="" loading="lazy"><img class="rot" src="assets/compass-rotor-g.webp" alt="" loading="lazy"></div></div>
       <svg class="mz-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M76 22.3H68L61 31"/><path d="M70 77.8H66L60.6 69"/><path d="M24 22.3H32L39 31"/><path d="M30 77.8H34L39.4 69"/></svg>
-      <div class="mz-it rt reveal"><figure class="mz-card"><span class="dmi"><img src="assets/ill-26-t-g.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>היכרות עם עולם הלקוח</h3><p>הבנה של העולם והמערכת שבהם הלקוח פועל</p></div></div>
-      <div class="mz-it rb reveal"><figure class="mz-card"><span class="dmi"><img src="assets/ill-3-t-g.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>זיכרון מקצועי</h3><p>ידע שמצטבר מפרויקט לפרויקט ומשרת גם את הבא</p></div></div>
-      <div class="mz-it lt reveal"><figure class="mz-card"><span class="dmi"><img src="assets/fig-21-t-g.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>שפה עיצובית מתמשכת</h3><p>שפה עיצובית שמתפתחת יחד עם הלקוח</p></div></div>
-      <div class="mz-it lo reveal"><figure class="mz-card"><span class="dmi"><img src="assets/fig-25-t-g.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>להוביל משוב והחלטות</h3><p>דרך להוביל משוב והחלטות, עם אחריות וגבולות</p></div></div>
+      <div class="mz-it rt reveal"><figure class="mz-card"><span class="dmi"><img src="assets/mz2-01.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>תקשורת שבונה שותפות</h3><p>להוביל שיח מקצועי שמחליף סבבי תיקונים בעבודה פורייה ומדויקת</p></div></div>
+      <div class="mz-it rb reveal"><figure class="mz-card"><span class="dmi"><img src="assets/mz2-02.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>להפוך לנכס שהלקוח לא מחליף</h3><p>לבנות זיכרון מקצועי מול הארגון, ולהפוך לכתובת הטבעית והבלעדית לכל פרויקט</p></div></div>
+      <div class="mz-it lt reveal"><figure class="mz-card"><span class="dmi"><img src="assets/mz2-03.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>לשמור על עקביות חזותית</h3><p>לנהל את שפת המותג לאורך זמן, ולהתאים אותה לכל פורמט ותוצר חדש</p></div></div>
+      <div class="mz-it lo reveal"><figure class="mz-card"><span class="dmi"><img src="assets/mz2-04.webp" alt="" loading="lazy"></span><i class="mz-dot" aria-hidden="true"></i></figure><div class="mz-txt"><h3>מפרויקט בודד לעבודה רציפה</h3><p>לבנות מעגל לקוחות ולבסס יציבות עסקית לאורך זמן</p></div></div>
     </div>
   </div>
   <div class="order">
     <div class="band" aria-hidden="true"><div class="o-cls"><i></i><i></i><i></i><i></i><i></i></div></div>
-    <div class="sec-head reveal"><h2>בסוף הסדנה</h2><span class="script">מה לוקחים איתך הביתה</span></div>
+    <div class="sec-head reveal"><h2>מה לוקחים הביתה</h2></div>
     <div class="card reveal">
       <div class="res"><ul>
-        <li><span class="dia"></span>הבנה של העולם והמערכת שבהם הלקוח פועל</li>
-        <li><span class="dia"></span>ידע שמצטבר מפרויקט לפרויקט ומשרת גם את הבא</li>
-        <li><span class="dia"></span>שפה עיצובית מתמשכת שמתפתחת יחד עם הלקוח</li>
-        <li><span class="dia"></span>דרך להוביל משוב והחלטות, עם אחריות וגבולות</li>
+        <li><span class="dia"></span>שיח מקצועי שמחליף סבבי תיקונים בהובלה משותפת</li>
+        <li><span class="dia"></span>בניית זיכרון מקצועי שמבסס אותך ככתובת הטבעית של הארגון</li>
+        <li><span class="dia"></span>דרך לפענוח כוונת הלקוח ותרגומה לקו חזותי עקבי</li>
+        <li><span class="dia"></span>מודל עבודה שמייצר מעגל לקוחות קבוע ושקט כלכלי</li>
       </ul></div>
       <div class="inc">
-        <span class="tag">שימור לקוח</span>
-        <h3>מה כלול</h3>
+        <h3>מה כלול בסדנה</h3>
         <ul>
-          <li><span class="dia"></span>שני מפגשי זום, 22.12 ו־29.12</li>
+          <li><span class="dia"></span>שני מפגשי זום, 28.1 ו־4.2</li>
           <li><span class="dia"></span>20:00 עד 21:40</li>
           <li><span class="dia"></span>קבוצה קטנה, עם מקום לשאלות</li>
           <li><span class="dia"></span>בלי תוכנות ובלי סקיצות במפגש</li>
+          <li><span class="dia"></span>הקלטות וצ׳קליסט ליישום מיידי</li>
         </ul>
         <p class="price"><b>680</b><span>₪ כולל מע״מ</span></p>
-        <a class="btn green" href="#register" data-track="client">להרשמה לשימור לקוח</a>
+        <a class="deal" href="#register">מחיר סדנה 550 ₪ ברכישת שתי סדנאות</a>
+        <a class="btn green" href="#register" data-track="client">להרשמה למלקוח לשותפות</a>
       </div>
     </div>
   </div>
@@ -1740,6 +1808,7 @@ html body .circle h3{font-size:var(--fs-b)!important;line-height:1.3!important;f
       <figure class="vd"><div class="vf"><video preload="none" playsinline poster="assets/video/demo-poster.jpg" aria-label="סרטון המלצה 1"><source src="assets/video/demo.mp4" type="video/mp4"></video><button class="vplay" type="button" aria-label="הפעלת הסרטון"></button></div><figcaption><b>נועה לוי</b><span>מעצבת גרפית עצמאית · משתתפת בפיילוט</span></figcaption></figure>
       <figure class="vd"><div class="vf"><video preload="none" playsinline poster="assets/video/demo-poster.jpg" aria-label="סרטון המלצה 2"><source src="assets/video/demo.mp4" type="video/mp4"></video><button class="vplay" type="button" aria-label="הפעלת הסרטון"></button></div><figcaption><b>מיכל כהן</b><span>מעצבת בסטודיו · משתתפת בפיילוט</span></figcaption></figure>
       <figure class="vd on"><div class="vf"><video preload="none" playsinline poster="assets/video/demo-poster.jpg" aria-label="סרטון המלצה 3"><source src="assets/video/demo.mp4" type="video/mp4"></video><button class="vplay" type="button" aria-label="הפעלת הסרטון"></button></div><figcaption><b>שירה אברהם</b><span>מעצבת בתחילת הדרך · משתתפת בפיילוט</span></figcaption></figure>
+      <figure class="vd vd-q"><div class="vf"><blockquote class="vq"><p>הסדנה הזו הייתה בדיוק מה שהייתי צריכה כדי לצאת מהתקיעות המוכרת מול דף ריק. הטיפים שקיבלנו מיעלה הפכו את תהליך העבודה להרבה יותר זורם ופחות מלחיץ. ממש נהניתי מהאווירה הקלילה ומזה שכל המפגש היה ממוקד ופרקטי לחלוטין. מרגישה שאני חוזרת לעבוד על פרויקטים חדשים עם הרבה יותר ביטחון וכלים מעשיים בכיס. ממליצה בחום לכל מעצב או מעצבת שמרגישים תקועים ורוצים לרענן את הגישה שלהם ליצירה.</p></blockquote></div><figcaption><b>תניר אייזקס</b><span>מעצבת · משתתפת בסדנת ״מעל המשימה״</span></figcaption></figure>
       <figure class="vd"><div class="vf"><video preload="none" playsinline poster="assets/video/demo-poster.jpg" aria-label="סרטון המלצה 4"><source src="assets/video/demo.mp4" type="video/mp4"></video><button class="vplay" type="button" aria-label="הפעלת הסרטון"></button></div><figcaption><b>טל פרידמן</b><span>מעצבת מותגים · משתתפת בפיילוט</span></figcaption></figure>
       <figure class="vd"><div class="vf"><video preload="none" playsinline poster="assets/video/demo-poster.jpg" aria-label="סרטון המלצה 5"><source src="assets/video/demo.mp4" type="video/mp4"></video><button class="vplay" type="button" aria-label="הפעלת הסרטון"></button></div><figcaption><b>רוני שגיא</b><span>מעצבת בצוות שיווק · משתתפת בפיילוט</span></figcaption></figure>
     </div>
@@ -1760,14 +1829,14 @@ html body .circle h3{font-size:var(--fs-b)!important;line-height:1.3!important;f
 
 <!-- 7. פוטר: הרשמה עם בחירת מסלול -->
 <footer class="foot" id="register" aria-labelledby="h-reg">
-    <div class="sec-head reveal" style="position:relative;z-index:2"><span class="script">השביל מתחיל כאן</span><h2 id="h-reg">בחרי מסלול ושמרי מקום</h2></div>
+    <div class="sec-head reveal" style="position:relative;z-index:2"><span class="script">השביל מתחיל כאן</span><h2 id="h-reg">בחרי סדנה ושמרי מקום</h2></div>
   <p class="lead" style="position:relative;z-index:2">אפשר להירשם לסדנה אחת, או לשתיהן יחד ולחסוך 260&nbsp;₪. שאלה לפני? <a href="https://wa.me/972528449567" target="_blank" rel="noopener">כתבי לי בוואטסאפ</a></p>
   <!-- TODO: לחבר לספק הסליקה -->
   <form class="form reveal" action="thanks.html" method="get">
     <fieldset class="opts">
       <legend>לאיזו סדנה נרשמים?</legend>
-      <label class="opt"><input type="radio" name="track" value="brief" required><span class="nm">פיצוח בריף<span>למתחילות · 12.11 ו־19.11</span></span><span class="pr">680 ₪</span></label>
-      <label class="opt"><input type="radio" name="track" value="client"><span class="nm">שימור לקוח<span>למתקדמות · 22.12 ו־29.12</span></span><span class="pr">680 ₪</span></label>
+      <label class="opt"><input type="radio" name="track" value="brief" required><span class="nm">מעל המשימה<span>פיצוח בריף · לכיוון עיצובי ברור</span><span>תאריכים: 7.1 ו־14.1</span></span><span class="pr">680 ₪</span></label>
+      <label class="opt"><input type="radio" name="track" value="client"><span class="nm">מלקוח לשותפות<span>בניית מעגל לקוחות · ליציבות בפרנסה והתפתחות מקצועית</span><span>תאריכים: 28.1 ו־4.2</span></span><span class="pr">680 ₪</span></label>
       <label class="opt"><input type="radio" name="track" value="both"><span class="nm">שתי הסדנאות יחד<span>ארבעה מפגשים, חוסכות 260 ₪</span></span><span class="pr">1,100 ₪</span></label>
     </fieldset>
     <div class="fields">
@@ -1776,7 +1845,7 @@ html body .circle h3{font-size:var(--fs-b)!important;line-height:1.3!important;f
       <label>אימייל<input name="email" type="email" autocomplete="email" dir="ltr" required></label>
     </div>
     <label class="agree"><input type="checkbox" name="ok" required><span>קראתי ואני מסכימה ל<a href="legal.html#terms" target="_blank">תקנון ולמדיניות הביטולים</a></span></label>
-    <div class="send"><button class="btn" type="submit">להמשך לתשלום</button><span>המחירים כוללים מע״מ</span></div>
+    <div class="send"><button class="btn" type="submit">להמשך לתשלום</button><span>המחירים כוללים מע״מ · הוצאה מוכרת</span></div>
   </form>
   <div class="bottom">
     <a class="lg" href="#top" aria-label="לראש הדף"><img src="assets/logo.webp" alt="יעלה: עיצוב בהקשבה תחילה" width="970" height="568" loading="lazy"></a>
@@ -1811,7 +1880,7 @@ html body .circle h3{font-size:var(--fs-b)!important;line-height:1.3!important;f
         var y0=ctr[0].y,y1=ctr[ctr.length-1].y,q=Math.min(1,Math.max(0,(innerHeight*.62-(hb.top+y0))/(y1-y0))),y=y0+q*(y1-y0);
         line.style.cssText='top:'+y0+'px;height:'+(y-y0)+'px';mk.style.cssText='top:'+y+'px';
         cs.forEach(function(c,i){c.classList.toggle('on',y>=ctr[i].y-40)});trk(w,host,hb,cs,false,function(i){return (y-ctr[i].y)/(ctr[i+1].y-ctr[i].y)});return}
-      var r=w.getBoundingClientRect(),span=w.offsetHeight-innerHeight,p=Math.min(1,Math.max(0,(-r.top+60)/Math.max(1,span*.85)));
+      var r=w.getBoundingClientRect(),span=w.offsetHeight-innerHeight,p=Math.min(1,Math.max(0,(-r.top+60)/Math.max(1,span*.7)));
       var x0=ctr[0].x,x1=ctr[ctr.length-1].x,x=x0+p*(x1-x0),cy=ctr[0].y;
       line.style.cssText='top:'+cy+'px;right:'+x0+'px;width:'+(x-x0)+'px';mk.style.cssText='top:'+cy+'px;right:'+x+'px';
       cs.forEach(function(c,i){c.classList.toggle('on',x>=ctr[i].x-2)});
@@ -1844,7 +1913,7 @@ html body .circle h3{font-size:var(--fs-b)!important;line-height:1.3!important;f
 <script>/* m=4: ציור החצים לפי הגודל בפועל (בלי עיוות) */(function(){var A=[[60,30,66,10,74.5,17],[61,68,66,84,69,71],[40,30,34,10,25.5,17],[39,68,34,84,31,71]];function draw(){document.querySelectorAll(".mz-lines").forEach(function(svg){var W=svg.clientWidth,H=svg.clientHeight;if(!W||!H)return;svg.setAttribute("viewBox","0 0 "+W+" "+H);svg.removeAttribute("preserveAspectRatio");var h="";A.forEach(function(a){var x0=a[0]*W/100,y0=a[1]*H/100,x1=a[2]*W/100,y1=a[3]*H/100,x2=a[4]*W/100,y2=a[5]*H/100,g=Math.atan2(y2-y1,x2-x1),L=Math.max(14,W*.015);var p=function(d){return (x2+L*Math.cos(g+Math.PI+d)).toFixed(1)+" "+(y2+L*Math.sin(g+Math.PI+d)).toFixed(1)};h+="<path d=\"M"+x0+" "+y0+"Q"+x1+" "+y1+" "+x2+" "+y2+"\"/><path d=\"M"+p(-.5)+"L"+x2+" "+y2+"L"+p(.5)+"\"/>"});svg.innerHTML=h})}addEventListener("resize",draw);addEventListener("load",draw);draw()})();</script>
 <script>/* המחט פונה אל העכבר (רק במכשירים עם עכבר) */(function(){if(!matchMedia("(hover:hover) and (pointer:fine)").matches||matchMedia("(prefers-reduced-motion:reduce)").matches)return;var rs=[].slice.call(document.querySelectorAll(".cmp .rot"));if(!rs.length)return;var H=document.documentElement,last={},raf=0,ev;function up(){raf=0;var any=false;rs.forEach(function(r){var m=r.closest(".meets").getBoundingClientRect();if(ev.clientY<m.top||ev.clientY>m.bottom)return;any=true;var b=r.getBoundingClientRect(),a=Math.atan2(ev.clientY-(b.top+b.height/2),ev.clientX-(b.left+b.width/2))*180/Math.PI+90,p=last[r.src]||0,d=((a-p)%360+540)%360-180;last[r.src]=p+d;r.style.rotate=last[r.src]+"deg"});H.classList.toggle("cmp-live",any);if(!any)rs.forEach(function(r){r.style.rotate=""})}addEventListener("mousemove",function(e){ev=e;if(!raf)raf=requestAnimationFrame(up)},{passive:true})})()</script>
 <script>/* המלצות בווידאו: מרכוז הסרטון הפעיל, חצים, נקודה בפס, הפעלה בלחיצה */(function(){var w=document.querySelector(".vids");if(!w)return;var t=w.querySelector(".vtrack"),it=[].slice.call(t.children),bar=w.querySelector(".vbar i"),pv=w.querySelector(".vprev"),nx=w.querySelector(".vnext"),i=it.findIndex(function(e){return e.classList.contains("on")});if(i<0)i=0;
-function stop(){it.forEach(function(e){var v=e.querySelector("video");if(!v.paused)v.pause();v.controls=false;e.classList.remove("playing")})}
+function stop(){it.forEach(function(e){var v=e.querySelector("video");if(v){if(!v.paused)v.pause();v.controls=false}e.classList.remove("playing")})}
 function go(n,anim){i=Math.max(0,Math.min(it.length-1,n));stop();it.forEach(function(e,k){e.classList.toggle("on",k===i)});bar.style.width=((i+1)/it.length*100)+"%";pv.disabled=i===0;nx.disabled=i===it.length-1;place()}
 function place(){var e=it[i],W=w.clientWidth,on=e.classList.contains("on");var off=0;var gap=parseFloat(getComputedStyle(t).columnGap)||0;
  /* חישוב לפי הרוחב הסופי (לא תוך כדי אנימציה): הסרטון הפעיל רחב יותר */
@@ -1855,7 +1924,7 @@ function place(){var e=it[i],W=w.clientWidth,on=e.classList.contains("on");var o
  var tx=rtl?(c-W/2):(W/2-c);t.style.translate=tx+"px 0"}
 function finalW(on){var vw=innerWidth;if(vw<=760)return vw*(on?.66:.46);return Math.max(on?240:170,vw*(on?.21:.15))}
 function measure(k){return finalW(k===i)}
-it.forEach(function(e,k){e.querySelector(".vf").addEventListener("click",function(){if(k!==i){go(k);return}var v=e.querySelector("video");if(!v.querySelector("source")&&!v.src)return;if(v.paused){v.controls=true;v.play();e.classList.add("playing")}})});
+it.forEach(function(e,k){e.querySelector(".vf").addEventListener("click",function(){if(k!==i){go(k);return}var v=e.querySelector("video");if(!v)return;if(!v.querySelector("source")&&!v.src)return;if(v.paused){v.controls=true;v.play();e.classList.add("playing")}})});
 pv.addEventListener("click",function(){go(i-1)});nx.addEventListener("click",function(){go(i+1)});
 addEventListener("resize",place);
 var sx=null;t.addEventListener("touchstart",function(e){sx=e.touches[0].clientX},{passive:true});t.addEventListener("touchend",function(e){if(sx==null)return;var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>40)go(i+(d>0?1:-1));sx=null});
