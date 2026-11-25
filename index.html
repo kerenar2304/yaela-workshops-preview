@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<script>/* וריאציות הירו במסך רחב: ברירת מחדל 3 (אושרה 25.11); ?hw=1 גל רדוד, ?hw=2 הירו בגובה המסך, ?hw=0 המקור */(function(){var q=new URLSearchParams(location.search).get('hw')||'3';document.documentElement.setAttribute('data-hw',q)})();</script>
+<script>/* וריאציות הירו במסך רחב: ברירת מחדל 3 (אושרה 25.11); ?hw=1 גל רדוד, ?hw=2 הירו בגובה המסך, ?hw=0 המקור */(function(){var q=new URLSearchParams(location.search).get('hw')||'3';document.documentElement.setAttribute('data-hw',q);var ga=new URLSearchParams(location.search).get('ga')||'2';document.documentElement.setAttribute('data-ga',ga)})();</script>
 <style>
 /* hw=1: רק הגל נעשה רדוד במסכים רחבים (עומק עד 330px במקום 24.4vw) */
 @media (min-width:1441px){html[data-hw="1"] .kbg{border-radius:0 0 50% 50%/0 0 min(24.4vw,330px) min(24.4vw,330px)}}
@@ -35,9 +35,18 @@
  html[data-hw="3"] .ksub{width:calc(406.5*var(--f));line-height:calc(28.3*var(--f));font-size:max(16px,calc(16.6*var(--f)))}
  html[data-hw="3"] .kctas .btn{font-size:max(16px,calc(16.6*var(--f)));min-height:max(44px,calc(44.9*var(--f)))}
 }
+
+/* ga=2: חצי הגלריה על גבי העבודות משני הצדדים, העצירה נשארת למטה */
+html[data-ga="2"][data-g="3"] .tun-arr{top:calc(50% - 35*var(--f));bottom:auto;left:auto;translate:0 -50%;width:56px;height:56px;box-shadow:0 10px 24px -10px rgba(31,58,39,.55)}
+html[data-ga="2"][data-g="3"] .tun-prev{right:var(--gut)}
+html[data-ga="2"][data-g="3"] .tun-next{left:var(--gut)}
+html[data-ga="2"] .tun-arr svg{width:20px;height:20px}
+@media (max-width:760px){html[data-ga="2"][data-g="3"] .tun-arr{top:calc(50% - 28px);width:44px;height:44px}html[data-ga="2"][data-g="3"] .tun-prev{right:10px}html[data-ga="2"][data-g="3"] .tun-next{left:10px}}
+/* חץ בכפתורים: SVG ממורכז במקום התו ←, שישב בדיוק באמצע העיגול */
+html .btn::before{content:"";background:var(--cream) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6' fill='none' stroke='%230d0c11' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/56% no-repeat}
 </style>
 <title>יעלה יהב | סדנאות לעיצוב: מבריף ראשון ללקוח קבוע</title>
-<meta name="description" content="שתי סדנאות זום בקבוצה קטנה למעצבות: פיצוח בריף למתחילות ושימור לקוח למתקדמות, עם יעלה יהב.">
+<meta name="description" content="שתי סדנאות זום בקבוצה קטנה למעצבות: מעל המשימה, פיצוח בריף לכיוון עיצובי ברור, ומלקוח לשותפות, בניית מעגל לקוחות. עם יעלה יהב.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0d0c11">
 <link rel="icon" href="assets/logo.webp">
@@ -1543,7 +1552,7 @@ html body .kwork h2{font-size:max(40px,3.9vw)!important;line-height:1.05!importa
   <div class="kc kc" aria-hidden="true"><img src="assets/v5/k-cloud.webp" alt=""></div>
   <h1 id="h-hero">מבריף ראשון<br>ללקוח קבוע</h1>
   <p class="ksub">שתי סדנאות שיעזרו לכם לגבש כיוון עיצובי ברור ולבנות קשר מקצועי שממשיך לפרויקט הבא.</p>
-  <div class="kctas"><a class="btn" href="#brief">מעל המשימה - למתחילות</a><a class="btn green" href="#client">מלקוח לשותפות - למתקדמות</a></div>
+  <div class="kctas"><a class="btn" href="#brief">מעל המשימה</a><a class="btn green" href="#client">מלקוח לשותפות</a></div>
   <div class="kc kc" aria-hidden="true"><img src="assets/v5/k-cloud.webp" alt=""></div>
   <span class="kshadow" aria-hidden="true"></span>
   <div class="kpath" aria-hidden="true"><img src="assets/v5/k-path.webp" alt=""></div>
@@ -1561,17 +1570,16 @@ html body .kwork h2{font-size:max(40px,3.9vw)!important;line-height:1.05!importa
     <li class="w w3" data-title="זהות קהילתית: מיתוג מערך צח״י" data-subtitle="מועצה אזורית חבל לכיש" data-full="assets/gallery/full/lachish-tzachi.webp?v=5"><figure><div class="ph"><img src="assets/gallery/lachish-tzachi.webp?v=5" alt="מחברות ועדכון וואטסאפ בעיצוב היחידה לעבודה קהילתית ומערך צח״י של חבל לכיש" width="1200" height="900" loading="lazy"></div><figcaption><b>70 שנה, דגל</b>חבל לכיש</figcaption></figure></li>
     <li class="w w4" data-title="זהות ליבה: קמפיין חגיגות 70 שנה" data-subtitle="מועצה אזורית חבל לכיש" data-full="assets/gallery/full/lachish70.webp"><figure><div class="ph"><img src="assets/gallery/lachish70.webp" alt="דגל 70 שנה לחבל לכיש מתנופף על רקע שמיים" width="1200" height="900" loading="lazy"></div><figcaption><b>70 שנה, דגל</b>חבל לכיש</figcaption></figure></li>
     <li class="w w5" data-title="שפה ציבורית: שילוט ומרחב ציבורי" data-subtitle="עיריית עפולה, פארק הרכבת" data-full="assets/gallery/full/park.webp?v=5"><figure><div class="ph"><img src="assets/gallery/park.webp?v=5" alt="דגלי פארק הרכבת בשחור ולבן לאורך טיילת מוארת בערב" width="1200" height="900" loading="lazy"></div><figcaption><b>שילוט</b>פארק הרכבת</figcaption></figure></li>
+    <li class="w w5b" data-title="שפה ציבורית: שילוט ומרחב ציבורי" data-subtitle="עיריית עפולה, פארק הרכבת" data-full="assets/gallery/full/park-sign.webp"><figure><div class="ph"><img src="assets/gallery/park-sign.webp" alt="שלט עגול של פארק הרכבת על קיר האבן של התחנה" width="1200" height="900" loading="lazy"></div><figcaption><b>שילוט</b>פארק הרכבת</figcaption></figure></li>
     <li class="w w6" data-title="שפה ציבורית: קמפיין מופעים ואירועי שיא" data-subtitle="עיריית עפולה, קיץ Extra" data-full="assets/gallery/full/afula-extra.webp?v=5"><figure><div class="ph"><img src="assets/gallery/afula-extra.webp?v=5" alt="מסך מחשב עם פוסטרים של קיץ Extra בעפולה, סאבלימינל והצל וששון שאולוב" width="1200" height="900" loading="lazy"></div><figcaption><b>70 שנה, דגל</b>חבל לכיש</figcaption></figure></li>
     <li class="w w7" data-title="שפה ציבורית: שילוט חוצות ופרסום עירוני" data-subtitle="עיריית עפולה, קיץ פנומנל" data-full="assets/gallery/full/phenomenal.webp?v=5"><figure><div class="ph"><img src="assets/gallery/phenomenal.webp?v=5" alt="פוסטר ארט לוזרוב של קיץ פנומנל על קיר בשדרה בשקיעה" width="1200" height="900" loading="lazy"></div><figcaption><b>קיץ פנומנל</b>עיריית עפולה</figcaption></figure></li>
     <li class="w w8" data-title="שפה ציבורית: אירועי הוקרה וטקסים רשמיים" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula-ceremony.webp?v=3"><figure><div class="ph"><img src="assets/gallery/afula-ceremony.webp?v=4" alt="שקף פתיחה לטקס יקיר העיר של עפולה, עצמאות 2024" width="1200" height="900" loading="lazy"></div><figcaption><b>טקס יקיר העיר</b>עיריית עפולה</figcaption></figure></li>
-    <li class="w w9" data-title="זיכרון מותגי: חגיגות עצמאות 74" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula74.webp?v=5"><figure><div class="ph"><img src="assets/gallery/afula74.webp?v=5" alt="מחשב נייד עם עמוד הפייסבוק של עיריית עפולה ובאנר חגיגות עצמאות 74" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 74</b>עיריית עפולה</figcaption></figure></li>
-    <li class="w w10" data-title="זיכרון מותגי: חגיגות עצמאות 74, שילוט" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula74-banner.webp?v=5"><figure><div class="ph"><img src="assets/gallery/afula74-banner.webp?v=5" alt="באנר חגיגות עצמאות 74 של עפולה מתוח על חזית בניין" width="1200" height="900" loading="lazy"></div><figcaption><b>70 שנה, דגל</b>חבל לכיש</figcaption></figure></li>
+    <li class="w w10" data-title="זיכרון מותגי: חגיגות עצמאות 74" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula74-banner.webp?v=5"><figure><div class="ph"><img src="assets/gallery/afula74-banner.webp?v=5" alt="באנר חגיגות עצמאות 74 של עפולה מתוח על חזית בניין" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 74</b>עיריית עפולה</figcaption></figure></li>
     <li class="w w11" data-title="זיכרון מותגי: חגיגות עצמאות 75" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula75.webp"><figure><div class="ph"><img src="assets/gallery/afula75.webp" alt="במת חגיגות העצמאות ה-75 של עפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 75</b>עיריית עפולה</figcaption></figure></li>
     <li class="w w12" data-title="זיכרון מותגי: חגיגות עצמאות 76" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula76-shirt.webp"><figure><div class="ph"><img src="assets/gallery/afula76-shirt.webp" alt="חולצה ממותגת של חגיגות העצמאות ה-76 של עפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 76</b>עיריית עפולה</figcaption></figure></li>
     <li class="w w13" data-title="זיכרון מותגי: חגיגות עצמאות 77" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula77.webp"><figure><div class="ph"><img src="assets/gallery/afula77.webp" alt="פוסטר חגיגות העצמאות ה-77 של עפולה בעמוד פרסום ברחוב עם דגלי ישראל" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 77</b>עיריית עפולה</figcaption></figure></li>
     <li class="w w14" data-title="זיכרון מותגי: עצמאות 78, שילוט ומכוונים" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula78-sign.webp"><figure><div class="ph"><img src="assets/gallery/afula78-sign.webp" alt="שלט חוצות של חגיגות העצמאות ה-78 בעפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 78, שילוט</b>עיריית עפולה</figcaption></figure></li>
     <li class="w w15" data-title="זיכרון מותגי: עצמאות 78, תכנון מוצר" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula78-kid.webp"><figure><div class="ph"><img src="assets/gallery/afula78-kid.webp" alt="ילדה בחולצת חגיגות העצמאות ה-78 של עפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 78, חולצות</b>עיריית עפולה</figcaption></figure></li>
-    <li class="w w16" data-title="זיכרון מותגי: עצמאות 78, כובעים" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula78-cap.webp"><figure><div class="ph"><img src="assets/gallery/afula78-cap.webp" alt="כובע ממותג של חגיגות העצמאות ה-78 של עפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 78, כובעים</b>עיריית עפולה</figcaption></figure></li>
     <li class="w w17" data-title="זיכרון מותגי: חגיגות עצמאות" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula-parade.webp"><figure><div class="ph"><img src="assets/gallery/afula-parade.webp" alt="ילדים בחולצות חגיגות העצמאות של עפולה בתהלוכה ברחוב" width="1200" height="900" loading="lazy"></div><figcaption><b>חגיגות עצמאות</b>עיריית עפולה</figcaption></figure></li>
     <li class="w w18" data-title="נרטיב חזותי: ספר מורשת ותיעוד מבצעי" data-subtitle="צה״ל, אוגדה 98" data-full="assets/gallery/full/book98.webp"><figure><div class="ph"><img src="assets/gallery/book98.webp" alt="כפולת עמודים מספר המורשת של אוגדה 98" width="1200" height="900" loading="lazy"></div><figcaption><b>ספר מורשת, אוגדה 98</b>צה״ל</figcaption></figure></li>
     <li class="w w19" data-title="נרטיב חזותי: ספר מורשת קרב" data-subtitle="עמותת שריון, גדוד מלר" data-full="assets/gallery/full/book-meler.webp"><figure><div class="ph"><img src="assets/gallery/book-meler.webp" alt="כריכת הספר מה שצריך עושים, סיפורו של גדוד מלר" width="1200" height="900" loading="lazy"></div><figcaption><b>ספר גדוד מלר</b>צה״ל</figcaption></figure></li>
@@ -1701,7 +1709,7 @@ html body .kwork h2{font-size:max(40px,3.9vw)!important;line-height:1.05!importa
   </div>
   <div class="kab-txt">
     <h2 id="h-about"><span class="l1">נעים מאוד,</span><span class="l2">אני <img class="kab-logo" src="assets/v5/logo-mark.webp" alt="יעלה" width="940" height="414"></span></h2>
-    <p class="kab-lead">בהקשבה תחילה מדייקים את ליבת העשייה לעיצוב ברור ומדויק.</p>
+    <p class="kab-lead">בהקשבה תחילה אני מדייקת את ליבת העשייה לעיצוב ברור ומדויק.</p>
     <div class="kab-cols">
       <p>פיתחתי את שיטת המצפן כדי לענות על הפער שבין הלימודים למציאות בשטח: שם, מול הלקוחות, החוטים מתפזרים והעבודה הופכת מתישה ומלאת סימני שאלה. הבנתי שאנחנו עובדים קודם כל מול אנשים, ויצרתי מתודולוגיה שאוספת את מה שנפרם, מחלצת את גרעין האמת מתוך בריף מבולבל ומייצרת שותפות בטוחה.</p>
       <p>היכולת הזו נשענת על מעל 1,600 שעות של סדנאות, ליווי ותהליכי התפתחות אישית שעברתי בעצמי. מרחב שלימד אותי מבפנים להקשיב בין השורות, להכיל מורכבות רגשית, ולהפוך כל בלבול לשקט מקצועי שנותן מקום בטוח ללקוחות ולמעצבים שאני מלווה.</p>
