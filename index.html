@@ -3,6 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script>/* וריאציות הירו במסך רחב: ברירת מחדל 3 (אושרה 25.11); ?hw=1 גל רדוד, ?hw=2 הירו בגובה המסך, ?hw=0 המקור */(function(){var q=new URLSearchParams(location.search).get('hw')||'3';document.documentElement.setAttribute('data-hw',q)})();</script>
+<style>
+/* hw=1: רק הגל נעשה רדוד במסכים רחבים (עומק עד 330px במקום 24.4vw) */
+@media (min-width:1441px){html[data-hw="1"] .kbg{border-radius:0 0 50% 50%/0 0 min(24.4vw,330px) min(24.4vw,330px)}}
+/* hw=2: ההירו נמדד גם לפי גובה המסך: לא גבוה ממסך אחד. הקומפוזיציה ממורכזת, הרקע נשאר ברוחב מלא, הגל רדוד באותו יחס */
+@media (min-width:761px){
+ html[data-hw="2"] .hdr{height:min(8.5vw,calc(8.5vh*1.43));min-height:96px}
+ html[data-hw="2"] .logo img{width:min(6.51vw,10vh)}
+ html[data-hw="2"] .khero{--f:min(calc(100vw/1325),calc(100vh/776.1));width:calc(1325*var(--f));margin-inline:auto}
+ html[data-hw="2"] .kbg{width:100vw;left:calc((1325*var(--f) - 100vw)/2);height:calc(650*var(--f));border-radius:0 0 50% 50%/0 0 calc(323*var(--f)) calc(323*var(--f))}
+ html[data-hw="2"] .kbg img{object-position:50% 55%}
+ html[data-hw="2"] .khero{--fs-b:max(16px,calc(15.24*var(--f)))}
+ html[data-hw="2"] .hdr{--fs-b:max(16px,min(1.15vw,1.96vh))}
+ html[data-hw="2"] .ksub{line-height:1.6!important}
+ html[data-hw="2"] .khero h1{font-size:calc(94.9*var(--f))}
+ html[data-hw="2"] .ksub{width:calc(406.5*var(--f));line-height:calc(28.3*var(--f));font-size:max(16px,calc(16.6*var(--f)))}
+ html[data-hw="2"] .kctas .btn{font-size:max(16px,calc(16.6*var(--f)));min-height:max(44px,calc(44.9*var(--f)))}
+}
+/* hw=3: אמצע הדרך: נמדד לפי הגובה בעדינות (100vh/560), הקומפוזיציה רחבה, הרקע חתוך מלמטה כמו במקור */
+@media (min-width:761px){
+ html[data-hw="3"] .hdr{height:min(8.5vw,16vh);min-height:96px}
+ html[data-hw="3"] .logo img{width:min(6.51vw,13.8vh)}
+ html[data-hw="3"] .khero{--f:min(calc(100vw/1325),calc(100vh/560));width:min(100%,calc(1325*var(--f)));margin-inline:auto}
+ html[data-hw="3"] .kbg{width:100vw;left:calc(50% - 50vw);height:calc(650*var(--f));border-radius:0 0 50% 50%/0 0 calc(323*var(--f)) calc(323*var(--f))}
+ html[data-hw="3"] .kbg img{object-position:50% 100%}
+ html[data-hw="3"] .khero{--fs-b:max(16px,calc(15.24*var(--f)))}
+ html[data-hw="3"] .hdr{--fs-b:max(16px,min(1.15vw,2.72vh))}
+ html[data-hw="3"] .ksub{line-height:1.6!important}
+ html[data-hw="3"] .khero h1{font-size:calc(94.9*var(--f))}
+ html[data-hw="3"] .ksub{width:calc(406.5*var(--f));line-height:calc(28.3*var(--f));font-size:max(16px,calc(16.6*var(--f)))}
+ html[data-hw="3"] .kctas .btn{font-size:max(16px,calc(16.6*var(--f)));min-height:max(44px,calc(44.9*var(--f)))}
+}
+</style>
 <title>יעלה יהב | סדנאות לעיצוב: מבריף ראשון ללקוח קבוע</title>
 <meta name="description" content="שתי סדנאות זום בקבוצה קטנה למעצבות: פיצוח בריף למתחילות ושימור לקוח למתקדמות, עם יעלה יהב.">
 <meta name="robots" content="noindex">
