@@ -1481,8 +1481,8 @@ html body .circle h3{font-size:var(--fs-b)!important;line-height:1.3!important;f
 .hdr .logo{position:relative}
 .hdr .logo::before{content:"";position:absolute;inset:-45% -40%;border-radius:50%;background:radial-gradient(closest-side,rgba(243,241,234,.96),rgba(243,241,234,.8) 55%,rgba(243,241,234,0));z-index:-1;pointer-events:none}
 /* תיקון לקוחה 3: כותרת השותפויות קטנה יותר, כדי שכותרת ההירו תישאר הגדולה ביותר והלוגואים לא יתגמדו */
-html body .kwork h2{font-size:max(40px,3.9vw)!important;line-height:1.05!important}
-@media (max-width:760px){html body .kwork h2{font-size:34px!important}}
+html body .kwork h2{font-size:max(48px,4.68vw)!important;line-height:1.05!important}
+@media (max-width:760px){html body .kwork h2{font-size:40px!important}}
 /* גלריה: חצי דפדוף ליד כפתור העצירה */
 .tun-arr{display:none;position:absolute;left:50%;z-index:6;width:44px;height:44px;border-radius:50%;border:0;background:var(--cream);color:var(--black);place-items:center;cursor:pointer;box-shadow:0 8px 20px -10px rgba(31,58,39,.45)}
 .tun-arr svg{width:16px;height:16px}
@@ -1520,6 +1520,28 @@ html body .kwork h2{font-size:max(40px,3.9vw)!important;line-height:1.05!importa
 @media (min-width:761px){html[data-rv="3"] .card .inc{margin-top:0!important}}
 /* nosim: שוליים 4vw ופינות 10.42vw */
 @media (min-width:761px){.why{padding:0 4vw}.why-box{border-radius:10.42vw}.why-sky{border-radius:10.42vw 0 0 10.42vw}[data-wv="5"] .why-title{width:50%}}
+/* כפתור: הטקסט יושב מעט נמוך בגלל ה-ascent של הפונט; מרימים את התוכן ומחזירים את עיגול החץ למרכז */
+html .btn{padding-top:.33em!important;padding-bottom:.57em!important}
+html .btn::before{position:relative;top:.12em}
+@media (max-width:760px){
+  /* אודות: "אני יעלה" צמוד יותר ל"נעים מאוד" ובין המילים */
+  html .kabout h2 .l2{margin-top:-.26em}
+  html .kabout .kab-logo{margin-inline-start:-.14em}
+  /* כרטיס הסדנה: יותר אוויר בין שורת ה-550 לכפתור */
+  html .inc .deal + .btn{margin-top:18px}
+}
+/* אודות בדסקטופ: "אני יעלה" מדורג שמאלה כמו במובייל, וצמוד יותר לשורה הראשונה */
+@media (min-width:761px){html .kabout h2 .l2{padding-inline-start:28%;margin-top:-.2em}}
+@media (max-width:760px){
+  /* שותפויות: אוויר בין הכותרת ללוגואים */
+  html .klogos{top:calc(122*var(--m) + 14px)}
+  html[data-g="3"] .kgal{top:calc(312*var(--m) + 14px)}
+  html[data-g="3"] .kwork{height:calc(312*var(--m) + 324px)}
+  /* פוטר: שלושת הקישורים המשפטיים מופרדים בבירור */
+  html .foot .bottom ul{flex-direction:column;align-items:center;gap:10px}
+}
+/* מסלול 2 במובייל: הדמות יוצאת מעט מהמסגרת למעלה, כמו הכדור הפורח במסלול 1 */
+@media (max-width:760px){html #client .why-bal.walker{top:-61px!important;height:380px!important;margin-left:-86px}html #client .why-sky img{translate:0 -70px}html #client{margin-top:130px!important}}
 </style>
 <script src="js/works-carousel.js" defer></script>
 <script>(function(){var v=(location.search.match(/[?&]v=([1235])/)||[])[1]||"5";document.documentElement.setAttribute("data-wv",v);var g=(location.search.match(/[?&]g=([123])/)||[])[1]||"3";document.documentElement.setAttribute("data-g",g);document.documentElement.setAttribute("data-mv","4");document.documentElement.setAttribute("data-rv","3")})()</script>
@@ -1573,10 +1595,9 @@ html body .kwork h2{font-size:max(40px,3.9vw)!important;line-height:1.05!importa
     <li class="w w5b" data-title="שפה ציבורית: שילוט ומרחב ציבורי" data-subtitle="עיריית עפולה, פארק הרכבת" data-full="assets/gallery/full/park-sign.webp"><figure><div class="ph"><img src="assets/gallery/park-sign.webp" alt="שלט עגול של פארק הרכבת על קיר האבן של התחנה" width="1200" height="900" loading="lazy"></div><figcaption><b>שילוט</b>פארק הרכבת</figcaption></figure></li>
     <li class="w w6" data-title="שפה ציבורית: קמפיין מופעים ואירועי שיא" data-subtitle="עיריית עפולה, קיץ Extra" data-full="assets/gallery/full/afula-extra.webp?v=5"><figure><div class="ph"><img src="assets/gallery/afula-extra.webp?v=5" alt="מסך מחשב עם פוסטרים של קיץ Extra בעפולה, סאבלימינל והצל וששון שאולוב" width="1200" height="900" loading="lazy"></div><figcaption><b>70 שנה, דגל</b>חבל לכיש</figcaption></figure></li>
     <li class="w w7" data-title="שפה ציבורית: שילוט חוצות ופרסום עירוני" data-subtitle="עיריית עפולה, קיץ פנומנל" data-full="assets/gallery/full/phenomenal.webp?v=5"><figure><div class="ph"><img src="assets/gallery/phenomenal.webp?v=5" alt="פוסטר ארט לוזרוב של קיץ פנומנל על קיר בשדרה בשקיעה" width="1200" height="900" loading="lazy"></div><figcaption><b>קיץ פנומנל</b>עיריית עפולה</figcaption></figure></li>
-    <li class="w w8" data-title="שפה ציבורית: אירועי הוקרה וטקסים רשמיים" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula-ceremony.webp?v=3"><figure><div class="ph"><img src="assets/gallery/afula-ceremony.webp?v=4" alt="שקף פתיחה לטקס יקיר העיר של עפולה, עצמאות 2024" width="1200" height="900" loading="lazy"></div><figcaption><b>טקס יקיר העיר</b>עיריית עפולה</figcaption></figure></li>
     <li class="w w10" data-title="זיכרון מותגי: חגיגות עצמאות 74" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula74-banner.webp?v=5"><figure><div class="ph"><img src="assets/gallery/afula74-banner.webp?v=5" alt="באנר חגיגות עצמאות 74 של עפולה מתוח על חזית בניין" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 74</b>עיריית עפולה</figcaption></figure></li>
     <li class="w w11" data-title="זיכרון מותגי: חגיגות עצמאות 75" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula75.webp"><figure><div class="ph"><img src="assets/gallery/afula75.webp" alt="במת חגיגות העצמאות ה-75 של עפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 75</b>עיריית עפולה</figcaption></figure></li>
-    <li class="w w12" data-title="זיכרון מותגי: חגיגות עצמאות 76" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula76-shirt.webp"><figure><div class="ph"><img src="assets/gallery/afula76-shirt.webp" alt="חולצה ממותגת של חגיגות העצמאות ה-76 של עפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 76</b>עיריית עפולה</figcaption></figure></li>
+    <li class="w w8" data-title="שפה ציבורית: אירועי הוקרה וטקסים רשמיים" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula-ceremony.webp?v=3"><figure><div class="ph"><img src="assets/gallery/afula-ceremony.webp?v=4" alt="שקף פתיחה לטקס יקיר העיר של עפולה, עצמאות 2024" width="1200" height="900" loading="lazy"></div><figcaption><b>טקס יקיר העיר</b>עיריית עפולה</figcaption></figure></li>
     <li class="w w13" data-title="זיכרון מותגי: חגיגות עצמאות 77" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula77.webp"><figure><div class="ph"><img src="assets/gallery/afula77.webp" alt="פוסטר חגיגות העצמאות ה-77 של עפולה בעמוד פרסום ברחוב עם דגלי ישראל" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 77</b>עיריית עפולה</figcaption></figure></li>
     <li class="w w14" data-title="זיכרון מותגי: עצמאות 78, שילוט ומכוונים" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula78-sign.webp"><figure><div class="ph"><img src="assets/gallery/afula78-sign.webp" alt="שלט חוצות של חגיגות העצמאות ה-78 בעפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 78, שילוט</b>עיריית עפולה</figcaption></figure></li>
     <li class="w w15" data-title="זיכרון מותגי: עצמאות 78, תכנון מוצר" data-subtitle="עיריית עפולה" data-full="assets/gallery/full/afula78-kid.webp"><figure><div class="ph"><img src="assets/gallery/afula78-kid.webp" alt="ילדה בחולצת חגיגות העצמאות ה-78 של עפולה" width="1200" height="900" loading="lazy"></div><figcaption><b>עצמאות 78, חולצות</b>עיריית עפולה</figcaption></figure></li>
@@ -1777,7 +1798,7 @@ html body .kwork h2{font-size:max(40px,3.9vw)!important;line-height:1.05!importa
         </ul>
         <p class="price"><b>680</b><span>₪ כולל מע״מ</span></p>
         <a class="deal" href="#register">מחיר סדנה 550 ₪ ברכישת שתי סדנאות</a>
-        <a class="btn" href="#register" data-track="brief">להרשמה למעל המשימה</a>
+        <a class="btn" href="#register" data-track="brief">להרשמה: מעל המשימה</a>
       </div>
     </div>
   </div>
@@ -1838,7 +1859,7 @@ html body .kwork h2{font-size:max(40px,3.9vw)!important;line-height:1.05!importa
         </ul>
         <p class="price"><b>680</b><span>₪ כולל מע״מ</span></p>
         <a class="deal" href="#register">מחיר סדנה 550 ₪ ברכישת שתי סדנאות</a>
-        <a class="btn green" href="#register" data-track="client">להרשמה למלקוח לשותפות</a>
+        <a class="btn green" href="#register" data-track="client">להרשמה: מלקוח לשותפות</a>
       </div>
     </div>
   </div>
