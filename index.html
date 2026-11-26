@@ -668,6 +668,9 @@ h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.04;text-wrap:b
 [data-wv="5"] .why h2{font-size:max(48px,4.4vw);line-height:.98;letter-spacing:0}
 [data-wv="5"] .why .script.p{font-size:max(19px,1.75vw);line-height:1.3;margin-top:.35em;opacity:.95}
 [data-wv="5"] .wdesc{font-size:max(16px,1.32vw);line-height:1.62;margin-top:.9em;max-width:none;font-weight:400}
+/* שבירת שורות יזומה בתיאור, רק בדסקטופ */
+.dbr{display:none}
+@media (min-width:1350px){.dbr{display:inline}}
 [data-wv="5"] .why .script.c{font:500 max(14px,1.04vw)/1.4 var(--body);margin-top:.95em;letter-spacing:.01em;opacity:.92}
 [data-wv="5"] .why .acts{margin-top:1.5vw}
 [data-wv="5"] .for{top:30.2vw;font-size:max(17px,1.5vw)}
@@ -692,7 +695,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.04;text-wrap:b
   [data-wv="5"] .why-title{width:auto;padding-bottom:34px}
   [data-wv="5"] .why h2{font-size:44px}
   [data-wv="5"] .why .script.p{font-size:20px}
-  [data-wv="5"] .wdesc{font-size:16.5px;line-height:1.65}
+  [data-wv="5"] .wdesc{font-size:16.5px;line-height:1.65;max-width:none}
   [data-wv="5"] .why .script.c{font-size:14.5px}
   [data-wv="5"] .why .acts{margin-top:18px}
   [data-wv="5"] .for{display:block;position:relative;font-size:19px;margin-top:44px;top:auto;right:auto}
@@ -1859,7 +1862,7 @@ html .btn:not(.dark){color:var(--ink)!important;text-shadow:none}
       <div class="why-title">
         <h2 id="h-client"><small class="kick">סדנת</small><bdi data-c="client.name">מלקוח לשותפות</bdi></h2>
         <span class="script p" data-c="client.sub">בניית מעגל לקוחות · להתפתחות מקצועית ויציבות בפרנסה</span>
-        <p class="wdesc" data-c="client.desc">מתחושת חוסר ודאות ומרדף אחרי פרויקטים למערכת יחסים מקצועית, יציבה ומלאת הערכה. בשני מפגשי זום בקבוצה קטנה נלמד איך לעבור מביצוע משימות נקודתיות להובלת שותפות מתמשכת: לבסס אמון עמוק מול הלקוח, ולבנות עבודה רציפה שמעניקה שקט וביטחון כלכלי.</p>
+        <p class="wdesc" data-c="client.desc">מתחושת חוסר ודאות ומרדף אחרי פרויקטים למערכת יחסים מקצועית, יציבה ומלאת הערכה. <br class="dbr">בשני מפגשי זום בקבוצה קטנה נלמד איך לעבור מביצוע משימות נקודתיות להובלת שותפות מתמשכת: <br class="dbr">לבסס אמון עמוק מול הלקוח, ולבנות עבודה רציפה שמעניקה שקט וביטחון כלכלי.</p>
         <div class="acts"><a class="btn" href="#register" data-track="client">להרשמה</a></div>
       </div>
       <span class="for">הסדנה בשבילך אם</span>
