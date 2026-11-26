@@ -1,37 +1,180 @@
 <!doctype html>
-<html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>נרשמתם! | יעלה יהב</title><meta name="robots" content="noindex">
-<link rel="preconnect" href="https://use.typekit.net" crossorigin><link rel="preconnect" href="https://p.typekit.net" crossorigin><link rel="stylesheet" href="https://use.typekit.net/ydd7wto.css"><link rel="stylesheet" href="fonts.css"><link rel="stylesheet" href="side.css">
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>המקום שלך שמור | יעלה יהב</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/logo.webp">
+<script>/* העיצוב לפי הסדנה: brief ורוד וכדור, client ירוק ודמות צועדת, both שניהם */(function(){var t=(location.search.match(/[?&]t=(brief|client|both)\b/)||[])[1]||"brief";document.documentElement.setAttribute("data-t",t)})();</script>
+<link rel="preconnect" href="https://use.typekit.net" crossorigin><link rel="stylesheet" href="https://use.typekit.net/ydd7wto.css"><link rel="stylesheet" href="fonts.css">
 <style>
-.top{position:relative;isolation:isolate;min-height:78svh;display:grid;align-items:center;padding:12vh 0}
-.top .sky{position:absolute;inset:0;z-index:-1}.top .sky img{width:100%;height:100%;object-fit:cover}
-.top .sky::after{content:"";position:absolute;inset-inline:0;bottom:0;height:30%;background:linear-gradient(to bottom,rgba(243,241,234,0),var(--cream))}
-.grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:6vw;align-items:center}
-.grid img.b{width:min(100%,340px);justify-self:center;animation:bob 7s ease-in-out infinite}
-@keyframes bob{50%{translate:0 -14px}}
-.lead{font-size:clamp(1.18rem,calc(26*var(--u)),2rem);line-height:1.5;max-width:26em}
-.next{padding:9vh 0}.next ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.next li{background:var(--white);border-radius:28px;padding:clamp(24px,calc(40*var(--u)),52px)}
-.next b{display:block;font-weight:500;margin-bottom:6px}
-@media (max-width:760px){.grid,.next ol{grid-template-columns:1fr}.grid img.b{width:150px;order:-1}}
-@media (prefers-reduced-motion:reduce){.grid img.b{animation:none}}
-</style></head><body>
+@font-face{font-family:"Avigail";src:url(fonts/HKAvigail-Regular.otf) format("opentype");font-weight:400;font-display:swap}
+/* אותה מערכת טיפוגרפית כמו בדף הסדנאות */
+:root{--ink:#0d0c11;--pink:#e880ad;--green:#72b37e;--cream:#f3f1ea;--paper:#fffdf8;
+  --display:"Avigail","futura-100-hebrew",sans-serif;--body:"futura-he","futura-100-hebrew",Arial,sans-serif;
+  --fs-s:max(14px,.98vw);--fs-b:max(16px,1.15vw);--lh-b:1.65;--fs-l:max(19px,1.42vw);--lh-l:1.4;--fs-xl:max(24px,min(1.9vw,3.4vh));--lh-xl:1.25;--fs-h1:max(56px,min(6.2vw,11vh));--fs-h2:max(56px,5.4vw);
+  --gut:max(16px,4vw);--shade:rgba(120,40,80,.3)}
+html[data-t="client"],html[data-t="both"]{--shade:rgba(31,58,39,.35)}
+@media (max-width:760px){:root{--fs-s:14px;--fs-b:16px;--fs-l:18px;--fs-xl:21px;--fs-h1:46px;--fs-h2:44px}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:400 var(--fs-b)/var(--lh-b) var(--body);color:var(--ink);background:var(--cream);min-height:100svh;display:flex;flex-direction:column}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.hdr{display:flex;justify-content:space-between;align-items:center;padding:max(16px,1.4vw) var(--gut)}
+.hdr img{width:max(70px,min(6.51vw,12vh))}
+
+/* הקופסה: כמו קופסת הסדנה בדף (שוליים 4vw, פינות 10.42vw), האיור יוצא מעט מהמסגרת למעלה */
+.box{position:relative;margin:max(48px,min(5vw,6svh)) var(--gut) 0;min-height:max(420px,min(38vw,100svh - 230px));border-radius:max(36px,10.42vw);isolation:isolate}
+.sky{position:absolute;inset:0;border-radius:inherit;overflow:hidden;z-index:-1}
+.sky img{width:100%;height:100%;object-fit:cover}
+.sky::after{content:"";position:absolute;inset:0}
+html[data-t="brief"] .box .sky::after{background:linear-gradient(90deg,rgba(232,128,173,0) 35%,rgba(232,128,173,.4) 60%,rgba(232,128,173,.7))}
+html[data-t="client"] .box .sky::after,html[data-t="both"] .box .sky::after{background:linear-gradient(90deg,rgba(114,179,126,0) 35%,rgba(114,179,126,.45) 60%,rgba(114,179,126,.8))}
+.sky .s-pink{object-position:35% 50%}
+.sky .s-green{object-position:20% 100%}
+html[data-t="brief"] .s-green,html:not([data-t="brief"]) .s-pink{display:none}
+.ill{position:absolute;pointer-events:none}
+.bal{left:9%;top:-7%;height:86%;width:auto;filter:drop-shadow(0 1.6vw 1.6vw rgba(90,30,60,.22));animation:bob 6s ease-in-out infinite alternate}
+.walker{left:15%;top:4%;height:88%;width:auto;filter:drop-shadow(0 1.2vw 1.2vw rgba(31,58,39,.25))}
+html[data-t="both"] .box .bal{left:27%;top:-9%;height:44%}
+html[data-t="brief"] .walker,html[data-t="client"] .bal{display:none}
+@keyframes bob{to{translate:0 -14px}}
+
+.txt{position:relative;width:50%;margin-inline-end:auto;padding:max(40px,min(4.6vw,7vh)) 5.5% max(40px,min(4vw,6vh)) 0;color:var(--cream);text-shadow:0 2px 3px var(--shade)}
+.kick{font-size:var(--fs-l);line-height:var(--lh-l);font-weight:500}
+h1{font:400 var(--fs-h1)/.98 var(--display);margin-top:.12em;text-wrap:balance}
+.line{font-size:var(--fs-xl);line-height:var(--lh-xl);font-weight:300;margin-top:.4em;text-wrap:balance}
+.when{margin-top:1em;display:grid;gap:.2em}
+.when span{font-size:var(--fs-b);line-height:var(--lh-b);font-weight:400}
+.when span:empty{display:none}
+
+/* מה קורה עכשיו */
+.next{padding:max(64px,7vw) var(--gut) max(48px,5vw)}
+.next h2{font:400 var(--fs-h2)/1.02 var(--display);color:var(--pink);text-align:center;margin-bottom:max(24px,2.4vw)}
+html:not([data-t="brief"]) .next h2{color:var(--green)}
+.next ol{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:max(16px,1.6vw);max-width:min(1200px,84vw);margin:0 auto;counter-reset:s}
+.next li{background:var(--paper);border-radius:max(24px,2.2vw);padding:max(24px,2.2vw);box-shadow:0 18px 40px -28px rgba(13,12,17,.35)}
+.next li::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:2.1em;height:2.1em;border-radius:50%;background:var(--pink);color:var(--ink);font-weight:500;margin-bottom:.9em}
+.next li:nth-child(2)::before{background:var(--green)}
+.next b{display:block;font-weight:500;font-size:var(--fs-l);line-height:var(--lh-l);margin-bottom:.3em}
+.next p{font-size:var(--fs-b);line-height:var(--lh-b)}
+.acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:max(32px,3vw)}
+/* אותו כפתור כמו בדף: גלולה + עיגול חץ */
+.btn{display:inline-flex;align-items:center;gap:.75em;border-radius:999px;padding:.33em 1.4em .57em .45em;min-height:48px;font:500 var(--fs-b)/1.3 var(--body);color:var(--ink);text-decoration:none;white-space:nowrap;background:var(--pink);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 12px 24px -12px rgba(200,70,130,.7);transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.btn.green{background:var(--green);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 12px 24px -12px rgba(50,120,70,.7)}
+.btn::before{content:"";order:2;width:1.9em;height:1.9em;border-radius:50%;position:relative;top:.12em;background:var(--cream) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6' fill='none' stroke='%230d0c11' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/56% no-repeat}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.ftr{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:24px var(--gut);border-top:1px solid rgba(13,12,17,.18);font-size:var(--fs-s)}
+.ftr .credit{display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.ftr .credit img{width:90px;filter:brightness(0)}
+
+@media (max-width:760px){
+  .box{margin-top:72px;min-height:0;border-radius:36px;padding-top:228px}
+  html[data-t="both"] .box{padding-top:236px}
+  html[data-t="brief"] .box .sky::after{background:linear-gradient(180deg,rgba(232,128,173,0) 20%,rgba(232,128,173,.55) 45%,var(--pink))}
+  html[data-t="client"] .box .sky::after,html[data-t="both"] .box .sky::after{background:linear-gradient(180deg,rgba(114,179,126,0) 20%,rgba(114,179,126,.6) 45%,var(--green))}
+  .sky .s-green{object-position:12% 100%}
+  .bal{left:50%;top:-52px;height:250px;margin-left:-66px}
+  .walker{left:50%;top:-40px;height:250px;margin-left:-56px}
+  html[data-t="both"] .box .walker{margin-left:-20px}
+  html[data-t="both"] .box .bal{left:22%;top:-56px;height:150px;margin-left:0}
+  .txt{width:auto;padding:0 22px 30px;text-align:center}
+  .next ol{grid-template-columns:1fr;max-width:none}
+  .ftr{justify-content:center;text-align:center}
+}
+
+/* ===== שתי הסדנאות ===== */
+.duo{display:none}
+/* כותרת על הרקע הבהיר, ושני כרטיסים: ורוד עם הכדור, ירוק עם הדמות */
+html[data-t="both"] .box{display:none}
+html[data-t="both"] .duo{display:block;padding:max(32px,min(3vw,5vh)) var(--gut) 0}
+.duo-head{text-align:center;max-width:40em;margin:0 auto max(56px,min(5.5vw,9vh))}
+.duo-head .kick{color:var(--ink)}
+.duo-head h1{color:var(--pink);text-shadow:none}
+.duo-head .line{color:var(--ink)}
+.duo-cards{display:grid;grid-template-columns:1fr 1fr;gap:max(16px,2vw)}
+.dc{position:relative;isolation:isolate;border-radius:max(32px,5vw);min-height:max(300px,min(24vw,46vh));display:flex;align-items:flex-end}
+.dc .sky::after{background:linear-gradient(90deg,rgba(232,128,173,0) 30%,rgba(232,128,173,.5) 60%,rgba(232,128,173,.8))}
+.dc-green .sky::after{background:linear-gradient(90deg,rgba(114,179,126,0) 30%,rgba(114,179,126,.5) 60%,rgba(114,179,126,.85))}
+.dc .bal,.dc .walker{display:block!important;animation:none}
+.dc .bal{left:7%;top:-14%;height:96%}
+.dc .walker{left:9%;top:-12%;height:104%}
+.dc-txt{position:relative;width:56%;margin-inline-end:auto;padding:0 6% max(28px,2.6vw) 0;color:var(--cream);text-shadow:0 2px 3px rgba(120,40,80,.35)}
+.dc-green .dc-txt{text-shadow:0 2px 3px rgba(31,58,39,.4)}
+.dc-txt .kick{font-size:var(--fs-b);font-weight:500}
+.dc-txt h2{font:400 max(36px,min(3.6vw,6.4vh))/1 var(--display);margin:.08em 0 .3em}
+.dc-txt p{font-size:var(--fs-b);line-height:1.5}
+@media (max-width:760px){
+  .duo-cards{grid-template-columns:1fr;gap:64px}
+  .dc{min-height:0;flex-direction:column;align-items:stretch;padding-top:200px;border-radius:32px}
+  .dc .sky::after{background:linear-gradient(180deg,rgba(232,128,173,0) 25%,rgba(232,128,173,.6) 55%,var(--pink))}
+  .dc-green .sky::after{background:linear-gradient(180deg,rgba(114,179,126,0) 25%,rgba(114,179,126,.6) 55%,var(--green))}
+  .dc .bal{left:50%;top:-48px;height:230px;margin-left:-60px}
+  .dc .walker{left:50%;top:-44px;height:236px;margin-left:-53px}
+  .dc-txt{width:auto;padding:0 22px 26px;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){.bal{animation:none}}
+</style>
+<!-- רכיב הנגישות האחיד: תוספת נוחות לגולשת, לא תחליף להנגשת הדף עצמו. הצבעים מ-pick-color.mjs, לא לכוונן ביד -->
+<link rel="stylesheet" href="a11y-widget.css">
+<style>:root{--a11y-accent:#b67992;--a11y-ink:#121217;--a11y-accent-panel:#b67992}.a11y-root{font-family:"futura-he","futura-100-hebrew",Arial,sans-serif}
+@media (max-width:760px){.a11y-root .a11y-btn{inset-block-end:calc(16px + env(safe-area-inset-bottom))}}</style>
+<script src="a11y-widget.js" defer data-statement="legal.html#a11y" data-key="yaela:a11y" data-side="start"></script>
+</head>
+<body>
+<header class="hdr"><a href="index.html" aria-label="חזרה לדף הסדנאות"><img src="assets/logo.webp" alt="יעלה: עיצוב בהקשבה תחילה" width="970" height="568"></a></header>
 <main>
-<section class="top"><div class="sky"><img src="assets/sky.webp" alt=""></div>
-<div class="wrap grid">
-  <div><h1>יש! המקום שלכם שמור</h1>
-  <p class="lead">תודה שנרשמתם. אישור ההרשמה בדרך למייל, וממש בקרוב נתחיל לעלות יחד מעל המשימה.</p></div>
-  <img class="b" src="assets/balloon.webp" alt="">
-</div></section>
-<section class="next"><div class="wrap">
-  <h2>מה קורה עכשיו</h2>
-  <ol>
-    <li><b>אישור במייל</b>קבלה ואישור הרשמה נשלחים לכתובת שמסרתם.</li>
-    <li><b>קישור הזום</b>מגיע אליכם <span class="todo">[[כמה ימים]]</span> לפני המפגש הראשון.</li>
-    <li><b>שאלה בינתיים?</b>אפשר לכתוב לי בוואטסאפ, אני כאן.</li>
-  </ol>
-  <p style="margin-top:36px"><a class="btn green" href="https://wa.me/972000000000" data-todo="מספר וואטסאפ">כתבו לי בוואטסאפ ←</a></p>
-</div></section>
+  <section class="box" aria-labelledby="h-thanks">
+    <div class="sky" aria-hidden="true">
+      <img class="s-pink" src="assets/sky-hd.webp" alt="">
+      <img class="s-green" src="assets/path-green.webp" srcset="assets/path-green-m.webp 1100w, assets/path-green.webp 1672w" sizes="(max-width:760px) 94vw, 100vw" alt="">
+    </div>
+    <img class="ill walker" src="assets/walker-yaela-g.webp?v=3" alt="" aria-hidden="true" width="654" height="1453">
+    <img class="ill bal" src="assets/balloon-ill.webp?v=2" srcset="assets/balloon-ill-m.webp 640w, assets/balloon-ill.webp?v=2 760w" sizes="(max-width:760px) 40vw, 26vw" alt="" aria-hidden="true" width="760" height="1453">
+    <div class="txt">
+      <p class="kick">התשלום התקבל</p>
+      <h1 id="h-thanks">המקום שלך שמור</h1>
+      <p class="line" data-c="thanks.line">נרשמת לסדנה, אני כבר מחכה לפגוש אותך</p>
+      <p class="when"><span data-c="thanks.when1"></span><span data-c="thanks.when2"></span></p>
+    </div>
+  </section>
+  <section class="duo" aria-labelledby="h-thanks2">
+    <div class="duo-head">
+      <p class="kick">התשלום התקבל</p>
+      <h1 id="h-thanks2">המקום שלך שמור</h1>
+      <p class="line">נרשמת לשתי הסדנאות, אני כבר מחכה לפגוש אותך</p>
+    </div>
+    <div class="duo-cards">
+      <article class="dc dc-pink">
+        <div class="sky" aria-hidden="true"><img src="assets/sky-hd.webp" alt="" loading="lazy"></div>
+        <img class="ill bal" src="assets/balloon-ill.webp?v=2" srcset="assets/balloon-ill-m.webp 640w, assets/balloon-ill.webp?v=2 760w" sizes="(max-width:760px) 40vw, 20vw" alt="" aria-hidden="true" width="760" height="1453" loading="lazy">
+        <div class="dc-txt"><p class="kick">סדנת</p><h2 data-c="thanks.n1">מעל המשימה</h2><p data-c="thanks.d1"></p></div>
+      </article>
+      <article class="dc dc-green">
+        <div class="sky" aria-hidden="true"><img class="s-green-card" src="assets/path-green.webp" srcset="assets/path-green-m.webp 1100w, assets/path-green.webp 1672w" sizes="(max-width:760px) 94vw, 48vw" alt="" loading="lazy" style="object-position:15% 100%"></div>
+        <img class="ill walker" src="assets/walker-yaela-g.webp?v=3" alt="" aria-hidden="true" width="654" height="1453" loading="lazy">
+        <div class="dc-txt"><p class="kick">סדנת</p><h2 data-c="thanks.n2">מלקוח לשותפות</h2><p data-c="thanks.d2"></p></div>
+      </article>
+    </div>
+  </section>
+  <section class="next" aria-labelledby="h-next">
+    <h2 id="h-next">מה קורה עכשיו</h2>
+    <ol>
+      <li><b>אישור במייל</b><p>הקבלה ואישור ההרשמה נשלחים לכתובת שמסרת. כדאי להציץ גם בתיקיית הספאם.</p></li>
+      <li><b>קישור לזום</b><p>הקישור יגיע אלייך במייל לפני המפגש הראשון, יחד עם תזכורת.</p></li>
+      <li><b>שאלה בינתיים?</b><p>אפשר לכתוב לי בוואטסאפ, אני כאן.</p></li>
+    </ol>
+    <div class="acts">
+      <a class="btn green" href="https://wa.me/972528449567" target="_blank" rel="noopener">כתבי לי בוואטסאפ</a>
+      <a class="btn" href="index.html">חזרה לדף הסדנאות</a>
+    </div>
+  </section>
 </main>
-<footer class="wrap ftr"><a href="index.html">חזרה לדף הסדנאות</a><a class="credit" href="https://kerenarlih.co.il" target="_blank" rel="noopener">עיצוב ופיתוח האתר: <img src="assets/credit-logo.svg" alt="קרן ארליכמן" width="90" height="30"></a></footer>
-</body></html>
+<footer class="ftr">
+  <span>יעלה יהב · <a href="legal.html#terms">תקנון ומדיניות ביטולים</a> · <a href="mailto:yeelayahav@gmail.com?subject=%D7%91%D7%99%D7%98%D7%95%D7%9C%20%D7%94%D7%A8%D7%A9%D7%9E%D7%94%20%D7%9C%D7%A1%D7%93%D7%A0%D7%94&amp;body=%D7%A9%D7%9D%20%D7%9E%D7%9C%D7%90%3A%0A%D7%98%D7%9C%D7%A4%D7%95%D7%9F%3A%0A%D7%A9%D7%9D%20%D7%94%D7%A1%D7%93%D7%A0%D7%94%3A%0A">ביטול הרשמה</a></span>
+  <a class="credit" href="https://kerenarlih.co.il" target="_blank" rel="noopener">עיצוב ופיתוח האתר: <img src="assets/credit-logo.svg" alt="קרן ארליכמן" width="90" height="30"></a>
+</footer>
+</body>
+</html>
